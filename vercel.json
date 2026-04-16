@@ -1,0 +1,17 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/", "destination": "/survey", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/results-v2", "destination": "/survey/results-v2.html" },
+    { "source": "/canvas-landing", "destination": "/survey/canvas-landing.html" },
+    { "source": "/studytube-logo.png", "destination": "/assets/studytube-logo.png" },
+    { "source": "/studytube-logo.svg", "destination": "/assets/studytube-logo.svg" },
+    { "source": "/hero-bg.jpg", "destination": "/assets/hero-bg.jpg" },
+    { "source": "/cover-pattern.svg", "destination": "/assets/cover-pattern.svg" },
+    { "source": "/cover-image.png", "destination": "/assets/cover-image.png" },
+    { "source": "/cover-cutout.svg", "destination": "/assets/cover-cutout.svg" }
+  ]
+}

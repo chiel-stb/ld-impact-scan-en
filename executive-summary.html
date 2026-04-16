@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&D Impact Scan — Executive Summary</title>
+
+  <style>
+    @font-face {
+      font-family: 'Euclid Circular B';
+      src: url('https://f.hubspotusercontent30.net/hubfs/515235/DiamondTube/fonts/EuclidCircularB-Regular.woff2') format('woff2');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Euclid Circular B';
+      src: url('https://f.hubspotusercontent30.net/hubfs/515235/DiamondTube/fonts/EuclidCircularB-Medium.woff2') format('woff2');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'Euclid Circular B';
+      src: url('https://f.hubspotusercontent30.net/hubfs/515235/DiamondTube/fonts/EuclidCircularB-SemiBold.woff2') format('woff2');
+      font-weight: 600;
+    }
+    @font-face {
+      font-family: 'Euclid Circular B';
+      src: url('https://f.hubspotusercontent30.net/hubfs/515235/DiamondTube/fonts/EuclidCircularB-Bold.woff2') format('woff2');
+      font-weight: 700;
+    }
+  </style>
+
+  <style>
+    :root {
+      --st-blue-100: #D7EBFF;
+      --st-blue-200: #B9DCFF;
+      --st-blue-500: #056DFF;
+      --st-blue-700: #0F4ABE;
+      --st-blue-900: #11295A;
+      --st-gray-50: #F5F7F9;
+      --st-gray-100: #F2F5F8;
+      --st-gray-200: #E9EDF1;
+      --st-gray-500: #8694A2;
+      --st-gray-600: #545E69;
+      --st-orange: #FF8229;
+      --st-success: #16A34A;
+      --st-warning: #D97706;
+      --st-error: #EF5350;
+      --font-family: 'Euclid Circular B', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: white;
+      color: var(--st-blue-900);
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 297mm;
+      height: 210mm;
+      padding: 12mm 15mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      background: white;
+    }
+
+    /* Header */
+    .header {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--st-blue-900);
+      margin-bottom: 4px;
+    }
+
+    .header-left h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--st-blue-900);
+      margin-bottom: 2px;
+    }
+
+    .header-left .subtitle {
+      font-size: 13px;
+      color: var(--st-gray-600);
+    }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .logo {
+      height: 24px;
+      margin-bottom: 8px;
+    }
+
+    .meta {
+      font-size: 11px;
+      color: var(--st-gray-500);
+    }
+
+    /* Left Column - Results */
+    .results-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--st-blue-900);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--st-gray-200);
+    }
+
+    /* Score Summary */
+    .score-summary {
+      background: linear-gradient(135deg, var(--st-blue-900) 0%, var(--st-blue-700) 100%);
+      color: white;
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .score-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .score-value {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .score-label {
+      font-size: 9px;
+      opacity: 0.8;
+    }
+
+    .score-details h3 {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .score-details p {
+      font-size: 11px;
+      opacity: 0.85;
+    }
+
+    /* Top Priorities */
+    .priorities-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .priority-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      background: var(--st-gray-50);
+      border-radius: 6px;
+      border-left: 3px solid var(--st-orange);
+    }
+
+    .priority-rank {
+      width: 24px;
+      height: 24px;
+      background: var(--st-orange);
+      color: white;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .priority-info h4 {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin-bottom: 1px;
+    }
+
+    .priority-info p {
+      font-size: 9px;
+      color: var(--st-gray-600);
+    }
+
+    .priority-gap {
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .priority-gap .label {
+      font-size: 8px;
+      color: var(--st-gray-500);
+      text-transform: uppercase;
+    }
+
+    .priority-gap .value {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--st-error);
+    }
+
+    /* Dimension Scores */
+    .dimensions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+    }
+
+    .dimension-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 8px;
+      background: var(--st-gray-50);
+      border-radius: 4px;
+    }
+
+    .dimension-name {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--st-blue-900);
+      flex: 1;
+    }
+
+    .dimension-score {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--st-blue-500);
+    }
+
+    .dimension-bar {
+      width: 32px;
+      height: 5px;
+      background: var(--st-gray-200);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .dimension-bar-fill {
+      height: 100%;
+      background: var(--st-blue-500);
+      border-radius: 3px;
+    }
+
+    /* Right Column - Recommendations */
+    .recommendations-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Executive Brief */
+    .executive-brief {
+      background: var(--st-blue-100);
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .executive-brief h3 {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--st-blue-900);
+      margin-bottom: 4px;
+    }
+
+    .executive-brief p {
+      font-size: 10px;
+      color: var(--st-blue-900);
+      line-height: 1.5;
+    }
+
+    /* Recommendations List */
+    .recommendations-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .recommendation-item {
+      padding: 8px 10px;
+      background: var(--st-gray-50);
+      border-radius: 6px;
+    }
+
+    .recommendation-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 3px;
+    }
+
+    .recommendation-icon {
+      width: 20px;
+      height: 20px;
+      background: var(--st-success);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .recommendation-icon svg {
+      width: 12px;
+      height: 12px;
+      stroke: white;
+    }
+
+    .recommendation-header h4 {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+    }
+
+    .recommendation-item p {
+      font-size: 9px;
+      color: var(--st-gray-600);
+      padding-left: 26px;
+      line-height: 1.4;
+    }
+
+    /* Next Steps */
+    .next-steps {
+      background: var(--st-blue-900);
+      color: white;
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+
+    .next-steps h3 {
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .next-steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .next-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 10px;
+    }
+
+    .next-step-number {
+      width: 16px;
+      height: 16px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .next-step p {
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    .footer {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 8px;
+      border-top: 1px solid var(--st-gray-200);
+      font-size: 9px;
+      color: var(--st-gray-500);
+    }
+
+    .footer a {
+      color: var(--st-blue-500);
+      text-decoration: none;
+    }
+
+    /* Print button - hide in print */
+    .print-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--st-blue-500);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: var(--font-family);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .print-button:hover {
+      background: var(--st-blue-600);
+    }
+
+    @media print {
+      .print-button {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .page {
+        margin: 0;
+        padding: 10mm 12mm;
+      }
+    }
+
+    @media screen {
+      body {
+        background: var(--st-gray-100);
+        padding: 20px;
+      }
+
+      .page {
+        margin: 0 auto;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+        border-radius: 8px;
+      }
+    }
+  </style>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <button class="print-button" onclick="window.print()">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="6 9 6 2 18 2 18 9"></polyline>
+      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+      <rect x="6" y="14" width="12" height="8"></rect>
+    </svg>
+    PDF drucken / herunterladen
+  </button>
+
+  <div class="page" id="executive-summary">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-left">
+        <h1>L&D Impact Scan — Executive Summary</h1>
+        <p class="subtitle" id="org-name">Organisation</p>
+      </div>
+      <div class="header-right">
+        <img src="/assets/studytube-logo.png" alt="StudyTube" class="logo">
+        <p class="meta" id="scan-date">Datum: --</p>
+      </div>
+    </div>
+
+    <!-- Left Column: Results Overview -->
+    <div class="results-column">
+      <div>
+        <div class="section-title">Ergebnisübersicht</div>
+
+        <!-- Score summary removed per feedback -->
+      </div>
+
+      <div>
+        <div class="section-title">Top 3 Priorityen</div>
+        <div class="priorities-list" id="priorities-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div>
+        <div class="section-title">Werte per Dimension</div>
+        <div class="dimensions-grid" id="dimensions-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Recommendations -->
+    <div class="recommendations-column">
+      <div class="executive-brief">
+        <h3>Für das Management / die Geschäftsführung</h3>
+        <p id="executive-message">
+          Der L&D Impact Scan zeigt, wo Learning & Development the greatest impact erzielen kann.
+          Die drei priorisierten Action Areas sind Bereiche, in denen das aktuelle Vorgehen hinter der strategischen Bedeutung für die Organisation zurückbleibt.
+          Investitionen in diese Felder erhöhen den Beitrag von L&D zur Erreichung Ihrer strategischen Ziele.
+        </p>
+      </div>
+
+      <div>
+        <div class="section-title">Recommendations</div>
+        <div class="recommendations-list" id="recommendations-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div class="next-steps">
+        <h3>Next Steps</h3>
+        <div class="next-steps-list">
+          <div class="next-step">
+            <span class="next-step-number">1</span>
+            <p>Die drei priorisierten Action Areas mit dem Management-Team oder HR/L&D diskutieren</p>
+          </div>
+          <div class="next-step">
+            <span class="next-step-number">2</span>
+            <p>Gemeinsam festlegen, welche Priority zuerst adressiert wird</p>
+          </div>
+          <div class="next-step">
+            <span class="next-step-number">3</span>
+            <p>Ein unverbindliches Gespräch mit Studytube vereinbaren, um konkrete Lösungsansätze zu besprechen</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>L&D Impact Scan | <a href="https://studytube.de">studytube.de</a></span>
+      <span>Dieser Bericht wurde auf Grundlage Ihrer Antworten im L&D Impact Scan erstellt.</span>
+    </div>
+  </div>
+
+  <script>
+    // Use case names
+    const useCaseNames = {
+      onboarding: 'Onboarding',
+      kennisdeling: 'Knowledge Management',
+      kwalificatie: 'Qualification Management',
+      training: 'Training Procurement',
+      regie: 'Eigenverantwortung',
+      reskilling: 'Up- & Reskilling',
+      strategie: 'Strategy',
+      mobiliteit: 'Mobilität'
+    };
+
+    // Recommendations per use case
+    const useCaseRecommendations = {
+      onboarding: 'Onboarding strukturiert aufsetzen und messbar machen, um neue Mitarbeitende schneller produktiv zu machen',
+      kennisdeling: 'Wissensaustausch zentralisieren, damit Expertise erhalten bleibt und leicht zugänglich ist',
+      kwalificatie: 'Qualification Management automatisieren, um Echtzeit-Transparenz und Compliance sicherzustellen',
+      training: 'Den Prozess für externe Schulungen verschlanken und Budgetsteuerung verbessern',
+      regie: 'Mitarbeitenden Transparenz über ihre Developmentspfade geben und Eigenverantwortung stärken',
+      reskilling: 'Proaktive Reskilling-Programme entwickeln, um Veränderungen frühzeitig zu begleiten',
+      strategie: 'Lerninitiativen direkt mit strategischen Unternehmenszielen verknüpfen',
+      mobiliteit: 'Interne Developmentsmöglichkeiten sichtbar und zugänglich machen'
+    };
+
+    // Load data from API or localStorage
+    async function loadScanData() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const resultId = urlParams.get('id');
+
+      // If we have a result ID, fetch from API first
+      if (resultId) {
+        try {
+          const response = await fetch(`/api/result?id=${resultId}`);
+          if (response.ok) {
+            const { payload } = await response.json();
+            localStorage.setItem('ldScanResults', JSON.stringify(payload));
+            return payload;
+          }
+        } catch (error) {
+          console.error('Failed to load from API:', error);
+        }
+      }
+
+      // Fallback to localStorage
+      const stored = localStorage.getItem('ldScanResults');
+      return stored ? JSON.parse(stored) : null;
+    }
+
+    // Load and display results
+    document.addEventListener('DOMContentLoaded', async function() {
+      const data = await loadScanData();
+
+      if (!data) {
+        document.getElementById('executive-summary').innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 60px;">
+            <h2 style="margin-bottom: 16px;">Keine Ergebnisse gefunden</h2>
+            <p style="margin-bottom: 24px; color: var(--st-gray-600);">Bitte führen Sie zunächst den L&D Impact Scan durch, um Ihre Executive Summary zu erstellen.</p>
+            <a href="/" style="color: var(--st-blue-500);">Zum L&D Impact Scan</a>
+          </div>
+        `;
+        return;
+      }
+      const contact = data.contact || {};
+      const useCases = data.useCases || {};
+
+      // Set organization name
+      document.getElementById('org-name').textContent = contact.organisatie || 'Organisation';
+
+      // Set date
+      const scanDate = data.meta?.completed_at ? new Date(data.meta.completed_at).toLocaleDateString('de-DE', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }) : new Date().toLocaleDateString('de-DE');
+      document.getElementById('scan-date').textContent = `Datum: ${scanDate}`;
+
+      // Calculate scores and priorities
+      const results = [];
+      Object.keys(useCases).forEach(ucId => {
+        const uc = useCases[ucId];
+        if (uc.A && uc.B) {
+          const gap = uc.B - uc.A;
+          const priority = uc.B >= 4 && uc.A <= 3 ? uc.B * (6 - uc.A) : 0;
+          results.push({
+            id: ucId,
+            name: useCaseNames[ucId] || ucId,
+            aanpak: uc.A,
+            belang: uc.B,
+            gap: gap,
+            priority: priority
+          });
+        }
+      });
+
+      // Sort by priority
+      results.sort((a, b) => b.priority - a.priority);
+
+      // Render top 3 priorities
+      const prioritiesHtml = results.slice(0, 3).map((r, i) => `
+        <div class="priority-item">
+          <div class="priority-rank">${i + 1}</div>
+          <div class="priority-info">
+            <h4>${r.name}</h4>
+            <p>Approach: ${r.aanpak}/5 | Bedeutung: ${r.belang}/5</p>
+          </div>
+          <div class="priority-gap">
+            <div class="label">Gap</div>
+            <div class="value">+${r.gap}</div>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('priorities-list').innerHTML = prioritiesHtml;
+
+      // Render dimensions grid
+      const dimensionsHtml = results.map(r => `
+        <div class="dimension-item">
+          <span class="dimension-name">${r.name}</span>
+          <span class="dimension-score">${r.aanpak}/5</span>
+          <div class="dimension-bar">
+            <div class="dimension-bar-fill" style="width: ${(r.aanpak / 5) * 100}%"></div>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('dimensions-grid').innerHTML = dimensionsHtml;
+
+      // Render recommendations
+      const recommendationsHtml = results.slice(0, 3).map(r => `
+        <div class="recommendation-item">
+          <div class="recommendation-header">
+            <div class="recommendation-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h4>${r.name}</h4>
+          </div>
+          <p>${useCaseRecommendations[r.id] || 'Das aktuelle Vorgehen stärker an der strategischen Bedeutung ausrichten'}</p>
+        </div>
+      `).join('');
+      document.getElementById('recommendations-list').innerHTML = recommendationsHtml;
+
+      // Update executive message based on context
+      const context = data.context || {};
+      let execMessage = `Der L&D Impact Scan zeigt, wo Learning & Development the greatest impact erzielen kann bei ${contact.organisatie || 'Ihrer Organisation'}. `;
+
+      if (context.strategic_goal === 'growth') {
+        execMessage += 'Mit Ihrem Fokus auf Wachstum ist es entscheidend, dass L&D skalierbar ist und neue Mitarbeitende schnell produktiv macht. ';
+      } else if (context.strategic_goal === 'transformation') {
+        execMessage += 'In Transformationsphasen ist es wesentlich, dass Mitarbeitende auf Veränderungen vorbereitet sind und gezielt neue Skills entwickeln. ';
+      }
+
+      execMessage += 'Die drei priorisierten Action Areas sind Bereiche, in denen Investitionen the greatest impact erzielen.';
+      document.getElementById('executive-message').textContent = execMessage;
+
+      // Auto-print if triggered from results page
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('print') === 'true') {
+        setTimeout(() => window.print(), 500);
+      }
+    });
+  </script>
+</body>
+</html>

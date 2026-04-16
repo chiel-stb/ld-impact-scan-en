@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&D Impact Scan Bericht | Studytube</title>
+  <style>
+    /* ===========================================
+       STUDYTUBE PDF REPORT STYLES
+       Print-optimized for A4 output
+       =========================================== */
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    :root {
+      --st-blue-500: #056DFF;
+      --st-blue-900: #11295A;
+      --st-blue-100: #EBF4FF;
+      --st-gray-075: #F9FAFB;
+      --st-gray-200: #E5E7EB;
+      --st-gray-400: #9CA3AF;
+      --st-gray-600: #6B7280;
+      --st-orange: #FF8229;
+      --st-link: #FF1B51;
+      --st-white: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: var(--st-blue-900);
+      background: white;
+    }
+
+    /* ===========================================
+       PAGE STRUCTURE
+       =========================================== */
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      padding: 20mm;
+      margin: 0 auto;
+      background: white;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .page-content {
+      min-height: 257mm; /* 297 - 40mm margins */
+    }
+
+    /* ===========================================
+       COVER PAGE (L&D Monitor style)
+       =========================================== */
+
+    .cover-page {
+      padding: 0;
+      background: #F5F7F9;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative pattern in background */
+    .cover-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 210mm;
+      height: 150mm;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .cover-pattern img {
+      width: 240mm;
+      height: auto;
+      margin-left: -13mm;
+      margin-top: -130mm;
+    }
+
+    .cover-content {
+      position: absolute;
+      left: 14mm;
+      top: 21mm;
+      display: flex;
+      flex-direction: column;
+      gap: 6mm;
+      z-index: 1;
+    }
+
+    .cover-tag {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 15pt;
+      line-height: 120%;
+      color: #066DFF;
+    }
+
+    .cover-title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 44pt;
+      line-height: 105%;
+      letter-spacing: -0.02em;
+      color: #11295A;
+      max-width: 180mm;
+    }
+
+    .cover-subtitle {
+      display: none;
+    }
+
+    .cover-meta {
+      font-size: 12pt;
+      color: var(--st-gray-600);
+      margin-top: 2mm;
+    }
+
+    .cover-meta strong {
+      color: var(--st-blue-900);
+      font-weight: 600;
+    }
+
+    .cover-image-wrapper {
+      position: absolute;
+      left: 14mm;
+      top: 149mm;
+      width: 182mm;
+      bottom: 14mm;
+      background: #F5F7F9;
+    }
+
+    .cover-image-area {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border-radius: 16px 16px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .cover-image-area img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cover-image-placeholder {
+      text-align: center;
+      color: var(--st-gray-400);
+    }
+
+    .cover-image-placeholder svg {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 8px;
+      opacity: 0.4;
+    }
+
+    /* White cutout in bottom-right of image */
+    .cover-cutout {
+      position: absolute;
+      right: -1px;
+      bottom: -1px;
+      width: calc(64mm + 1px);
+      height: calc(23mm + 1px);
+    }
+
+    .cover-cutout svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .cover-footer {
+      position: absolute;
+      right: 14mm;
+      bottom: 7mm;
+      z-index: 2;
+    }
+
+    .cover-logo {
+      height: 12px;
+    }
+
+    .cover-logo img {
+      height: 12px;
+      width: auto;
+    }
+
+    .cover-date {
+      display: none;
+    }
+
+    /* Ensure cover page elements print correctly */
+    @media print {
+      .cover-pattern,
+      .back-cover-pattern,
+      .back-cover-page,
+      .meer-weten-page {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    /* ===========================================
+       HEADERS & TYPOGRAPHY
+       =========================================== */
+
+    h1 {
+      font-size: 24pt;
+      font-weight: 700;
+      color: var(--st-blue-900);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 18pt;
+      font-weight: 700;
+      color: var(--st-blue-900);
+      margin-bottom: 10px;
+      margin-top: 20px;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 14pt;
+      font-weight: 600;
+      color: var(--st-blue-500);
+      margin-bottom: 8px;
+      margin-top: 16px;
+    }
+
+    h4 {
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin-bottom: 6px;
+      margin-top: 12px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: var(--st-gray-600);
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: var(--st-blue-100);
+      color: var(--st-blue-500);
+      font-size: 9pt;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    /* ===========================================
+       CARDS & BOXES
+       =========================================== */
+
+    .card {
+      background: var(--st-gray-075);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+    }
+
+    .card-blue {
+      background: var(--st-blue-100);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 13pt;
+      font-weight: 600;
+      color: var(--st-blue-900);
+    }
+
+    .card-subtitle {
+      font-size: 10pt;
+      color: var(--st-gray-600);
+    }
+
+    /* ===========================================
+       CONTEXT SECTION
+       =========================================== */
+
+    .context-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .context-item {
+      background: var(--st-gray-075);
+      padding: 14px 16px;
+      border-radius: 8px;
+    }
+
+    .context-label {
+      font-size: 9pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--st-gray-400);
+      margin-bottom: 4px;
+    }
+
+    .context-value {
+      font-size: 11pt;
+      font-weight: 500;
+      color: var(--st-blue-900);
+    }
+
+    .focus-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .focus-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--st-blue-500);
+      color: white;
+      font-size: 10pt;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+
+    .focus-chip-rank {
+      font-weight: 700;
+    }
+
+    /* ===========================================
+       USE CASES GRID
+       =========================================== */
+
+    .use-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .use-case-item {
+      background: var(--st-gray-075);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      border: 2px solid transparent;
+    }
+
+    .use-case-item.highlighted {
+      background: var(--st-blue-100);
+      border-color: var(--st-blue-500);
+    }
+
+    .use-case-name {
+      font-size: 9pt;
+      font-weight: 500;
+      color: var(--st-gray-600);
+      line-height: 1.3;
+    }
+
+    .use-case-item.highlighted .use-case-name {
+      color: var(--st-blue-900);
+      font-weight: 600;
+    }
+
+    .use-case-badge {
+      display: inline-block;
+      background: var(--st-blue-500);
+      color: white;
+      font-size: 8pt;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+
+    /* ===========================================
+       PRIORITY CARDS
+       =========================================== */
+
+    .priority-card {
+      background: white;
+      border: 1px solid var(--st-gray-200);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      page-break-inside: avoid;
+    }
+
+    .priority-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--st-gray-200);
+    }
+
+    .priority-rank {
+      width: 40px;
+      height: 40px;
+      background: var(--st-blue-500);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16pt;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .priority-title-area {
+      flex: 1;
+    }
+
+    .priority-name {
+      font-size: 16pt;
+      font-weight: 700;
+      color: var(--st-blue-900);
+      margin-bottom: 4px;
+    }
+
+    .priority-scores {
+      font-size: 10pt;
+      color: var(--st-gray-600);
+    }
+
+    .priority-gap {
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 9pt;
+      font-weight: 600;
+    }
+
+    .priority-gap.high {
+      background: #FEE2E2;
+      color: #DC2626;
+    }
+
+    .priority-gap.medium {
+      background: #FEF3C7;
+      color: #D97706;
+    }
+
+    .priority-gap.low {
+      background: #D1FAE5;
+      color: #059669;
+    }
+
+    .priority-rationale {
+      background: var(--st-blue-100);
+      border-left: 4px solid var(--st-blue-500);
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .priority-rationale p {
+      color: var(--st-blue-900);
+      font-style: italic;
+      margin: 0;
+    }
+
+    .priority-section {
+      margin-top: 16px;
+    }
+
+    .priority-section h4 {
+      color: var(--st-blue-500);
+      margin-bottom: 8px;
+    }
+
+    /* ===========================================
+       LISTS
+       =========================================== */
+
+    .opportunity-list,
+    .success-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+    }
+
+    .opportunity-list li,
+    .success-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      color: var(--st-gray-600);
+      font-size: 10pt;
+    }
+
+    .opportunity-list li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--st-blue-500);
+      font-size: 8pt;
+    }
+
+    .success-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--st-blue-500);
+      font-weight: 700;
+    }
+
+    /* ===========================================
+       ALL SCORES LIST
+       =========================================== */
+
+    .all-scores-list {
+      margin-top: 16px;
+    }
+
+    .score-row {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      background: var(--st-gray-075);
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+
+    .score-row.is-priority {
+      background: var(--st-blue-100);
+      border: 1px solid var(--st-blue-500);
+    }
+
+    .score-row-name {
+      flex: 1;
+      font-weight: 500;
+      color: var(--st-blue-900);
+      font-size: 11pt;
+    }
+
+    .score-row-badge {
+      background: var(--st-blue-500);
+      color: white;
+      font-size: 8pt;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
+    }
+
+    .score-row-scores {
+      display: flex;
+      gap: 16px;
+      margin-left: auto;
+    }
+
+    .score-item {
+      text-align: center;
+      min-width: 50px;
+    }
+
+    .score-item-label {
+      font-size: 8pt;
+      color: var(--st-gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .score-item-value {
+      font-size: 14pt;
+      font-weight: 700;
+      color: var(--st-blue-900);
+    }
+
+    .score-bar {
+      width: 80px;
+      height: 6px;
+      background: var(--st-gray-200);
+      border-radius: 3px;
+      margin-top: 4px;
+      overflow: hidden;
+    }
+
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+
+    .score-bar-fill.score-a {
+      background: var(--st-gray-400);
+    }
+
+    .score-bar-fill.score-b {
+      background: var(--st-blue-500);
+    }
+
+    /* ===========================================
+       MEER WETEN PAGE
+       =========================================== */
+
+    .meer-weten-page {
+      background: white;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .meer-weten-photo {
+      width: 210mm;
+      height: 140mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .meer-weten-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .meer-weten-photo .geometric-accent {
+      position: absolute;
+      bottom: -1px;
+      right: 0;
+      width: 80mm;
+      height: 80mm;
+      pointer-events: none;
+    }
+
+    .meer-weten-logo {
+      position: absolute;
+      top: 105mm;
+      right: 20mm;
+      z-index: 2;
+    }
+
+    .meer-weten-logo img {
+      height: 20px;
+    }
+
+    .meer-weten-body {
+      padding: 24mm 20mm 0 20mm;
+    }
+
+    .meer-weten-body h2 {
+      font-size: 24pt;
+      font-weight: 700;
+      color: var(--st-blue-900);
+      margin-bottom: 12px;
+    }
+
+    .meer-weten-body p {
+      font-size: 11pt;
+      line-height: 1.7;
+      color: var(--st-blue-900);
+      max-width: 140mm;
+      margin-bottom: 20px;
+    }
+
+    .meer-weten-btn {
+      display: inline-block;
+      background: var(--st-orange);
+      color: white;
+      font-size: 11pt;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    /* ===========================================
+       BACK COVER PAGE
+       =========================================== */
+
+    .back-cover-page {
+      background: var(--st-blue-500);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .back-cover-pattern {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 210mm;
+      height: 148.5mm; /* 50% of A4 height */
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 5%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, transparent 5%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+    }
+
+    .back-cover-pattern img {
+      width: 240mm;
+      height: auto;
+      margin-left: -13mm;
+      margin-top: 0;
+    }
+
+    .back-cover-logo {
+      position: absolute;
+      top: 20mm;
+      left: 20mm;
+      z-index: 1;
+    }
+
+    .back-cover-logo img {
+      height: 22px;
+      filter: brightness(0) invert(1);
+    }
+
+    .back-cover-tagline {
+      position: absolute;
+      top: 50mm;
+      left: 105mm;
+      z-index: 1;
+      text-align: left;
+      font-size: 32pt;
+      font-weight: 700;
+      font-style: italic;
+      color: white;
+      line-height: 1.25;
+      max-width: 120mm;
+    }
+
+    .back-cover-footer {
+      position: absolute;
+      bottom: 20mm;
+      left: 20mm;
+      right: 20mm;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      font-size: 9pt;
+      line-height: 1.6;
+    }
+
+    .back-cover-footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .back-cover-footer-left {
+      opacity: 0.9;
+    }
+
+    .back-cover-footer-right {
+      text-align: right;
+      opacity: 0.9;
+    }
+
+    /* ===========================================
+       FOOTER
+       =========================================== */
+
+    .page-footer {
+      position: absolute;
+      bottom: 15mm;
+      left: 20mm;
+      right: 20mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9pt;
+      color: var(--st-gray-400);
+    }
+
+    .page-footer-logo {
+      font-weight: 600;
+      color: var(--st-gray-600);
+    }
+
+    /* ===========================================
+       PRINT UTILITIES
+       =========================================== */
+
+    .no-break {
+      page-break-inside: avoid;
+    }
+
+    .break-before {
+      page-break-before: always;
+    }
+
+    .break-after {
+      page-break-after: always;
+    }
+
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+
+    /* Screen preview styling */
+    @media screen {
+      body {
+        background: #e5e7eb;
+        padding: 20px;
+      }
+
+      .page {
+        box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <!-- =========================================
+       PAGE 1: COVER
+       ========================================= -->
+  <div class="page cover-page">
+    <!-- Decorative pattern background -->
+    <div class="cover-pattern">
+      <img src="./assets/cover-pattern.svg" alt="">
+    </div>
+
+    <div class="cover-content">
+      <div class="cover-tag">L&D IMPACT SCAN</div>
+      <h1 class="cover-title">Ihr L&D<br>Impact Profil</h1>
+      <div class="cover-meta">
+        <strong id="cover-name">{{CONTACT_NAME}}</strong><br>
+        <span id="cover-org">{{ORG_NAME}}</span>
+      </div>
+    </div>
+
+    <div class="cover-image-wrapper">
+      <div class="cover-image-area">
+        <img src="./assets/cover-image.png" alt="L&D Impact Scan">
+      </div>
+      <!-- White cutout for logo area (inlined to prevent rendering gaps) -->
+      <div class="cover-cutout">
+        <svg width="179" height="62" viewBox="0 0 179 62" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 62L23.7872 62C32.0281 62 38.9211 55.7405 39.7131 47.5377L41.1036 33.1367C41.8956 24.9339 48.7886 18.6744 57.0296 18.6744L162.5 18.6744C171.337 18.6744 178.5 11.511 178.5 2.67443L178.5 0L178.5 20.1686L178.5 40.3372L178.5 62L0 62Z" fill="#F5F7F9"/>
+        </svg>
+      </div>
+      <!-- Logo positioned in cutout -->
+      <div class="cover-footer">
+        <div class="cover-logo">
+          <img src="./assets/studytube-logo.svg" alt="StudyTube">
+        </div>
+      </div>
+    </div>
+
+    <span id="cover-date" style="display: none;">{{DATE}}</span>
+  </div>
+
+  <!-- =========================================
+       PAGE 2: INTRO & CONTEXT
+       ========================================= -->
+  <div class="page">
+    <div class="page-content">
+      <div class="section-tag">ÜBER DIESEN BERICHT</div>
+      <h1>Über diesen Bericht</h1>
+
+      <p>Der L&D Impact Scan gibt Ihnen Einblick, wie Lernen und Development aktuell organised sind – im Verhältnis zu ihrer strategischen Bedeutung. Er dient als Instrument zur orientation: Wo können Sie mit L&D derzeit the greatest impact erzielen?</p>
+
+      <p>Der Bericht ist nicht dazu gedacht, Ihren L&D-Approach zu bewerten oder seinen „Reifegrad" zu messen. Ziel ist es, sichtbar zu machen, wo die Differenz zwischen Anspruch und aktuellem Vorgehen am größten ist. Genau dort liegt das Potenzial.</p>
+
+      <p>Der Bericht basiert vollständig auf den Antworten, die Sie im Scan gegeben haben. Diese wurden übersetzt in:</p>
+      <ul class="success-list" style="margin-bottom: 16px;">
+        <li>Einblick in Ihren Kontext und Ihre Priorityen</li>
+        <li>Eine Overview der relevantesten L&D-Anwendungsfelder</li>
+        <li>Fokusbereiche, in denen gezielte Aufmerksamkeit the greatest impact für employees und organisation erzielen kann</li>
+      </ul>
+
+      <p style="font-size: 10pt; font-style: italic; border-left: 2px solid var(--st-blue-500); padding-left: 12px; margin: 12px 0;">Nutzen Sie diesen Bericht als Gesprächsgrundlage. Als Kompass für Priorityen. Und als Basis, um gemeinsam zu entscheiden: Wo investieren wir Zeit, Energie und Ressourcen am wirkungsvollsten?</p>
+
+      <h3>Zentrale Begriffe</h3>
+      <ul class="success-list">
+        <li><strong>L&D Impact Modell</strong> — Rahmenwerk zur structureierung und strategischen Ausrichtung Ihres L&D-Approaches</li>
+        <li><strong>Use Case</strong> — Konkretes Anwendungsfeld im L&D-Kontext</li>
+        <li><strong>Fokus Use Case</strong> — Ein Anwendungsfeld mit vergleichsweise großer Lücke, in dem gezielte Aufmerksamkeit den größten Mehrwert schafft</li>
+        <li><strong>Gap</strong> — Differenz zwischen strategischer Bedeutung und aktuellem Vorgehen</li>
+        <li><strong>Success Factors</strong> — Bausteine, die erforderlich sind, um ein Anwendungsfeld wirksam aufzusetzen</li>
+      </ul>
+
+    </div>
+    <div class="page-footer">
+      <span class="page-footer-logo">STUDYTUBE</span>
+      <span>2</span>
+    </div>
+  </div>
+
+  <!-- =========================================
+       PAGE 3: DIT VERTELDE JE ONS
+       ========================================= -->
+  <div class="page">
+    <div class="page-content">
+      <div class="section-tag">IHR KONTEXT</div>
+      <h1>Das haben Sie uns mitgeteilt</h1>
+      <p id="context-org" style="color: var(--st-gray-600); margin-bottom: 16px;">Sie arbeiten bei <strong style="color: var(--st-blue-900);">{{ORG_NAME}}</strong></p>
+
+      <div id="org-goals-section" style="display: none;">
+        <div class="card">
+          <div class="context-label">Ihre organisationsziele für 2026</div>
+          <p id="context-goals" style="margin: 0; color: var(--st-blue-900); word-break: break-word; overflow-wrap: break-word;">{{ORG_GOALS}}</p>
+        </div>
+      </div>
+
+      <div class="context-grid">
+        <div class="context-item">
+          <div class="context-label">Ihre strategische Priority</div>
+          <div class="context-value" id="context-strategic">{{STRATEGIC_GOAL}}</div>
+        </div>
+        <div class="context-item">
+          <div class="context-label">Ihre größte Herausforderung</div>
+          <div class="context-value" id="context-challenge">{{LD_CHALLENGE}}</div>
+        </div>
+      </div>
+
+      <div class="focus-chips" id="focus-chips">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+    <div class="page-footer">
+      <span class="page-footer-logo">STUDYTUBE</span>
+      <span>3</span>
+    </div>
+  </div>
+
+  <!-- =========================================
+       PAGE 4: L&D IMPACT MODEL (was 3)
+       ========================================= -->
+  <div class="page">
+    <div class="page-content">
+      <div class="section-tag">L&D IMPACT MODEL</div>
+      <h1>L&D Impact Modell</h1>
+
+      <p>Das L&D Impact Modell ist ein Rahmenwerk, das structure in Ihren L&D-Approach bringt. Es umfasst acht klar definierte Anwendungsfelder, die gemeinsam die gesamte Bandbreite von Lernen und Development im organisation abdecken.</p>
+
+      <p style="font-size: 10pt;">In vielen organisationen besteht L&D aus einzelnen Initiativen, dringenden Anfragen und ad-hoc Lösungen. Das L&D Impact Modell schafft eine gemeinsame Sprache und einen festen Bezugsrahmen, um diese Initiativen zu bündeln und im Zusammenhang zu betrachten. Das Modell ist kein Stufenplan und kein Reifegradmodell — es gibt keine festgelegte Reihenfolge und kein definiertes Endziel.</p>
+
+      <div class="use-cases-grid" id="use-cases-grid">
+        <!-- Dynamically populated -->
+      </div>
+
+      <div class="card card-blue" style="margin-top: 16px;">
+        <h4 style="margin-top: 0;">Wie lesen Sie dieses Modell?</h4>
+        <p style="margin-bottom: 8px; font-size: 10pt;">Für jedes Anwendungsfeld wurden zwei Werte ermittelt: die strategische <strong>Bedeutung</strong> des Themas für Ihr organisation und das <strong>aktuelle Vorgehen</strong>. Die Differenz zwischen beiden bildet die <strong>Lücke</strong>.</p>
+        <p style="margin-bottom: 0; font-size: 10pt;">Die markierten Anwendungsfelder (#1, #2, #3) zeigen, wo diese Lücke am größten ist. Das sind Ihre <strong>Fokus Use Cases</strong> — nicht, weil dort etwas „schlecht" organised ist, sondern weil hier, im Verhältnis zu Ihren Priorityen, das größte Potenzial für Impact liegt.</p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span class="page-footer-logo">STUDYTUBE</span>
+      <span>4</span>
+    </div>
+  </div>
+
+  <!-- =========================================
+       PAGE 5: ALLE SCORES
+       ========================================= -->
+  <div class="page">
+    <div class="page-content">
+      <div class="section-tag">ALLE WERTE</div>
+      <h1>Alle Werte per Use Case</h1>
+
+      <p>Nachfolgend finden Sie eine Overview aller acht Anwendungsfelder mit Ihren Bewertungen. Der <strong>A-Score</strong> zeigt, wie Ihr aktuelles Vorgehen ausgeprägt ist (1–5). Der <strong>B-Score</strong> gibt an, wie wichtig dieses Thema für Sie ist (1–5).</p>
+
+      <div class="all-scores-list" id="all-scores-list">
+        <!-- Dynamically populated -->
+      </div>
+
+    </div>
+    <div class="page-footer">
+      <span class="page-footer-logo">STUDYTUBE</span>
+      <span>5</span>
+    </div>
+  </div>
+
+  <!-- =========================================
+       PAGES 6-8: PRIORITY CARDS (1 per page)
+       ========================================= -->
+  <div class="page" id="priority-page-1">
+    <div class="page-content">
+      <div class="section-tag">FOKUS USE CASE #1</div>
+      <div class="priority-card" id="priority-1">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+    <div class="page-footer">
+      <span class="page-footer-logo">STUDYTUBE</span>
+      <span>6</span>
+    </div>
+  </div>
+
+  <div class="page" id="priority-page-2">
+    <div class="page-content">
+      <div class="section-tag">FOKUS USE CASE #2</div>
+      <div class="priority-card" id="priority-2">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+    <div class="page-footer">
+      <span class="page-footer-logo">STUDYTUBE</span>
+      <span>7</span>
+    </div>
+  </div>
+
+  <div class="page" id="priority-page-3">
+    <div class="page-content">
+      <div class="section-tag">FOKUS USE CASE #3</div>
+      <div class="priority-card" id="priority-3">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+    <div class="page-footer">
+      <span class="page-footer-logo">STUDYTUBE</span>
+      <span>8</span>
+    </div>
+  </div>
+
+  <!-- =========================================
+       PAGE 9: MEER WETEN
+       ========================================= -->
+  <div class="page meer-weten-page">
+    <div class="meer-weten-photo">
+      <img src="./assets/meer-weten-image.png" alt="Zusammenarbeit im Team">
+    </div>
+
+    <div class="meer-weten-body">
+      <h2>Möchten Sie mehr erfahren?</h2>
+      <p>Wenn Sie Ihre employeesn bestmöglich beim lebenslangen Lernen unterstützen möchten, sprechen Sie mit einem unserer Expert:innen. Wir zeigen Ihnen, wie die All-in-One-Lernplattform von Studytube organisation dabei unterstützt.</p>
+      <a href="https://www.studytube.com/de/demo" class="meer-weten-btn">Demo buchen</a>
+    </div>
+
+    <div class="page-footer">
+      <span class="page-footer-logo">STUDYTUBE</span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- =========================================
+       PAGE 10: BACK COVER
+       ========================================= -->
+  <div class="page back-cover-page">
+    <div class="back-cover-pattern">
+      <img src="./assets/cover-pattern-white.svg" alt="">
+    </div>
+
+    <div class="back-cover-logo">
+      <img src="./assets/studytube-logo.svg" alt="Studytube">
+    </div>
+
+    <div class="back-cover-tagline">
+      Lernen, skills und<br>Qualifikationen<br>zentral steuern.
+    </div>
+
+    <div class="back-cover-footer">
+      <div class="back-cover-footer-left">
+        <a href="https://www.studytube.de">www.studytube.de</a><br>
+        Erftstraße 15-17<br>
+        50672 Köln
+      </div>
+      <div class="back-cover-footer-right">
+        <a href="mailto:info@studytube.de">info@studytube.de</a><br>
+        Telefon: +49 (0) 221 8282 9160
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       DATA & RENDERING SCRIPT
+       ========================================= -->
+  <script>
+    // Content library (same as results.html)
+    const USE_CASE_CONTENT = {
+      onboarding: {
+        name: 'Onboarding',
+        section1Title: 'Onboarding als struktureller Ausgangspunkt',
+        section1Content: 'Onboarding entscheidet darüber, wie neue employees im organisation starten – und wie schnell sie eigenständig wirksam werden. It's about orientation in der ersten Phase: knowledge, was von einem erwartet wird, wissen, wo relevante Informationen zu finden sind undw issen, wie Erfolg in der jeweiligen role definiert ist. Onboarding gibt es in nahezu jeder organisation. The difference lies nicht in seiner Existenz, sondern darin, wie konsequent und skalierbar der process aufgesetzt ist.',
+        section2Title: 'Wo Onboarding Potenzial zeigt',
+        section2Content: 'Viele organisationen erleben, dass Onboarding grundsätzlich geregelt ist, in der Praxis jedoch zunehmend Abstimmung erfordert. Was wir häufig beobachten: Neue employees erhalten Informationen, müssen Priorityen jedoch selbst festlegen. Eine klare Abfolge oder gezielte orientation fehlt. This is precisely where liegt das Potenzial von Onboarding – nicht weil es fehlt, sondern weil es an Richtung, structure und transparency mangelt.',
+        opportunities: [
+          { title: 'An role und Kontext ausrichten', desc: 'Durch die Ausrichtung je Funktion entsteht clarity darüber, was relevant ist.' },
+          { title: 'Rhythmus und Verlässlichkeit create', desc: 'Wenn Onboarding zeitlich gestaffelt erfolgt, lässt sich Lernen besser mit der Praxis verknüpfen.' },
+          { title: 'orientation vor dem ersten Arbeitstag geben', desc: 'Beginnt Onboarding bereits vor dem ersten Tag, starten neue employees vorbereitet.' }
+        ],
+        successFactors: [
+          'LMS mit Automatisierung',
+          'rolenprofile mit skills',
+          'Willkommens- und Kulturinhalte',
+          'Onboarding-Pfade je Themengebiet'
+        ]
+      },
+      kennisdeling: {
+        name: 'Knowledge Management',
+        section1Title: 'Knowledge Management als struktureller Ausgangspunkt',
+        section1Content: 'knowledgesaustausch entscheidet darüber, in welchem Maß expertise im organisation verfügbar bleibt. Dabei stehen drei Kernfragen im Mittelpunkt: Auffindbarkeit (Können employees knowledge schnell finden?), Aktualität (Ist das knowledge auf dem neuesten Stand?) und Anwendbarkeit (Lässt es sich mit der täglichen Arbeit verknüpfen?). In vielen organisationen ist knowledge vorhanden, jedoch verteilt. The difference lies nicht in der Menge des knowledges, sondern darin, wie zugänglich und wiederverwendbar es organised ist.',
+        section2Title: 'Wo knowledgesaustausch Potenzial zeigt',
+        section2Content: 'In practice hängt knowledgesaustausch häufig von einzelnen Personen oder vom Zufall ab. employees suchen Informationen, wissen jedoch nicht, wo sie beginnen sollen. Die Folge: Fragen werden mehrfach gestellt, Expertinnen und Experten werden überlastet, und wertvolles knowledge geht verloren, wenn Personen das organisation verlassen. This is precisely where liegt das Potenzial – nicht aufgrund fehlender Expertise, sondern weil knowledge unzureichend dokumentiert, strukturiert und aktiv geteilt wird.',
+        opportunities: [
+          { title: 'Einen klar erkennbaren Ausgangspunkt create', desc: 'Wird knowledge an einem zentralen Ort gebündelt, entsteht Overview und orientation.' },
+          { title: 'knowledgesaustausch in die Arbeit integrieren', desc: 'Durch die professionelle organisation und Dokumentation von knowledgesformaten wird Austausch strukturiert und wiederholbar.' },
+          { title: 'Expertinnen und Experten sichtbar und aktiv einbinden', desc: 'Indem erfahrene employees gezielt dabei unterstützt werden, ihre Expertise zu dokumentieren.' }
+        ],
+        successFactors: [
+          'Zentrale Akademie mit Suchfunktion',
+          'Seminarmanagement mit Benachrichtigungen',
+          'Authoring-Tool für Expertinnen und Experten',
+          'Klare structure und Kategorien'
+        ]
+      },
+      kwalificatie: {
+        name: 'Qualification Management',
+        section1Title: 'Kontrolle über verpflichtende Kenntnisse und Zertifizierungen',
+        section1Content: 'Qualification Management bedeutet transparency darüber, welches knowledge, welche Zertifizierungen und welche Verpflichtungen erforderlich sind. Zentrale Fragen sind: Wer muss wofür qualifiziert sein? Wann sind Wiederholungen erforderlich? Sind alle auf dem aktuellen Stand? Ist das Qualification Management gut organised, entsteht Sicherheit. employees wissen, wo sie stehen – und Audits werden nicht zur Last-Minute-Aktion.',
+        section2Title: 'Wo Qualification Management Potenzial zeigt',
+        section2Content: 'In practice ist Qualification Management häufig stark von manueller Nachverfolgung geprägt: Overviewen in Excel, Erinnerungen per E-Mail und hoher Abstimmungsaufwand. Typische Anzeichen: Unklarheit darüber, wer was absolvieren muss, zu spät erkannte abgelaufene Zertifikate und erhöhter Druck im Vorfeld von Audits. This is precisely where liegt das Potenzial – nicht weil Regeln unklar wären, sondern weil der process zu wenig transparency und Kontinuität bietet.',
+        opportunities: [
+          { title: 'clarity je role create', desc: 'Wird eindeutig definiert, welche Anforderungen für welche role gelten, entsteht Overview.' },
+          { title: 'Verpflichtungen verständlich machen', desc: 'Werden Richtlinien in kurze Lerneinheiten übersetzt, lassen sie sich besser in den Arbeitsalltag integrieren.' },
+          { title: 'Fortschritt kontinuierlich sichtbar machen', desc: 'Ist der Fortschritt transparent, können Maßnahmen frühzeitig angepasst werden.' }
+        ],
+        successFactors: [
+          'Qualification Management mit Wiederholungslogik',
+          'Audit-Trail und Reports',
+          'Zertifikatsverwaltung',
+          'Tools zur Übersetzung von Richtlinien'
+        ]
+      },
+      training: {
+        name: 'Training Procurement',
+        section1Title: 'Kontrolle über externe Schulungen und Budgets',
+        section1Content: 'Die Beschaffung externer Schulungen beschreibt, wie employees Zugang zu externen Lernangeboten erhalten. Dabei geht es um das Gleichgewicht zwischen Entscheidungsfreiheit und transparency: employees möchten schnell mit relevanten Schulungen starten, die organisation möchte wissen, wofür Budgets eingesetzt werden. Ist die Beschaffung externer Schulungen gut organised, finden employees schnell passende Angebote – während das organisation Kosten und quality im Blick behält.',
+        section2Title: 'Wo die Beschaffung externer Schulungen Potenzial zeigt',
+        section2Content: 'In practice ist die Beantragung externer Schulungen häufig langsam und wenig transparent. Typische Muster: employees wissen nicht, welche Angebote verfügbar sind, Antragsprozesse sind unklar, und Budgets werden erst im Nachhinein statt in Echtzeit überprüft. This is precisely where liegt das Potenzial – nicht wegen fehlender Angebote, sondern weil processe zu wenig effizient und transparent gestaltet sind.',
+        opportunities: [
+          { title: 'Einen klaren Antragsprozess create', desc: 'Durch die zentrale Steuerung von Anfragen wissen employees, an wen sie sich wenden können.' },
+          { title: 'quality im Vorfeld sicherstellen', desc: 'Durch die Prüfung von Anbietern steigt die quality, ohne zusätzlichen Aufwand pro Anfrage.' },
+          { title: 'Budgets in Echtzeit transparent machen', desc: 'Werden Ausgaben sichtbar, lassen sich Anpassungen frühzeitig vornehmen.' }
+        ],
+        successFactors: [
+          'Katalog für externe Schulungen',
+          'Genehmigungs-Workflows mit klaren rolen',
+          'Budgetmanagement je Team',
+          'Integration mit Anbietern'
+        ]
+      },
+      regie: {
+        name: 'Eigenverantwortung der employeesn',
+        section1Title: 'Verantwortung für die eigene Development übernehmen',
+        section1Content: 'Eigenverantwortung beschreibt, in welchem Maß employees transparency über ihre eigene Development haben. Im Kern geht es um Ownership: knowledge, welche skills zur eigenen role gehören, transparency über eigene Stärken und Developmentspotenziale und clarity über sinnvolle nächste Schritte. Ist Eigenverantwortung gut verankert, ergreifen employees selbst Initiative. Sie treiben ihre Development aktiv voran und übernehmen Verantwortung für ihr Wachstum.',
+        section2Title: 'Wo Eigenverantwortung Potenzial zeigt',
+        section2Content: 'In practice fehlt employeesn häufig die clarity darüber, welche skills von ihnen erwartet werden. Was wir beobachten: Development wird vertagt, Gespräche bleiben oberflächlich, und Lernen findet vor allem dann statt, wenn es erforderlich ist – nicht, wenn es sinnvoll wäre. This is precisely where liegt das Potenzial – nicht aufgrund mangelnder Motivation, sondern weil geeignete Instrumente zur Selbststeuerung fehlen.',
+        opportunities: [
+          { title: 'skills je role sichtbar machen', desc: 'Durch klare Definitionen wird deutlich, welche capabilities zu einer Funktion gehören.' },
+          { title: 'Selbsterkenntnis fördern', desc: 'Mithilfe von Assessments können employees ihre Developmentspotenziale erkennen.' },
+          { title: 'Individuelle Lernempfehlungen enable', desc: 'Relevante Inhalte werden auf Basis von role und Erfahrungsniveau vorgeschlagen.' }
+        ],
+        successFactors: [
+          'Skill-Profile je Funktion',
+          'Persönliches Dashboard',
+          'Self-Assessments',
+          'Personalisierte Lernempfehlungen'
+        ]
+      },
+      reskilling: {
+        name: 'Up- & Reskilling',
+        section1Title: 'employees auf Veränderung vorbereiten',
+        section1Content: 'Up- und Reskilling beschreibt die gezielte Development von skills, die für zukünftige Veränderungen erforderlich sind. Im Kern geht es um Zukunftsorientierung: Nicht nur für den aktuellen Bedarf schulen, sondern auf kommende Anforderungen vorbereiten, damit employees sich gemeinsam mit der organisation weiterdevelop können. Ist Reskilling gut organised, wird Veränderung nicht zur Bedrohung, sondern zur Wachstumschance.',
+        section2Title: 'Wo Up- und Reskilling Potenzial zeigt',
+        section2Content: 'In practice erfolgt Reskilling häufig reaktiv. Erst wenn systeme verändert werden, Umstrukturierungen anstehen oder Funktionen wegfallen, wird gehandelt. Das Risiko: Wer zu spät startet, setzt employees unter Druck – oder verliert Talente, die anderswo bessere Perspektiven sehen. This is precisely where liegt das Potenzial – nicht wegen fehlender Dringlichkeit, sondern weil der Blick nicht weit genug in die Zukunft reicht.',
+        opportunities: [
+          { title: 'Zukünftige Skill-Bedarfe ableiten', desc: 'Durch die Übersetzung strategischer Pläne in konkrete, benötigte skills entsteht clarity über künftige Anforderungen.' },
+          { title: 'Lernpfade für Übergänge design', desc: 'Gezielte Programme unterstützen bei rolenveränderungen.' },
+          { title: 'Zeit und Raum für Development create', desc: 'Reskilling wird als fester Bestandteil der Arbeit eingeplant.' }
+        ],
+        successFactors: [
+          'Skill-Gap-Analyse',
+          'Lernpfade für Übergänge',
+          'Blended-Learning-Formate',
+          'Fortschrittsmonitoring'
+        ]
+      },
+      strategie: {
+        name: 'Strategice Skill-Development',
+        section1Title: 'Lernen mit strategischen Zielen verknüpfen',
+        section1Content: 'Strategice Skill-Development beschreibt, in welchem Maß L&D-Investitionen zur Erreichung der organisationsziele beitragen. Im Kern geht es um Ausrichtung: Nicht Lernen um des Lernens willen, sondern gezielte Development von skills mit strategischer Relevanz und mit messbarem Impact auf die organisationsziele. Ist dies gut organised, wird L&D nicht als Kostenstelle wahrgenommen, sondern als strategischer Partner, der aktiv zum organisationserfolg beiträgt.',
+        section2Title: 'Wo strategische Skill-Development Potenzial zeigt',
+        section2Content: 'In practice bietet L&D häufig ein breites Spektrum ohne klare Priorisierung. Es gibt viele Optionen, doch es bleibt unklar, was wirklich relevant ist. Die Folge: Investitionen in Lernen wirken wie „nice to have" statt „must have", und die Verbindung zur Strategy fehlt im Dialog mit dem Management. This is precisely where liegt das Potenzial – nicht wegen fehlender Angebote, sondern weil die Anbindung an die organisationsziele nicht konsequent hergestellt wird.',
+        opportunities: [
+          { title: 'Strategice skills definieren', desc: 'Klar benennen, welche capabilities für die Umsetzung der Strategy entscheidend sind.' },
+          { title: 'Lerninitiativen nach Impact priorisieren', desc: 'Investitionen auf ihren strategischen Beitrag prüfen.' },
+          { title: 'Impact sichtbar machen', desc: 'Fortschritte bei strategischen skills messen und transparent berichten.' }
+        ],
+        successFactors: [
+          'Strategice Skill-Taxonomie',
+          'Skill-basiertes Reporting',
+          'Integration in den HR-Zyklus',
+          'Einbindung relevanter Stakeholder'
+        ]
+      },
+      mobiliteit: {
+        name: 'Internal Mobility',
+        section1Title: 'Talente im organisation develop',
+        section1Content: 'Internal Mobility beschreibt, in welchem Maß employees sich weiterdevelop oder intern die role wechseln können. Im Kern geht es um Perspektive: Wahrnehmen, dass es in der organisation Developmentsmöglichkeiten gibt, wissen, wie der Weg dorthin aussieht und erleben, dass die organisation in die Development ihrer employeesn investiert. Ist interne Mobilität gut organised, sehen employees eine Zukunft im organisation – und bleiben.',
+        section2Title: 'Wo interne Mobilität Potenzial zeigt',
+        section2Content: 'In practice hängt Weiterentwicklung häufig vom Zufall oder vom eigenen Netzwerk ab. Wer nicht sichtbar ist, bleibt unberücksichtigt. Typische Anzeichen: Talente verlassen das organisation, während interne Stellen schwer zu besetzen sind, und employees wissen nicht, welche Möglichkeiten ihnen offenstehen. This is precisely where liegt das Potenzial – nicht wegen fehlender Talente, sondern weil Opportunities nicht transparent sind und processe unklar bleiben.',
+        opportunities: [
+          { title: 'Interne Vakanzen sichtbar machen', desc: 'Durch transparency über offene rolen erkennen employees, welche Möglichkeiten es gibt.' },
+          { title: 'Karrierepfade visualisieren', desc: 'Klar darstellen, welche Developmentsschritte von einer role aus sinnvoll sind.' },
+          { title: 'skills mit Opportunities verknüpfen', desc: 'capabilities gezielt mit internen Möglichkeiten verbinden.' }
+        ],
+        successFactors: [
+          'Interne Stellenbörse',
+          'Visualisierte Karrierepfade',
+          'Talent Marketplace',
+          'Mobilitätsrichtlinie'
+        ]
+      }
+    };
+
+    const RATIONALES = {
+      onboarding: {
+        fast_productive: 'Ihr Fokus darauf, neue employees schnell produktiv zu machen, macht strukturiertes Onboarding zu einer logischen ersten Priority.',
+        compliance: 'Auch bei starkem Compliance-Fokus ist Onboarding relevant: Neue employees müssen von Beginn an wissen, welche Regeln gelten.',
+        change: 'In Veränderungsphasen ist ein guter Start besonders wichtig — neue Kolleginnen und Kollegen bringen häufig die frische Perspektive mit, die benötigt wird.',
+        talent_retention: 'Eine starke Onboarding-Erfahrung ist entscheidend für Bindung. Wer gut startet, bleibt länger.',
+        strategic_alignment: 'Onboarding ist der Moment, neue employees direkt mit der strategischen Ausrichtung zu verbinden.'
+      },
+      kennisdeling: {
+        fast_productive: 'Gut zugänglicher knowledgesaustausch beschleunigt Onboarding: Neue employees finden Antworten selbstständig.',
+        compliance: 'knowledgesaustausch unterstützt Compliance, da processe und Best Practices auffindbar und aktuell bleiben.',
+        change: 'In Veränderungsphasen ist knowledgesaustausch zentral: Erkenntnisse müssen schnell geteilt werden.',
+        talent_retention: 'knowledgesaustausch stärkt die Bindung — wer von Kolleginnen und Kollegen lernen kann, fühlt sich wertgeschätzt.',
+        strategic_alignment: 'Strategicer knowledgesaustausch sorgt dafür, dass Erkenntnisse organisationsweit verbreitet werden.'
+      },
+      kwalificatie: {
+        fast_productive: 'Sind Qualifikationen sofort klar, können neue employees schneller eigenständig arbeiten.',
+        compliance: 'Ihr Compliance-Fokus macht Qualification Management zu einer zentralen Priority.',
+        change: 'In Veränderungsphasen ist es entscheidend, dass alle wissen, welche (neuen) Qualifikationen erforderlich sind.',
+        talent_retention: 'Ein klares Qualification Management gibt employeesn Sicherheit über ihren Status.',
+        strategic_alignment: 'Strategice Ziele führen häufig zu neuen Anforderungen — ein strukturiertes Qualification Management macht diese steuerbar.'
+      },
+      training: {
+        fast_productive: 'Schneller Zugang zu relevanten Schulungen beschleunigt die Produktivität neuer employeesr.',
+        compliance: 'Eine gezielte Beschaffung externer Schulungen unterstützt dabei, spezifische Zertifizierungsanforderungen zu erfüllen.',
+        change: 'In Veränderungsphasen ist schneller Zugang zu neuem knowledge essenziell.',
+        talent_retention: 'Weiterbildungsmöglichkeiten sind ein wichtiger Faktor für die Bindung von Talenten.',
+        strategic_alignment: 'Eine strategische Steuerung externer Schulungen maximiert den Impact auf organisationsziele.'
+      },
+      regie: {
+        fast_productive: 'employees, die ihre Development selbst steuern, werden schneller produktiv.',
+        compliance: 'Eigenverantwortung unterstützt dabei, Verpflichtungen eigenständig im Blick zu behalten.',
+        change: 'In Veränderungsphasen ist Selbststeuerung entscheidend — employees müssen sich eigenständig anpassen können.',
+        talent_retention: 'Autonomie in der Development ist ein zentraler Faktor für Bindung.',
+        strategic_alignment: 'Wenn employees Verantwortung übernehmen, verknüpfen sie ihre Development stärker mit den organisationszielen.'
+      },
+      reskilling: {
+        fast_productive: 'Reskilling beschleunigt den Übergang in neue rolen und erhöht die Vielseitigkeit.',
+        compliance: 'Reskilling unterstützt dabei, auf veränderte regulatorische Anforderungen zu reagieren.',
+        change: 'Ihr Fokus auf Veränderung macht Reskilling zu einer logischen Priority.',
+        talent_retention: 'Investitionen in Reskilling zeigen Vertrauen in die Zukunft Ihrer employeesn.',
+        strategic_alignment: 'Strategices Reskilling bereitet die organisation auf kommende Herausforderungen vor.'
+      },
+      strategie: {
+        fast_productive: 'Strategice Skill-Development stellt sicher, dass neue employees unmittelbar zu den organisationszielen beitragen.',
+        compliance: 'Ein klarer Skill-Fokus hilft, Compliance in die Geschäftsstrategie zu integrieren.',
+        change: 'In Transformationsphasen ist strategische Skill-Development entscheidend für den Erfolg.',
+        talent_retention: 'employees, die erkennen, wie ihr Wachstum zur Strategy beiträgt, fühlen sich stärker verbunden.',
+        strategic_alignment: 'Ihr strategischer Fokus macht dieses Thema zu einer Kernpriorität.'
+      },
+      mobiliteit: {
+        fast_productive: 'Internal Mobility ermöglicht eine schnelle Neubesetzung dort, wo sie benötigt wird.',
+        compliance: 'Sie hilft, Anforderungen zu erfüllen, indem employees gezielt eingesetzt werden.',
+        change: 'In Veränderungsphasen ist rolenflexibilität entscheidend — Mobilität macht sie möglich.',
+        talent_retention: 'Ihr Fokus auf Talentbindung macht interne Mobilität zu einer logischen Priority.',
+        strategic_alignment: 'Strategice Mobilität stellt sicher, dass Talente dort eingesetzt werden, wo sie the greatest impact erzielen.'
+      }
+    };
+
+    const STRATEGIC_GOAL_LABELS = {
+      growth: 'Wachstum — Umsatz oder Marktanteil steigern',
+      operational_excellence: 'Operative Exzellenz — Effizienz und quality improve',
+      transformation: 'Transformation — Neue Märkte, Produkte oder Geschäftsmodelle erschließen',
+      stability: 'Stabilität — Kontinuität secure und Kosten kontrollieren',
+      talent_development: 'Talententwicklung — In employees investieren, um sich strategisch zu differenzieren'
+    };
+
+    const LD_CHALLENGE_LABELS = {
+      fast_productive: 'Neue employees schnell produktiv machen',
+      compliance: 'Compliance-Anforderungen und Qualifikationen sicherstellen',
+      change: 'employees für Veränderungen gewinnen',
+      talent_retention: 'Talente binden und weiterdevelop',
+      strategic_alignment: 'Lernen mit der organisationsstrategie verknüpfen'
+    };
+
+    const ALL_USE_CASES = [
+      { id: 'onboarding', name: 'Onboarding' },
+      { id: 'kennisdeling', name: 'knowledges-management' },
+      { id: 'kwalificatie', name: 'Qualification Management' },
+      { id: 'training', name: 'Training Procurement' },
+      { id: 'regie', name: 'Eigenverantwortung' },
+      { id: 'reskilling', name: 'Up- & Reskilling' },
+      { id: 'strategie', name: 'Strat. Skill-Development' },
+      { id: 'mobiliteit', name: 'Internal Mobility' }
+    ];
+
+    // Scoring functions
+    function calculatePriority(A, B) {
+      if (B >= 4 && A <= 3) {
+        return B * (6 - A);
+      }
+      return 0;
+    }
+
+    function classifyGap(priority) {
+      if (priority >= 20) return 'high';
+      if (priority >= 12) return 'medium';
+      return 'low';
+    }
+
+    // Render the PDF content
+    function renderPDF(data) {
+      const { contact, context, useCases } = data;
+
+      // Cover page
+      document.getElementById('cover-name').textContent = contact.naam;
+      document.getElementById('cover-org').textContent = contact.organisatie
+      document.getElementById('cover-date').textContent = new Date().toLocaleDateString('de-DE', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      });
+
+      // Context section
+      document.getElementById('context-org').textContent = contact.organisatie;
+      // Get top strategic priority from ranked array (first item = highest priority)
+      const topStrategicGoal = context.strategic_goals_ranked?.[0] || context.strategic_goal;
+      document.getElementById('context-strategic').textContent = STRATEGIC_GOAL_LABELS[topStrategicGoal] || topStrategicGoal;
+      document.getElementById('context-challenge').textContent = LD_CHALLENGE_LABELS[context.ld_challenge] || context.ld_challenge;
+
+      if (context.org_goals_2026) {
+        document.getElementById('org-goals-section').style.display = 'block';
+        document.getElementById('context-goals').textContent = context.org_goals_2026;
+      }
+
+      // Calculate priorities
+      const priorities = Object.entries(useCases).map(([id, scores]) => {
+        const priority = calculatePriority(scores.A, scores.B);
+        return {
+          id,
+          name: USE_CASE_CONTENT[id]?.name || id,
+          scoreA: scores.A,
+          scoreB: scores.B,
+          priority,
+          gap: classifyGap(priority)
+        };
+      });
+
+      priorities.sort((a, b) => b.priority - a.priority);
+      const topPriorities = priorities.filter(p => p.priority > 0).slice(0, 3);
+
+      // Focus chips
+      const chipsHtml = topPriorities.map((p, i) => `
+        <div class="focus-chip">
+          <span class="focus-chip-rank">#${i + 1}</span>
+          ${p.name}
+        </div>
+      `).join('');
+      document.getElementById('focus-chips').innerHTML = chipsHtml;
+
+      // Use cases grid
+      const topIds = topPriorities.map(p => p.id);
+      const gridHtml = ALL_USE_CASES.map(uc => {
+        const isHighlighted = topIds.includes(uc.id);
+        const rank = topPriorities.findIndex(p => p.id === uc.id) + 1;
+        return `
+          <div class="use-case-item ${isHighlighted ? 'highlighted' : ''}">
+            <div class="use-case-name">${uc.name}</div>
+            ${rank > 0 ? `<div class="use-case-badge">#${rank}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+      document.getElementById('use-cases-grid').innerHTML = gridHtml;
+
+      // All scores list
+      const allScoresHtml = ALL_USE_CASES.map(uc => {
+        const scores = useCases[uc.id] || { A: 0, B: 0 };
+        const isPriority = topIds.includes(uc.id);
+        const rank = topPriorities.findIndex(p => p.id === uc.id) + 1;
+        const fullName = USE_CASE_CONTENT[uc.id]?.name || uc.name;
+        return `
+          <div class="score-row ${isPriority ? 'is-priority' : ''}">
+            <span class="score-row-name">
+              ${fullName}
+              ${rank > 0 ? `<span class="score-row-badge">#${rank}</span>` : ''}
+            </span>
+            <div class="score-row-scores">
+              <div class="score-item">
+                <div class="score-item-label">Approach</div>
+                <div class="score-item-value">${scores.A}</div>
+                <div class="score-bar">
+                  <div class="score-bar-fill score-a" style="width: ${scores.A * 20}%"></div>
+                </div>
+              </div>
+              <div class="score-item">
+                <div class="score-item-label">Bedeutung</div>
+                <div class="score-item-value">${scores.B}</div>
+                <div class="score-bar">
+                  <div class="score-bar-fill score-b" style="width: ${scores.B * 20}%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      document.getElementById('all-scores-list').innerHTML = allScoresHtml;
+
+      // Priority cards
+      topPriorities.forEach((priority, index) => {
+        const content = USE_CASE_CONTENT[priority.id];
+        const rationale = RATIONALES[priority.id]?.[context.ld_challenge] || '';
+
+        const cardHtml = `
+          <div class="priority-header">
+            <div class="priority-rank">#${index + 1}</div>
+            <div class="priority-title-area">
+              <div class="priority-name">${content.name}</div>
+              <div class="priority-scores">Bedeutung: ${priority.scoreB}/5 | Currenter Approach: ${priority.scoreA}/5</div>
+            </div>
+          </div>
+
+          <div class="priority-rationale">
+            <p>${rationale}</p>
+          </div>
+
+          <h3>${content.section1Title}</h3>
+          <p>${content.section1Content}</p>
+
+          ${content.section2Title ? `<h3 style="margin-top: 12px;">${content.section2Title}</h3>
+          <p>${content.section2Content}</p>` : ''}
+
+          <h4>Konkrete Handlungsfelder</h4>
+          <ul class="opportunity-list">
+            ${content.opportunities.map(o => `<li><strong>${o.title}</strong> — ${o.desc}</li>`).join('')}
+          </ul>
+
+          <h4>Success Factors</h4>
+          <ul class="success-list">
+            ${content.successFactors.map(sf => `<li>${sf}</li>`).join('')}
+          </ul>
+        `;
+
+        document.getElementById(`priority-${index + 1}`).innerHTML = cardHtml;
+      });
+
+      // Hide unused priority pages
+      for (let i = topPriorities.length + 1; i <= 3; i++) {
+        const page = document.getElementById(`priority-page-${i}`);
+        if (page) page.style.display = 'none';
+      }
+    }
+
+    // Load data from API, localStorage, or use demo data
+    async function loadData() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const resultId = urlParams.get('id');
+
+      // If we have a result ID, fetch from API first
+      if (resultId) {
+        try {
+          const response = await fetch(`/api/result?id=${resultId}`);
+          if (response.ok) {
+            const { payload } = await response.json();
+            localStorage.setItem('ldScanResults', JSON.stringify(payload));
+            return payload;
+          }
+        } catch (error) {
+          console.error('Failed to load from API:', error);
+        }
+      }
+
+      // Fallback to localStorage
+      const storedData = localStorage.getItem('ldScanResults');
+      if (storedData) {
+        try {
+          return JSON.parse(storedData);
+        } catch (e) {
+          console.error('Failed to parse stored data:', e);
+        }
+      }
+
+      return null;
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', async () => {
+      const data = await loadData();
+      renderPDF(data);
+
+      // Check if auto-print is requested via URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('print') === 'true') {
+        setTimeout(() => window.print(), 500);
+      }
+    });
+
+    function printReport() {
+      window.print();
+    }
+  </script>
+
+  <!-- Print button for screen view -->
+  <div id="print-bar" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #056DFF;
+    color: white;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  ">
+    <span style="font-size: 14px;">
+      <strong>PDF-Vorschau</strong> — Nutzen Sie die Schaltfläche rechts, um die Datei als PDF herunterzuladen.
+    </span>
+    <button onclick="printReport()" style="
+      background: white;
+      color: #056DFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    ">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="12" y1="18" x2="12" y2="12"></line>
+        <polyline points="9 15 12 18 15 15"></polyline>
+      </svg>
+      Als PDF speichern
+    </button>
+  </div>
+
+  <style>
+    @media print {
+      #print-bar {
+        display: none !important;
+      }
+      body {
+        padding-top: 0 !important;
+      }
+    }
+    @media screen {
+      body {
+        padding-top: 60px;
+      }
+    }
+  </style>
+
+</body>
+</html>

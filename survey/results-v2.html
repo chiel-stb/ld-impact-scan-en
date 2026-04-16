@@ -1,0 +1,3777 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your L&D impact Scan Results | Studytube</title>
+
+  <!-- ============================================
+       HUBSPOT CONFIGURATION
+       ============================================
+
+       STEP 1: Replace YOUR_PORTAL_ID below with your HubSpot Portal ID
+       - Find it at: HubSpot → Settings (gear icon) → Account Management → Account Name
+       - It's also visible in your HubSpot URL: app.hubspot.com/contacts/PORTAL_ID/...
+       - Example: 515235
+  -->
+  <script type="text/javascript" id="hs-script-loader" async defer
+    src="//js.hs-scripts.com/YOUR_PORTAL_ID.js"></script>
+
+  <!-- ============================================
+       REVENUEHERO CONFIGURATION
+       ============================================
+
+       HubSpot Meetings is used for meeting scheduling on the results page (EN).
+       Meeting link: https://meetings.hubspot.com/sarina-fritsche/15-minuten-meeting-kalender-impact-scan
+  -->
+
+  <!-- Euclid Circular B - StudyTube Official Font -->
+  <style>
+    @font-face {
+      font-family: 'Euclid Circular B';
+      src: url('https://f.hubspotusercontent30.net/hubfs/515235/DiamondTube/fonts/EuclidCircularB-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Euclid Circular B';
+      src: url('https://f.hubspotusercontent30.net/hubfs/515235/DiamondTube/fonts/EuclidCircularB-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Euclid Circular B';
+      src: url('https://f.hubspotusercontent30.net/hubfs/515235/DiamondTube/fonts/EuclidCircularB-SemiBold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Euclid Circular B';
+      src: url('https://f.hubspotusercontent30.net/hubfs/515235/DiamondTube/fonts/EuclidCircularB-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <style>
+    :root {
+      /* StudyTube Brand Colors */
+      --st-blue-100: #D7EBFF;
+      --st-blue-200: #B9DCFF;
+      --st-blue-300: #7ABDFF;
+      --st-blue-400: #50A7FF;
+      --st-blue-500: #056DFF;
+      --st-blue-600: #0A5CEB;
+      --st-blue-700: #0F4ABE;
+      --st-blue-900: #11295A;
+
+      --st-gray-50: #F5F7F9;
+      --st-gray-75: #F9FAFB;
+      --st-gray-100: #F2F5F8;
+      --st-gray-200: #E9EDF1;
+      --st-gray-300: #D1D9E0;
+      --st-gray-400: #AFBBC6;
+      --st-gray-500: #8694A2;
+      --st-gray-600: #545E69;
+      --st-gray-700: #434A51;
+
+      --st-link: #FF1B51;
+      --st-success: #16A34A;
+      --st-warning: #D97706;
+      --st-error: #EF5350;
+      --st-cyan: #05D5FF;
+
+      --font-family: 'Euclid Circular B', -apple-system, BlinkMacsystemFont, sans-serif;
+      --header-height: 64px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: var(--st-gray-50);
+      color: var(--st-blue-900);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: white;
+      border-bottom: 1px solid var(--st-gray-200);
+      padding: 0 24px;
+      height: var(--header-height);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: stretch;
+      gap: 12px;
+    }
+
+    .header-actions .share-container {
+      display: flex;
+    }
+
+    .header-actions .share-container > .btn {
+      height: 100%;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--st-blue-500);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--st-blue-600);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--st-blue-900);
+      border: 1px solid var(--st-gray-300);
+    }
+
+    .btn-secondary:hover {
+      background: var(--st-gray-75);
+      border-color: var(--st-gray-400);
+    }
+
+    /* Share Dropdown */
+    .share-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 8px;
+      background: white;
+      border: 1px solid var(--st-gray-200);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      min-width: 160px;
+      z-index: 100;
+      display: none;
+    }
+
+    .share-dropdown.is-visible {
+      display: block;
+    }
+
+    .share-dropdown button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 12px 16px;
+      border: none;
+      background: none;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--st-blue-900);
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .share-dropdown button:hover {
+      background: var(--st-gray-50);
+    }
+
+    .share-dropdown button:first-child {
+      border-radius: 8px 8px 0 0;
+    }
+
+    .share-dropdown button:last-child {
+      border-radius: 0 0 8px 8px;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--st-blue-900);
+    }
+
+    .btn-white:hover {
+      background: var(--st-gray-100);
+    }
+
+    .btn-lg {
+      padding: 14px 28px;
+      font-size: 16px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--st-blue-900) 0%, #1a3a7a 100%);
+      padding: 80px 24px 60px;
+      margin-top: var(--header-height);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--st-blue-500);
+      background: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Main Content */
+    .main-container {
+      max-width: 900px;
+      margin: -40px auto 60px;
+      padding: 0 24px;
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--st-gray-200);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-header {
+      margin-bottom: 24px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin-bottom: 8px;
+    }
+
+    .card-subtitle {
+      font-size: 15px;
+      color: var(--st-gray-600);
+    }
+
+    /* Context Card */
+    .context-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .context-item {
+      background: var(--st-gray-75);
+      padding: 16px 20px;
+      border-radius: 10px;
+    }
+
+    .context-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--st-gray-500);
+      margin-bottom: 6px;
+    }
+
+    .context-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--st-blue-900);
+    }
+
+    .context-goals {
+      background: var(--st-gray-75);
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .context-goals-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--st-blue-900);
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .focus-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--st-gray-200);
+    }
+
+    .focus-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--st-blue-100);
+      color: var(--st-blue-900);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .focus-chip-rank {
+      background: var(--st-blue-500);
+      color: white;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* Report Navigation */
+    .report-nav {
+      background: white;
+      border-radius: 12px;
+      padding: 16px 24px;
+      margin-bottom: 24px;
+      border: 1px solid var(--st-gray-200);
+      position: sticky;
+      top: calc(var(--header-height) + 16px);
+      z-index: 99;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    /* Offset anchor scroll targets to clear fixed header + sticky nav */
+    #over-rapport,
+    #jullie-context,
+    #impact-model,
+    #focus-usecases,
+    #alle-scores,
+    #aan-de-slag {
+      scroll-margin-top: calc(var(--header-height) + 140px);
+    }
+
+    .report-nav-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--st-gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .report-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .report-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: var(--st-gray-50);
+      border: 1px solid var(--st-gray-200);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--st-gray-700);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .report-nav-link:hover {
+      background: var(--st-blue-100);
+      border-color: var(--st-blue-300);
+      color: var(--st-blue-700);
+    }
+
+    .report-nav-link svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      .report-nav {
+        padding: 12px 16px;
+        position: relative;
+        top: 0;
+      }
+
+      .report-nav-links {
+        gap: 6px;
+      }
+
+      .report-nav-link {
+        padding: 6px 10px;
+        font-size: 13px;
+      }
+    }
+
+    /* Priority Card */
+    .priority-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--st-gray-200);
+      margin-bottom: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .priority-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 32px;
+      background: var(--st-gray-75);
+      border-bottom: 1px solid var(--st-gray-200);
+    }
+
+    .priority-rank {
+      width: 48px;
+      height: 48px;
+      background: var(--st-blue-500);
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .priority-title-area {
+      flex: 1;
+    }
+
+    .priority-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin-bottom: 4px;
+    }
+
+    .priority-scores {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--st-gray-600);
+    }
+
+    .priority-gap {
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .priority-gap.high {
+      background: #FEE2E2;
+      color: var(--st-error);
+    }
+
+    .priority-gap.medium {
+      background: #FEF3C7;
+      color: var(--st-warning);
+    }
+
+    .priority-gap.low {
+      background: #D1FAE5;
+      color: var(--st-success);
+    }
+
+    .priority-body {
+      padding: 32px;
+    }
+
+    .priority-rationale {
+      background: var(--st-blue-100);
+      border-left: 4px solid var(--st-blue-500);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 24px;
+      font-size: 15px;
+      color: var(--st-blue-900);
+      line-height: 1.6;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .priority-section {
+      margin-bottom: 28px;
+    }
+
+    .priority-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .priority-section-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .priority-section-content {
+      font-size: 15px;
+      color: var(--st-gray-700);
+      line-height: 1.75;
+    }
+
+    .priority-section-content p {
+      margin-bottom: 16px;
+    }
+
+    .priority-section-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .priority-section-content strong {
+      color: var(--st-blue-900);
+      font-weight: 600;
+    }
+
+    .priority-section-content .highlight-box {
+      background: var(--st-blue-100);
+      border-left: 3px solid var(--st-blue-500);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+    }
+
+    .priority-section-content ul {
+      margin: 12px 0 16px 20px;
+      padding: 0;
+    }
+
+    .priority-section-content ul li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .priority-section-content ul li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Opportunities & Success Factors */
+    .items-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .grid-item {
+      display: flex;
+      gap: 14px;
+      padding: 16px;
+      background: var(--st-gray-75);
+      border-radius: 10px;
+    }
+
+    .grid-item-number {
+      width: 28px;
+      height: 28px;
+      background: var(--st-blue-500);
+      color: white;
+      font-weight: 600;
+      font-size: 13px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .grid-item-content {
+      flex: 1;
+    }
+
+    .grid-item-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--st-blue-900);
+      margin-bottom: 4px;
+    }
+
+    .grid-item-desc {
+      font-size: 14px;
+      color: var(--st-gray-600);
+      line-height: 1.5;
+    }
+
+    .success-factors {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .success-factor {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px;
+      background: var(--st-gray-75);
+      border-radius: 8px;
+    }
+
+    .success-factor-icon {
+      color: var(--st-success);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .success-factor-text {
+      font-size: 14px;
+      color: var(--st-blue-900);
+    }
+
+    .success-factor-name {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .success-factor-desc {
+      color: var(--st-gray-600);
+      font-size: 13px;
+    }
+
+    /* All Scores Section */
+    .scores-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .score-item {
+      background: var(--st-gray-75);
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .score-item.is-priority {
+      background: var(--st-blue-100);
+      border: 2px solid var(--st-blue-500);
+    }
+
+    .score-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .score-item-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+    }
+
+    .score-item-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: var(--st-blue-500);
+      color: white;
+    }
+
+    .score-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .score-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .score-bar-label {
+      font-size: 12px;
+      color: var(--st-gray-600);
+      width: 60px;
+      flex-shrink: 0;
+    }
+
+    .score-bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--st-gray-200);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+
+    .score-bar-fill.aanpak {
+      background: var(--st-gray-400);
+    }
+
+    .score-bar-fill.belang {
+      background: var(--st-blue-500);
+    }
+
+    .score-bar-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      width: 30px;
+      text-align: right;
+    }
+
+    /* About Section */
+    .about-card {
+      background: var(--st-gray-75);
+    }
+
+    .about-card .card-subtitle {
+      margin-bottom: 12px;
+    }
+
+    .about-intro {
+      font-size: 15px;
+      color: var(--st-gray-700);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* Collapsible Section */
+    .collapsible-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 16px 0;
+      margin-top: 16px;
+      border: none;
+      border-top: 1px solid var(--st-gray-200);
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+      text-align: left;
+    }
+
+    .collapsible-trigger:hover {
+      opacity: 0.8;
+    }
+
+    .collapsible-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+    }
+
+    .collapsible-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--st-blue-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .collapsible-trigger.is-open .collapsible-icon {
+      transform: rotate(180deg);
+    }
+
+    .collapsible-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
+    }
+
+    .collapsible-content.is-open {
+      grid-template-rows: 1fr;
+    }
+
+    .collapsible-inner {
+      overflow: hidden;
+    }
+
+    .key-concepts-wrapper {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--st-gray-200);
+    }
+
+    .key-concepts-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      padding: 12px 16px;
+      background: var(--st-gray-50);
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .key-concepts-toggle:hover {
+      background: var(--st-gray-100);
+    }
+
+    .key-concepts-toggle h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .key-concepts-toggle-icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      background: var(--st-gray-200);
+      transition: transform 0.3s ease, background 0.2s ease;
+    }
+
+    .key-concepts-toggle-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--st-gray-600);
+    }
+
+    .key-concepts-wrapper.is-expanded .key-concepts-toggle-icon {
+      transform: rotate(180deg);
+      background: var(--st-blue-100);
+    }
+
+    .key-concepts-wrapper.is-expanded .key-concepts-toggle-icon svg {
+      stroke: var(--st-blue-500);
+    }
+
+    .key-concepts-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .key-concepts-wrapper.is-expanded .key-concepts-content {
+      max-height: 500px;
+      padding-top: 16px;
+    }
+
+    .key-concepts {
+      display: grid;
+      gap: 12px;
+    }
+
+    .key-concept {
+      display: flex;
+      gap: 12px;
+      padding: 12px 14px;
+      background: white;
+      border-radius: 8px;
+    }
+
+    .key-concept-bullet {
+      color: var(--st-blue-500);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .key-concept-text {
+      font-size: 14px;
+      color: var(--st-gray-600);
+      line-height: 1.5;
+    }
+
+    .key-concept-text strong {
+      color: var(--st-blue-900);
+    }
+
+    /* impact Model Section */
+    .impact-model-intro {
+      font-size: 15px;
+      color: var(--st-gray-600);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .impact-model-intro p {
+      margin-bottom: 12px;
+    }
+
+    .impact-model-intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .use-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, auto);
+      grid-auto-flow: column;
+      gap: 12px;
+    }
+
+    .use-case-item {
+      display: flex;
+      flex-direction: column;
+      padding: 14px 16px;
+      background: var(--st-gray-75);
+      border-radius: 10px;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .use-case-item:hover {
+      background: var(--st-gray-100);
+    }
+
+    .use-case-item.is-highlighted {
+      background: var(--st-blue-100);
+      border-color: var(--st-blue-500);
+    }
+
+    .use-case-item.is-highlighted:hover {
+      background: var(--st-blue-150, #d4e5ff);
+    }
+
+    .use-case-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .use-case-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--st-gray-600);
+      line-height: 1.3;
+      flex: 1;
+    }
+
+    .use-case-item.is-highlighted .use-case-name {
+      color: var(--st-blue-900);
+      font-weight: 600;
+    }
+
+    .use-case-badge {
+      background: var(--st-blue-500);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .use-case-toggle {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--st-gray-400);
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .use-case-item:hover .use-case-toggle {
+      color: var(--st-gray-600);
+      background: rgba(0,0,0,0.05);
+    }
+
+    .use-case-desc-wrapper {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.25s ease;
+    }
+
+    .use-case-item.is-expanded .use-case-desc-wrapper {
+      grid-template-rows: 1fr;
+    }
+
+    .use-case-desc {
+      overflow: hidden;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--st-gray-600);
+    }
+
+    .use-case-item.is-expanded .use-case-desc {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    /* Hidden state for other use cases when one is expanded */
+    .use-case-item.is-hidden {
+      display: none;
+    }
+
+    /* When grid has an expanded item, make it full width */
+    .use-cases-grid.has-expanded {
+      grid-template-columns: 1fr;
+    }
+
+    .use-cases-grid.has-expanded .use-case-item.is-expanded {
+      padding: 20px 24px;
+    }
+
+    .use-cases-grid.has-expanded .use-case-item.is-expanded .use-case-desc {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .use-cases-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+      }
+    }
+
+    /* CTA Card */
+    .cta-card {
+      background: linear-gradient(135deg, var(--st-blue-900) 0%, #1a3a7a 100%);
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
+      color: white;
+    }
+
+    .cta-card h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .cta-card p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cta-features {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .cta-feature {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--st-gray-500);
+      font-size: 14px;
+    }
+
+    .footer-thanks {
+      margin-bottom: 16px;
+      color: var(--st-gray-600);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--st-gray-500);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--st-blue-500);
+    }
+
+    /* Loading State */
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      text-align: center;
+    }
+
+    .loading-spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid var(--st-gray-200);
+      border-top-color: var(--st-blue-500);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Error State */
+    .error-state {
+      text-align: center;
+      padding: 60px 24px;
+    }
+
+    .error-state h2 {
+      color: var(--st-error);
+      margin-bottom: 12px;
+    }
+
+    /* Tablet Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .context-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .scores-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .success-factors {
+        grid-template-columns: 1fr;
+      }
+
+      .priority-header {
+        flex-wrap: wrap;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-features {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+      :root {
+        --header-height: 52px;
+      }
+
+      .header {
+        padding: 0 16px;
+        height: 52px;
+      }
+
+      .logo img {
+        height: 24px;
+      }
+
+      .header-actions {
+        gap: 8px;
+      }
+
+      .header-actions .btn {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+
+      .header-actions .btn svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 40px 16px 32px;
+        margin-top: 52px;
+      }
+
+      .eyebrow {
+        font-size: 11px;
+        margin-bottom: 12px;
+      }
+
+      .hero h1 {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      /* Main Container */
+      .main-container {
+        margin: -24px auto 40px;
+        padding: 0 12px;
+      }
+
+      /* Cards */
+      .card {
+        border-radius: 12px;
+        padding: 20px 16px;
+        margin-bottom: 16px;
+      }
+
+      .card-header {
+        margin-bottom: 16px;
+      }
+
+      .card-title {
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+
+      .card-subtitle {
+        font-size: 14px;
+      }
+
+      /* Context */
+      .context-item {
+        padding: 14px 16px;
+        border-radius: 8px;
+      }
+
+      .context-label {
+        font-size: 11px;
+        margin-bottom: 4px;
+      }
+
+      .context-value {
+        font-size: 14px;
+      }
+
+      .context-goals {
+        padding: 14px 16px;
+        border-radius: 8px;
+        margin-bottom: 16px;
+      }
+
+      .context-goals-text {
+        font-size: 14px;
+      }
+
+      /* Focus Chips */
+      .focus-chips {
+        gap: 8px;
+        margin-top: 16px;
+        padding-top: 16px;
+      }
+
+      .focus-chip {
+        font-size: 13px;
+        padding: 8px 12px;
+      }
+
+      /* Priority Cards */
+      .priority-card {
+        border-radius: 12px;
+        margin-bottom: 16px;
+      }
+
+      .priority-header {
+        padding: 16px;
+        gap: 12px;
+      }
+
+      .priority-rank {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+      }
+
+      .priority-title {
+        font-size: 18px;
+      }
+
+      .priority-subtitle {
+        font-size: 13px;
+      }
+
+      .priority-scores {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 16px;
+      }
+
+      .priority-score {
+        font-size: 13px;
+      }
+
+      .priority-body {
+        padding: 16px;
+      }
+
+      .priority-section-title {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .priority-section p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      /* Success Factors */
+      .success-factor {
+        padding: 12px 14px;
+        border-radius: 8px;
+      }
+
+      .success-factor-name {
+        font-size: 14px;
+      }
+
+      .success-factor-desc {
+        font-size: 13px;
+      }
+
+      /* Use Cases Grid */
+      .use-cases-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+      }
+
+      .use-case-item {
+        padding: 14px;
+        border-radius: 10px;
+      }
+
+      .use-case-name {
+        font-size: 14px;
+      }
+
+      .use-case-scores {
+        font-size: 12px;
+        gap: 10px;
+      }
+
+      /* CTA Card */
+      .cta-card {
+        border-radius: 12px;
+        padding: 32px 20px;
+      }
+
+      .cta-card h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .cta-card p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .cta-buttons .btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 15px;
+      }
+
+      .cta-features {
+        margin-top: 20px;
+        gap: 10px;
+        font-size: 13px;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 32px 16px;
+        font-size: 13px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      /* Scores Grid */
+      .score-item {
+        padding: 14px;
+        border-radius: 8px;
+      }
+
+      .score-item-name {
+        font-size: 13px;
+      }
+
+      .score-item-value {
+        font-size: 14px;
+      }
+
+      /* About Section */
+      .about-intro {
+        font-size: 14px;
+      }
+
+      .impact-model-intro {
+        font-size: 14px;
+      }
+
+      /* Buttons general */
+      .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 8px;
+      }
+
+      .btn-sm {
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      body {
+        background: white;
+        font-size: 11pt;
+        line-height: 1.4;
+      }
+
+      .header, .cta-card, .header-actions, .share-container, #unlock-btn, .collapsible-trigger {
+        display: none !important;
+      }
+
+      .hero {
+        margin-top: 0;
+        padding: 30px 20px;
+        page-break-after: avoid;
+      }
+
+      .main-container {
+        margin: 0;
+        padding: 20px;
+        max-width: 100%;
+      }
+
+      /* Prevent sections from breaking across pages */
+      .card, .priority-card, .pdf-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-bottom: 16px;
+      }
+
+      /* Force page breaks before major sections */
+      .pdf-page-break {
+        page-break-before: always;
+      }
+
+      /* Keep headers with content */
+      h2, h3, .card-header, .priority-header {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+
+      /* Scores grid - keep together */
+      .scores-grid {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .score-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .use-cases-grid {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .priority-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .context-grid {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      /* Hide gated overlays */
+      .gate-overlay, .gated-section::before {
+        display: none !important;
+      }
+
+      .gated-section.is-locked .gated-content {
+        filter: none !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        max-height: none !important;
+      }
+
+      /* Key concepts - always show in print */
+      .collapsible-content {
+        display: block !important;
+        height: auto !important;
+      }
+    }
+
+    /* PDF-specific section class */
+    .pdf-section {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--st-gray-200);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    /* ============================================
+       TIERED ACCESS / GATING STYLES
+       ============================================ */
+
+    /* Locked content overlay */
+    .gated-section {
+      position: relative;
+    }
+
+    .gated-section.is-locked .gated-content {
+      filter: blur(4px);
+      opacity: 0.6;
+      pointer-events: none;
+      user-select: none;
+      max-height: 600px;
+      overflow: hidden;
+    }
+
+    .gated-section.is-locked::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg,
+        transparent 0%,
+        transparent 40%,
+        rgba(245, 247, 249, 0.7) 70%,
+        rgba(245, 247, 249, 0.98) 100%);
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .gate-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      background: white;
+      border-radius: 16px;
+      padding: 32px 40px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      max-width: 420px;
+      width: 90%;
+    }
+
+    .gate-overlay-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--st-blue-100);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: var(--st-blue-500);
+    }
+
+    .gate-overlay h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin-bottom: 8px;
+    }
+
+    .gate-overlay p {
+      font-size: 14px;
+      color: var(--st-gray-600);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .gate-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .gate-input {
+      padding: 12px 16px;
+      border: 1px solid var(--st-gray-300);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: var(--font-family);
+      transition: border-color 0.2s;
+    }
+
+    .gate-input:focus {
+      outline: none;
+      border-color: var(--st-blue-500);
+    }
+
+    .gate-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+      text-align: left;
+    }
+
+    .gate-benefit {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--st-gray-600);
+    }
+
+    .gate-benefit svg {
+      color: var(--st-success);
+      flex-shrink: 0;
+    }
+
+    /* Premium section locked state */
+    .premium-section {
+      background: white;
+      border: 1px solid var(--st-gray-200);
+      border-radius: 16px;
+      padding: 0;
+      margin-top: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .premium-section.is-unlocked {
+      background: white;
+      border: 1px solid var(--st-gray-200);
+    }
+
+    /* Premium header - always visible */
+    .premium-header {
+      padding: 24px 40px 16px;
+      text-align: center;
+      background: white;
+      position: relative;
+      z-index: 2;
+    }
+
+    .premium-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #FF8229 0%, #FF6B00 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .premium-section h3 {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin-bottom: 8px;
+    }
+
+    .premium-header > p {
+      font-size: 14px;
+      color: var(--st-gray-600);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Premium content preview - blurred when locked */
+    .premium-preview {
+      position: relative;
+      padding: 0 40px 40px;
+    }
+
+    .premium-preview-content {
+      position: relative;
+    }
+
+    /* Gradient fade mask for locked state - top row stays fully visible */
+    .premium-section:not(.is-unlocked) .premium-preview-content {
+      mask-image: linear-gradient(to bottom,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,1) 40%,
+        rgba(0,0,0,0.6) 60%,
+        rgba(0,0,0,0.2) 80%,
+        rgba(0,0,0,0) 100%
+      );
+      -webkit-mask-image: linear-gradient(to bottom,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,1) 40%,
+        rgba(0,0,0,0.6) 60%,
+        rgba(0,0,0,0.2) 80%,
+        rgba(0,0,0,0) 100%
+      );
+    }
+
+    .premium-section:not(.is-unlocked) .premium-preview::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(255,255,255,0.5) 30%,
+        rgba(255,255,255,0.9) 70%,
+        white 100%
+      );
+      pointer-events: none;
+    }
+
+    /* Capture overlay - shown when locked */
+    .premium-capture-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 60px 40px 40px;
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        white 30%
+      );
+      z-index: 10;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .premium-section.is-unlocked .premium-capture-overlay {
+      display: none;
+    }
+
+    .premium-capture-box {
+      background: white;
+      border: 1px solid var(--st-gray-200);
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 32px rgba(17, 41, 90, 0.12);
+    }
+
+    .premium-capture-box h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin-bottom: 8px;
+    }
+
+    .premium-capture-box > p {
+      font-size: 13px;
+      color: var(--st-gray-600);
+      margin-bottom: 20px;
+    }
+
+    .premium-capture-box .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .premium-capture-box input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--st-gray-300);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: var(--font-family);
+    }
+
+    .premium-capture-box input:focus {
+      outline: none;
+      border-color: var(--st-blue-500);
+      box-shadow: 0 0 0 3px rgba(5, 109, 255, 0.1);
+    }
+
+    .premium-capture-box .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .premium-capture-box .consent-text {
+      font-size: 11px;
+      color: var(--st-gray-500);
+      margin-top: 12px;
+      line-height: 1.4;
+    }
+
+    .premium-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .premium-feature {
+      background: var(--st-gray-50);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .premium-section.is-unlocked .premium-feature {
+      background: var(--st-gray-75);
+    }
+
+    .premium-feature-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--st-blue-100);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--st-blue-500);
+      margin-bottom: 12px;
+    }
+
+    .premium-feature h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin-bottom: 4px;
+    }
+
+    .premium-feature p {
+      font-size: 13px;
+      color: var(--st-gray-600);
+      line-height: 1.4;
+    }
+
+    /* Tier status indicator */
+    .tier-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--st-gray-100);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--st-gray-600);
+    }
+
+    .tier-status.tier-email {
+      background: var(--st-blue-100);
+      color: var(--st-blue-700);
+    }
+
+    .tier-status.tier-premium {
+      background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+      color: #C2410C;
+    }
+
+    /* Modal styles */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-backdrop.is-visible {
+      display: flex;
+    }
+
+    .modal {
+      background: white;
+      border-radius: 16px;
+      max-width: 480px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 48px rgba(0,0,0,0.2);
+    }
+
+    .modal-header {
+      padding: 24px 24px 0;
+      text-align: center;
+    }
+
+    .modal-header h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin-bottom: 8px;
+    }
+
+    .modal-header p {
+      font-size: 14px;
+      color: var(--st-gray-600);
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--st-gray-400);
+      padding: 8px;
+    }
+
+    .modal-close:hover {
+      color: var(--st-gray-600);
+    }
+
+    @media (max-width: 768px) {
+      .premium-features {
+        grid-template-columns: 1fr;
+      }
+
+      .gate-overlay {
+        padding: 24px;
+      }
+    }
+  </style>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <!-- Email Gate Modal -->
+  <div class="modal-backdrop" id="email-gate-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="gate-overlay-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <h2>Vollständigen Bericht freischalten</h2>
+        <p>Geben Sie Ihre E-Mail-Adresse ein, um Zugang zur detaillierten Analyse und Ihrem PDF-Bericht zu erhalten.</p>
+      </div>
+      <div class="modal-body">
+        <form class="gate-form" onsubmit="unlockEmailTier(event)">
+          <input type="email" class="gate-input" id="gate-email" placeholder="ihre@email.de" required>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Vollständigen Bericht freischalten
+          </button>
+        </form>
+        <div class="gate-benefits">
+          <div class="gate-benefit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Detaillierte Analyse pro Use Case
+          </div>
+          <div class="gate-benefit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Konkrete Handlungsfelder und Success Factors
+          </div>
+          <div class="gate-benefit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Als Download PDF
+          </div>
+          <div class="gate-benefit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Alle Werte im overview
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo"><img src="/studytube-logo.png" alt="StudyTube" /></a>
+      <div class="header-actions">
+        <div class="share-container" style="position: relative;">
+          <button class="btn btn-secondary" onclick="shareReport()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            Share
+          </button>
+          <div id="share-dropdown" class="share-dropdown">
+            <button onclick="shareViaLinkedIn(); hideShareDropdown();">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </button>
+            <button onclick="shareViaEmail(); hideShareDropdown();">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              E-Mail
+            </button>
+            <button onclick="copyLinkToClipboard();">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Link kopieren
+            </button>
+          </div>
+        </div>
+        <a href="https://meetings.hubspot.com/sarina-fritsche/15-minuten-meeting-kalender-impact-scan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="plan-gesprek-btn" style="display: none; text-decoration: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Einen Book a Meeting
+        </a>
+        <button class="btn btn-secondary" id="unlock-btn" onclick="showEmailGate()" style="display: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          Freischalten
+        </button>
+        <button class="btn btn-primary" id="download-btn" onclick="downloadPDF()" style="display: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="12" y1="18" x2="12" y2="12"></line>
+            <polyline points="9 15 12 18 15 15"></polyline>
+          </svg>
+          Download PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">L&D IMPACT SCAN</div>
+      <h1 id="hero-title">Wird geladen...</h1>
+      <p id="hero-subtitle">Bitte haben Sie einen Moment Geduld, während wir Ihre Ergebnisse vorbereiten.</p>
+      <div id="hero-cta" style="display: none;"></div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="main-container" id="main-content">
+    <div class="loading">
+      <div class="loading-spinner"></div>
+      <p>Ihr Bericht is erstellt...</p>
+    </div>
+  </div>
+
+  <script>
+    // ============================================
+    // HUBSPOT CONFIGURATION
+    // ============================================
+    //
+    // STEP 2: Replace these values with your HubSpot credentials
+    //
+    // YOUR_PORTAL_ID: Your HubSpot account ID (numeric)
+    //   → Find at: Settings → Account Management → look for "Hub ID"
+    //   → Or in URL: app.hubspot.com/contacts/PORTAL_ID/...
+    //   → Example: '515235'
+    //
+    // YOUR_FORM_GUID: The unique ID of your HubSpot form
+    //   → Find at: Marketing → Forms → Click your form → look in URL
+    //   → URL format: .../forms/PORTAL_ID/editor/FORM_GUID/...
+    //   → Or click "Embed" and find it in the embed code
+    //   → Example: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890'
+    //
+    const HUBSPOT_CONFIG = {
+      portalId: 'YOUR_PORTAL_ID',      // ← Replace with your Portal ID
+      formGuid: 'YOUR_FORM_GUID',      // ← Replace with your Form GUID
+      enabled: false                    // ← Set to true when ready to test
+    };
+
+    // ============================================
+    // REVENUEHERO CONFIGURATION
+    // ============================================
+    //
+    // Meeting scheduler configuration
+    //
+    // HubSpot Meetings configuration (DE)
+    const MEETING_CONFIG = {
+      meetingUrl: 'https://meetings.hubspot.com/sarina-fritsche/15-minuten-meeting-kalender-impact-scan',
+      enabled: true
+    };
+
+    // Cached data for sync access (loaded data is also saved to localStorage)
+    let cachedScanData = null;
+
+    // Sync version of loadData for event handlers (reads from localStorage)
+    function getLoadedData() {
+      if (cachedScanData) return cachedScanData;
+      const stored = localStorage.getItem('ldScanResults');
+      return stored ? JSON.parse(stored) : null;
+    }
+
+    // ============================================
+    // CONTENT LIBRARY
+    // ============================================
+
+    const USE_CASE_CONTENT = {
+      onboarding: {
+        id: 'onboarding',
+        name: 'Onboarding',
+        section1Title: 'Onboarding as a structural foundation',
+        section1Content: `<p>Onboarding determines, wie neue employees im organisation starten – und wie schnell sie eigenständig wirksam are.</p>
+<p>It's about <strong>orientation in der ersten Phase</strong>:</p>
+<ul>
+  <li>Knowing what von einem <strong>erwartet</strong> is</li>
+  <li>Knowing where relevante <strong>Informationen</strong> zu finden sind</li>
+  <li>Knowing how <strong>Erfolg</strong> in der jeweiligen role definiert ist</li>
+</ul>
+<p>Onboarding gibt es in nahezu jeder organisation. The difference isn't in seiner Existenz, but in, <strong>wie konsequent und skalierbar</strong> der process aufgesetzt ist.</p>`,
+        section2Title: 'Where Onboarding shows potential',
+        section2Content: `<p>Viele organisationen erleben, dass Onboarding grundsätzlich geregelt ist, in der Praxis jedoch zunehmend Abstimmung erfordert.</p>
+<p><strong>What we often observe:</strong> Neue employees erhalten Informationen, must Priorityen jedoch selbst festlegen. Eine klare Abfolge oder gezielte orientation fehlt.</p>
+<p>This is precisely where the potential lies von Onboarding – not because es fehlt, but because es an <strong>Richtung, structure und transparency</strong> mangelt.</p>`,
+        opportunities: [
+          { title: 'An role und Kontext ausrichten', desc: 'Durch eine funktionsspezifische Ausgestaltung entsteht clarity darüber, was relevant ist und was zu einem späteren Zeitpunkt folgt.' },
+          { title: 'Create rhythm and reliability', desc: 'Wenn Onboarding zeitlich gestaffelt ist, lässt sich Lernen besser mit der Praxis verknüpfen.' },
+          { title: 'orientation vor dem ersten Arbeitstag geben', desc: 'Beginnt Onboarding bereits vor dem ersten Tag, starten neue employees vorbereitet und mit klaren expectations.' }
+        ],
+        successFactors: [
+          { name: 'LMS with automation', desc: 'Phasenweise Ausspielung von Inhalten mit Triggern und Erinnerungen.' },
+          { name: 'rolenprofile mit skills', desc: 'Klar definiert, welche capabilities pro role erforderlich sind.' },
+          { name: 'Welcome and culture content', desc: "videos und e-learning, die in organisation, Werte und Arbeitsweise einführen." },
+          { name: 'Onboarding paths per topic', desc: 'Structurede Lernpakete pro role oder Bereich.' }
+        ]
+      },
+      kennisdeling: {
+        id: 'kennisdeling',
+        name: 'knowledgesmanagement',
+        section1Title: 'Knowledge management as a structural foundation',
+        section1Content: `<p>knowledgesaustausch determines, in welchem Maß expertise im organisation verfügbar bleibt.</p>
+<p>Dabei stehen drei Kernfragen im Mittelpunkt:</p>
+<ul>
+  <li><strong>Auffindbarkeit:</strong> Können employees knowledge schnell finden?</li>
+  <li><strong>Aktualität:</strong> Ist das knowledge auf dem neuesten Stand?</li>
+  <li><strong>Anwendbarkeit:</strong> Lässt es sich mit der täglichen Arbeit verknüpfen?</li>
+</ul>
+<p>In vielen organisationen ist knowledge vorhanden, jedoch verteilt. The difference isn't in der Menge des knowledges, but in, <strong>wie zugänglich und wiederverwendbar</strong> es organised ist.</p>`,
+        section2Title: 'Where knowledge sharing shows potential',
+        section2Content: `<p>In practice hängt knowledgesaustausch häufig von <strong>einzelnen Personen oder vom Zufall</strong> ab. employees suchen Informationen, wissen jedoch nicht, wo sie beginnen should.</p>
+<p><strong>The consequence:</strong> Fragen are mehrfach gestellt, Expertinnen und Experten are überlastet, und wertvolles knowledge geht verloren, wenn Personen das organisation verlassen.</p>
+<p>This is precisely where the potential lies – nicht aufgrund fehlender Expertise, but because knowledge <strong>unzureichend dokumentiert, strukturiert und aktiv geteilt</strong> is.</p>`,
+        opportunities: [
+          { title: 'Create a clear starting point', desc: 'Wird knowledge an einem zentralen Ort gebündelt, entsteht transparency und orientation.' },
+          { title: 'knowledgesaustausch in die Arbeit integrieren', desc: 'Wenn knowledgesformate professionell organised und dokumentiert are, is Austausch wiederholbar und skalierbar.' },
+          { title: 'Make expertise visible and actively engaged', desc: 'Indem erfahrene employees gezielt dabei unterstützt are, ihr knowledge zu dokumentieren und weiterzugeben.' }
+        ],
+        successFactors: [
+          { name: 'Zentrale Akademie mit Suchfunktion', desc: 'Ein klarer Einstiegspunkt, an dem employees beginnen can.' },
+          { name: 'Seminarmanagement mit Benachrichtigungen', desc: 'Anmeldungen und Erinnerungen are automatisch gesteuert.' },
+          { name: 'Authoring tool for experts und Experten', desc: 'Ein niedrigschwelliger Weg, expertise in strukturierte Inhalte zu überführen.' },
+          { name: 'Klare structure und Kategorien', desc: 'Eine Taxonomie, die mit der organisation mitwächst.' }
+        ]
+      },
+      kwalificatie: {
+        id: 'kwalificatie',
+        name: 'Qualifikationsmanagement',
+        section1Title: 'Kontrolle über verpflichtende Kenntnisse und Zertifizierungen',
+        section1Content: `<p>Qualifikationsmanagement bedeutet transparency darüber, welches knowledge, welche Zertifizierungen und welche Verpflichtungen erforderlich sind.</p>
+<p><strong>Zentrale Fragen sind:</strong></p>
+<ul>
+  <li>Wer muss wofür <strong>qualifiziert</strong> sein?</li>
+  <li>Wann sind <strong>Wiederholungen</strong> erforderlich?</li>
+  <li>Sind alle auf dem <strong>aktuellen Stand</strong>?</li>
+</ul>
+<p>Ist das Qualifikationsmanagement gut organised, entsteht <strong>Sicherheit</strong>. employees wissen, wo sie stehen – und Audits are nicht zur Last-Minute-Aktion.</p>`,
+        section2Title: 'Where qualification management shows potential',
+        section2Content: `<p>In practice ist Qualifikationsmanagement häufig stark von <strong>manueller Nachverfolgung</strong> geprägt: overviewen in Excel, Erinnerungen per E-Mail und hoher Abstimmungsaufwand.</p>
+<p><strong>Typische Anzeichen:</strong> Unklarheit darüber, wer was absolvieren muss, zu spät erkannte abgelaufene Zertifikate und erhöhter Druck im Vorfeld von Audits.</p>
+<p>This is precisely where the potential lies – not because Regeln unklar wären, but because der process <strong>zu wenig transparency und Kontinuität</strong> bietet.</p>`,
+        opportunities: [
+          { title: 'clarity pro role create', desc: 'Wenn definiert ist, welche Anforderungen für welche role gelten, entsteht overview.' },
+          { title: 'Make obligations understandable', desc: 'Werden Richtlinien in kurze, praxisnahe Lerneinheiten übersetzt, steigt die Anschlussfähigkeit an den Arbeitsalltag.' },
+          { title: 'Make progress continuously visible', desc: 'Wird Fortschritt transparent, lassen sich Maßnahmen frühzeitig steuern.' }
+        ],
+        successFactors: [
+          { name: 'Qualifikationsmanagement mit Wiederholungslogik', desc: 'Automatische Zuweisungen und Erinnerungen.' },
+          { name: 'Audit-Trail und Reports', desc: 'Jederzeit transparency darüber, wer was wann abgeschlossen hat.' },
+          { name: 'Certificate administration', desc: 'overview pro employeesm ohne manuelle Nachverfolgung.' },
+          { name: 'Tools zur Übersetzung von Richtlinien', desc: 'Formale Dokumente schneller in verständliche Inhalte überführen.' }
+        ]
+      },
+      training: {
+        id: 'training',
+        name: 'Schulungseinkauf',
+        section1Title: 'Control over external training and budgets',
+        section1Content: `<p>Die Beschaffung externer Schulungen beschreibt, wie employees Zugang zu externen Lernangeboten erhalten.</p>
+<p>Dabei geht es um das <strong>Gleichgewicht zwischen Entscheidungsfreiheit und transparency</strong>:</p>
+<ul>
+  <li><strong>employees</strong> möchten schnell mit relevanten Schulungen starten</li>
+  <li><strong>Die organisation</strong> möchte wissen, wofür Budgets eingesetzt are</li>
+</ul>
+<p>Ist die Beschaffung externer Schulungen gut organised, finden employees schnell passende Angebote – während das organisation <strong>Kosten und quality im Blick behält</strong>.</p>`,
+        section2Title: 'Wo die Beschaffung externer Schulungen potential zeigt',
+        section2Content: `<p>In practice ist die Beantragung externer Schulungen häufig ein <strong>langsamer und wenig transparenter</strong> process.</p>
+<p><strong>Typische Muster:</strong> employees wissen nicht, welche Angebote verfügbar sind, Antragsprozesse sind unklar, und Budgets are erst im Nachhinein statt in Echtzeit überprüft.</p>
+<p>This is precisely where the potential lies – nicht wegen fehlender Angebote, but because processe <strong>zu wenig effizient und transparent</strong> gestaltet sind.</p>`,
+        opportunities: [
+          { title: 'Ein klarer Antragsprozess', desc: 'Durch eine zentrale Steuerung von Anfragen wissen employees, an wen sie sich wenden can.' },
+          { title: 'quality im Vorfeld secure', desc: 'Werden Anbieter vorab geprüft, steigt die quality – ohne zusätzlichen Aufwand pro Anfrage.' },
+          { title: 'Budget-Einsicht in Echtzeit', desc: 'Sind Ausgaben sichtbar, lassen sich Steuerungsmaßnahmen frühzeitig ergreifen.' }
+        ],
+        successFactors: [
+          { name: 'Catalogue for external training', desc: 'Ein zentraler Ort zum Suchen und Vergleichen.' },
+          { name: 'Genehmigungs-Workflows mit klaren rolen', desc: 'Transparente Schritte im Antragsverfahren.' },
+          { name: 'Budgetmanagement je Team', desc: 'Echtzeit-transparency über verfügbare Mittel.' },
+          { name: 'Integration with providers', desc: 'Direkte Anbindung für Anmeldung und Rechnungsstellung.' }
+        ]
+      },
+      regie: {
+        id: 'regie',
+        name: 'Eigenverantwortung der employeesn',
+        section1Title: 'Verantwortung für die eigene Development übernehmen',
+        section1Content: `<p>Eigenverantwortung beschreibt, in welchem Maß employees <strong>transparency über ihre eigene Development</strong> haben.</p>
+<p>Im Kern geht es um <strong>Ownership</strong>:</p>
+<ul>
+  <li>knowledge, welche <strong>skills</strong> zur eigenen role gehören</li>
+  <li>transparency über eigene <strong>Stärken und Developmentspotenziale</strong></li>
+  <li>clarity über sinnvolle <strong>nächste Schritte</strong></li>
+</ul>
+<p>Ist Eigenverantwortung gut verankert, ergreifen employees <strong>selbst Initiative</strong>. Sie treiben ihre Development aktiv voran und übernehmen Verantwortung für ihr Wachstum.</p>`,
+        section2Title: 'Wo Eigenverantwortung potential zeigt',
+        section2Content: `<p>In practice fehlt employeesn häufig die <strong>clarity</strong> darüber, welche skills von ihnen erwartet are.</p>
+<p><strong>Was wir beobachten:</strong> Development is vertagt, Gespräche bleiben oberflächlich, und Lernen findet vor allem dann statt, wenn es erforderlich ist – nicht, wenn es sinnvoll wäre.</p>
+<p>This is precisely where the potential lies – nicht aufgrund mangelnder Motivation, but because geeignete <strong>Instrumente zur Selbststeuerung</strong> fehlen.</p>`,
+        opportunities: [
+          { title: 'skills je role sichtbar machen', desc: 'Durch klare Definitionen is deutlich, welche capabilities zu einer Funktion gehören.' },
+          { title: 'Enable self-assessment', desc: 'Mithilfe von Assessments can employees ihre Developmentspotenziale erkennen.' },
+          { title: 'Provide individual learning recommendations', desc: 'Relevante Inhalte are auf Basis von role und Erfahrungsniveau vorgeschlagen.' }
+        ],
+        successFactors: [
+          { name: 'Skill profiles per function', desc: 'Transparente expectations pro role – für employees einsehbar.' },
+          { name: 'Personal dashboard', desc: 'Zentraler Ort für Fortschritt und Empfehlungen.' },
+          { name: 'Self-Assessments', desc: 'Instrumente zur Reflexion eigener skills.' },
+          { name: 'Personalised learning suggestions', desc: 'Algorithmen, die passende Inhalte sichtbar machen.' }
+        ]
+      },
+      reskilling: {
+        id: 'reskilling',
+        name: 'Up- & Reskilling',
+        section1Title: 'employees auf change vorbereiten',
+        section1Content: `<p>Up- und Reskilling beschreibt die <strong>gezielte Development</strong> von skills, die für zukünftige changes erforderlich sind.</p>
+<p>Im Kern geht es um <strong>Zukunftsorientierung</strong>:</p>
+<ul>
+  <li>Nicht nur für den <strong>aktuellen</strong> Bedarf schulen</li>
+  <li>Sondern auf <strong>kommende</strong> Anforderungen vorbereiten</li>
+  <li>Damit employees sich <strong>gemeinsam mit der organisation</strong> weiterdevelop can</li>
+</ul>
+<p>Ist Reskilling gut organised, is change nicht zur Bedrohung, sondern zur <strong>Wachstumschance</strong>.</p>`,
+        section2Title: 'Where up- and reskilling shows potential',
+        section2Content: `<p>In practice erfolgt Reskilling häufig <strong>reaktiv</strong>. Erst wenn systeme verändert are, Umstrukturierungen anstehen oder Funktionen wegfallen, is gehandelt.</p>
+<p><strong>Das Risiko:</strong> Wer zu spät startet, setzt employees unter Druck – oder verliert Talente, die anderswo bessere Perspektiven sehen.</p>
+<p>This is precisely where the potential lies – nicht wegen fehlender Dringlichkeit, but because der <strong>Blick nicht weit genug in die Zukunft</strong> reicht.</p>`,
+        opportunities: [
+          { title: 'Derive future skill needs', desc: 'Strategice Pläne in konkrete, benötigte skills übersetzen.' },
+          { title: 'Develop transition learning paths', desc: 'Gezielte Developmentsprogramme für sich verändernde rolen' },
+          { title: 'Zeit und Raum für Development', desc: 'Reskilling als festen Bestandteil der Arbeit einplanen.' }
+        ],
+        successFactors: [
+          { name: 'Skill gap analysis', desc: 'transparency über die Differenz zwischen vorhandenen und benötigten skills.' },
+          { name: 'Transition learning paths', desc: 'Structurede Developmentswege für rolenwechsel.' },
+          { name: 'Blended learning formats', desc: 'Kombination aus E-Learning, Praxis und Begleitung.' },
+          { name: 'Fortschrittsmonitoring', desc: 'transparency darüber, wer auf Kurs ist.' }
+        ]
+      },
+      stratskill: {
+        id: 'stratskill',
+        name: 'Strategice Skill-Development',
+        section1Title: 'Linking learning to strategic goals',
+        section1Content: `<p>Strategice Skill-Development beschreibt, in welchem Maß L&D-Investitionen <strong>zur Erreichung der organisationsziele</strong> beitragen.</p>
+<p>Im Kern geht es um <strong>Ausrichtung</strong>:</p>
+<ul>
+  <li>Nicht Lernen um des Lernens willen</li>
+  <li>Sondern <strong>gezielte Development</strong> von skills mit strategischer Relevanz</li>
+  <li>Mit <strong>messbarem impact</strong> auf die organisationsziele</li>
+</ul>
+<p>Ist dies gut organised, is L&D nicht als Kostenstelle wahrgenommen, sondern als <strong>strategischer Partner</strong>, der aktiv zum organisationserfolg beiträgt.</p>`,
+        section2Title: 'Wo strategische Skill-Development potential zeigt',
+        section2Content: `<p>In practice bietet L&D häufig <strong>ein breites Spektrum ohne klare Priorisierung</strong>. Es gibt viele Optionen, doch es bleibt unklar, was wirklich relevant ist.</p>
+<p><strong>The consequence:</strong> Investitionen in Lernen wirken wie „nice to have" statt „must have", und die Verbindung zur Strategie fehlt im Dialog mit dem Management.</p>
+<p>This is precisely where the potential lies – nicht wegen fehlender Angebote, but because die <strong>Anbindung an die organisationsziele nicht konsequent hergestellt</strong> is.</p>`,
+        opportunities: [
+          { title: 'Strategice skills definieren', desc: 'Klar benennen, welche skills für die Umsetzung der Strategie entscheidend sind.' },
+          { title: 'Lerninitiativen nach impact priorisieren', desc: 'Investitionen an ihrem strategischen Wert messen.' },
+          { title: 'impact sichtbar machen', desc: 'Fortschritt bei strategischen skills messen und transparent berichten.' }
+        ],
+        successFactors: [
+          { name: 'Strategice Skill-Taxonomie', desc: 'overview über skills, die direkt mit organisationszielen verknüpft sind.' },
+          { name: 'Skill-based reporting', desc: 'Dashboards, die den Fortschritt bei strategischen skills sichtbar machen.' },
+          { name: 'Integration in den HR-Zyklus', desc: 'Verknüpfung mit Performance-Management und Zielvereinbarungen.' },
+          { name: 'Engagement of relevant stakeholders', desc: 'Aktive Beteiligung des Managements bei Priorisierung und Steuerung.' }
+        ]
+      },
+      mobiliteit: {
+        id: 'mobiliteit',
+        name: 'Interne Mobilität',
+        section1Title: 'Talente im organisation develop',
+        section1Content: `<p>Interne Mobilität beschreibt, in welchem Maß employees sich <strong>weiterdevelop oder intern die role wechseln</strong> can.</p>
+<p>Im Kern geht es um <strong>Perspektive</strong>:</p>
+<ul>
+  <li>Wahrnehmen, dass es <strong>Developmentsmöglichkeiten</strong> in der organisation gibt</li>
+  <li>knowledge, <strong>wie</strong> der Weg dorthin aussieht</li>
+  <li>Erleben, dass die organisation <strong>investiert</strong> in die Development ihrer employeesn</li>
+</ul>
+<p>Ist interne Mobilität gut organised, sehen employees eine <strong>Zukunft im organisation</strong> – und bleiben.</p>`,
+        section2Title: 'Where internal mobility shows potential',
+        section2Content: `<p>In practice hängt Weiterentwicklung häufig vom <strong>Zufall oder vom eigenen Netzwerk</strong> ab. Wer nicht sichtbar ist, bleibt unberücksichtigt.</p>
+<p><strong>Typische Anzeichen:</strong> Talente verlassen das organisation, während interne Stellen schwer zu besetzen sind, und employees wissen nicht, welche Opportunities ihnen offenstehen.</p>
+<p>This is precisely where the potential lies – nicht wegen fehlender Talente, but because <strong>Opportunities nicht transparent sind und processe unklar</strong> bleiben.</p>`,
+        opportunities: [
+          { title: 'Interne Vakanzen sichtbar machen', desc: 'Wer offene rolen transparent macht, zeigt employeesn, was möglich ist.' },
+          { title: 'Visualise career paths', desc: 'Klar darstellen, welche Developmentsschritte von einer role aus sinnvoll sind.' },
+          { title: 'skills mit Opportunities verknüpfen', desc: 'skills gezielt mit internen Opportunities verbinden.' }
+        ],
+        successFactors: [
+          { name: 'Interne Stellenbörse', desc: 'Ein zentraler Ort für interne Karrieremöglichkeiten.' },
+          { name: 'Visualised career paths', desc: 'Transparente Developmentswege zu angrenzenden rolen.' },
+          { name: 'Talent Marketplace', desc: 'Matching von skills und Ambitionen mit internen Opportunities.' },
+          { name: 'Mobilitätsrichtlinie', desc: 'Klare Regelungen für interne Bewerbungen.' }
+        ]
+      }
+    };
+
+    // Rationale templates per use case per LD challenge
+    const RATIONALES = {
+      onboarding: {
+        fast_productive: 'Ihr Fokus darauf, neue employees schnell produktiv zu machen, macht strukturiertes Onboarding zu einer logischen ersten Priority. Ein konsistenter Start verkürzt die Zeit bis zur eigenständigen Arbeit.',
+        compliance: 'Auch bei starkem Compliance-Fokus ist Onboarding relevant: Neue employees must von Beginn an wissen, welche Regeln gelten.',
+        change: 'In changesphasen ist ein guter Start besonders wichtig — neue Kolleginnen und Kollegen bringen häufig die frische Perspektive mit, die benötigt is.',
+        talent_retention: 'Eine starke Onboarding-Erfahrung ist entscheidend für Bindung. Wer gut startet, bleibt länger und leistet mehr.',
+        strategic_alignment: 'Onboarding ist der Moment, neue employees direkt mit der strategischen Ausrichtung zu verbinden.'
+      },
+      kennisdeling: {
+        fast_productive: 'Gut zugänglicher knowledgesaustausch beschleunigt Onboarding: Neue employees finden Antworten selbstständig.',
+        compliance: 'knowledgesaustausch unterstützt Compliance, da processe und Best Practices auffindbar und aktuell bleiben.',
+        change: 'In changesphasen ist knowledgesaustausch zentral: Erkenntnisse must schnell geteilt are.',
+        talent_retention: 'knowledgesaustausch stärkt die Bindung — wer von Kolleginnen und Kollegen lernen kann, fühlt sich wertgeschätzt.',
+        strategic_alignment: 'Strategicer knowledgesaustausch sorgt dafür, dass Erkenntnisse organisationsweit verbreitet are.'
+      },
+      kwalificatie: {
+        fast_productive: 'Sind Qualifikationen sofort klar, can neue employees schneller eigenständig arbeiten.',
+        compliance: 'Ihr Compliance-Fokus macht Qualifikationsmanagement zu einer zentralen Priority.',
+        change: 'In changesphasen ist es entscheidend, dass alle wissen, welche (neuen) Qualifikationen erforderlich sind.',
+        talent_retention: 'Ein klares Qualifikationsmanagement gibt employeesn Sicherheit über ihren Status.',
+        strategic_alignment: 'Strategice goals führen häufig zu neuen Anforderungen — ein strukturiertes Qualifikationsmanagement macht diese steuerbar.'
+      },
+      training: {
+        fast_productive: 'Schneller Zugang zu relevanten Schulungen beschleunigt die Produktivität neuer employeesr.',
+        compliance: 'Eine gezielte Beschaffung externer Schulungen unterstützt dabei, spezifische Zertifizierungsanforderungen zu erfüllen.',
+        change: 'In changesphasen ist schneller Zugang zu neuem knowledge essenziell.',
+        talent_retention: 'Weiterbildungsmöglichkeiten sind ein wichtiger Faktor für die Bindung von Talenten.',
+        strategic_alignment: 'Eine strategische Steuerung externer Schulungen maximiert den impact auf organisationsziele.'
+      },
+      regie: {
+        fast_productive: 'employees, die ihre Development selbst steuern, are schneller produktiv.',
+        compliance: 'Eigenverantwortung unterstützt dabei, Verpflichtungen eigenständig im Blick zu behalten.',
+        change: 'In changesphasen ist Selbststeuerung entscheidend — employees must sich eigenständig anpassen can.',
+        talent_retention: 'Autonomie in der Development ist ein zentraler Faktor für Bindung.',
+        strategic_alignment: 'Wenn employees Verantwortung übernehmen, verknüpfen sie ihre Development stärker mit den organisationszielen.'
+      },
+      reskilling: {
+        fast_productive: 'Reskilling beschleunigt den Übergang in neue rolen und erhöht die Vielseitigkeit.',
+        compliance: 'Reskilling unterstützt dabei, auf veränderte regulatorische Anforderungen zu reagieren.',
+        change: 'Ihr Fokus auf change macht Reskilling zu einer logischen Priority.',
+        talent_retention: 'Investitionen in Reskilling zeigen Vertrauen in die Zukunft Ihrer employeesn.',
+        strategic_alignment: 'Strategices Reskilling bereitet die organisation auf kommende Herausforderungen vor.'
+      },
+      stratskill: {
+        fast_productive: 'Strategice Skill-Development stellt sicher, dass neue employees unmittelbar zu den organisationszielen beitragen.',
+        compliance: 'Ein klarer Skill-Fokus hilft, Compliance in die Geschäftsstrategie zu integrieren.',
+        change: 'In Transformationsphasen ist strategische Skill-Development entscheidend für den Erfolg.',
+        talent_retention: 'employees, die erkennen, wie ihr Wachstum zur Strategie beiträgt, fühlen sich stärker verbunden.',
+        strategic_alignment: 'Ihr strategischer Fokus macht dieses Thema zu einer Kernpriorität.'
+      },
+      mobiliteit: {
+        fast_productive: 'Interne Mobilität ermöglicht eine schnelle Neubesetzung dort, wo sie benötigt is.',
+        compliance: 'Sie hilft, Anforderungen zu erfüllen, indem employees gezielt eingesetzt are.',
+        change: 'In changesphasen ist rolenflexibilität entscheidend — Mobilität macht sie möglich.',
+        talent_retention: 'Ihr Fokus auf Talentbindung macht interne Mobilität zu einer logischen Priority.',
+        strategic_alignment: 'Strategice Mobilität stellt sicher, dass Talente dort eingesetzt are, wo sie den größten impact erzielen.'
+      }
+    };
+
+    // Context boost mapping (from C2 LD Challenge)
+    const CONTEXT_BOOST_MAP = {
+      fast_productive: ['onboarding', 'kennisdeling'],
+      compliance: ['kwalificatie'],
+      change: ['reskilling', 'kennisdeling'],
+      talent_retention: ['mobiliteit', 'regie'],
+      strategic_alignment: ['stratskill']
+    };
+
+    // Display labels
+    const STRATEGIC_GOAL_LABELS = {
+      growth: 'Wachstum — Umsatz oder Marktanteil steigern',
+      operational_excellence: 'Operative Exzellenz — Effizienz und quality improve',
+      transformation: 'Transformation — Neue Märkte, Produkte oder Geschäftsmodelle erschließen',
+      stability: 'Stabilität — Kontinuität secure und Kosten kontrollieren',
+      talent_development: 'Talententwicklung — In employees investieren, um sich strategisch zu differenzieren'
+    };
+
+    const LD_CHALLENGE_LABELS = {
+      fast_productive: 'Neue employees schnell produktiv machen',
+      compliance: 'Compliance-Anforderungen und Qualifikationen sicherstellen',
+      change: 'employees für changes gewinnen',
+      talent_retention: 'Talente binden und weiterdevelop',
+      strategic_alignment: 'Lernen mit der organisationsstrategie verknüpfen'
+    };
+
+    // Case-insensitive label lookup (handles sheet data with varying casing)
+    function getLabel(labels, key) {
+      if (!key) return null;
+      return labels[key] || labels[key.toLowerCase()] || labels[key.toLowerCase().replace(/\s+/g, '_')] || null;
+    }
+
+    const SECTOR_LABELS = {
+      zorg: 'Gesundheitswesen',
+      overheid: 'Öffentlicher Sektor',
+      retail: 'Handel',
+      productie: 'Produktion / Industrie',
+      zakelijk: 'organisationsdienstleistungen',
+      tech: 'Tech / IT',
+      financieel: 'Finanzdienstleistungen',
+      onderwijs: 'Bildung',
+      overig: 'Sonstige'
+    };
+
+    // Map questionnaire IDs to content library IDs
+    const UC_ID_MAP = {
+      onboarding: 'onboarding',
+      kennisdeling: 'kennisdeling',
+      kwalificatie: 'kwalificatie',
+      training: 'training',
+      regie: 'regie',
+      reskilling: 'reskilling',
+      strategie: 'stratskill',  // questionnaire uses 'strategie', content uses 'stratskill'
+      mobiliteit: 'mobiliteit'
+    };
+
+    // ============================================
+    // SCORING LOGIC
+    // ============================================
+
+    function calculatePriority(A, B) {
+      if (B >= 4 && A <= 3) {
+        return B * (6 - A);
+      }
+      return 0;
+    }
+
+    function classifyGap(priority) {
+      if (priority >= 20) return 'high';
+      if (priority >= 12) return 'medium';
+      return 'low';
+    }
+
+    function calculatePriorities(useCases, ldChallenge) {
+      const boostedUCs = CONTEXT_BOOST_MAP[ldChallenge] || [];
+
+      const results = Object.entries(useCases).map(([id, scores]) => {
+        const contentId = UC_ID_MAP[id] || id;
+        let priority = calculatePriority(scores.A, scores.B);
+
+        // Apply context boost (1.2x multiplier)
+        if (priority > 0 && boostedUCs.includes(contentId)) {
+          priority = priority * 1.2;
+        }
+
+        return {
+          id: id,
+          contentId: contentId,
+          name: USE_CASE_CONTENT[contentId]?.name || id,
+          scoreA: scores.A,
+          scoreB: scores.B,
+          priority: priority,
+          gap: classifyGap(priority),
+          isBoosted: boostedUCs.includes(contentId)
+        };
+      });
+
+      // Sort by priority descending
+      results.sort((a, b) => b.priority - a.priority);
+
+      // Mark top 3
+      results.forEach((item, index) => {
+        if (item.priority > 0 && index < 3) {
+          item.rank = index + 1;
+        }
+      });
+
+      return results;
+    }
+
+    // ============================================
+    // DATA LOADING
+    // ============================================
+
+    async function loadData() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const resultId = urlParams.get('id');
+
+      // Try Google Sheets API via result endpoint
+      if (resultId) {
+        try {
+          const response = await fetch(`/api/result?id=${resultId}`);
+
+          if (!response.ok) {
+            throw new Error(`API error: ${response.status}`);
+          }
+
+          const { payload } = await response.json();
+
+          if (!payload) {
+            throw new Error('API returned empty payload');
+          }
+
+          // Save to localStorage for other pages
+          localStorage.setItem('ldScanResults', JSON.stringify(payload));
+          return payload;
+        } catch (error) {
+          console.error('Failed to load from API:', error);
+        }
+      }
+
+      // Fallback: Try localStorage
+      try {
+        const storedData = localStorage.getItem('ldScanResults');
+        if (storedData) {
+          return JSON.parse(storedData);
+        }
+      } catch (e) {
+        console.error('localStorage error:', e);
+      }
+
+      return null;
+    }
+
+    // ============================================
+    // RENDERING
+    // ============================================
+
+    function renderReport(data) {
+      console.log('renderReport() called with data:', data);
+      const { contact = {}, context = {}, useCases = {}, delivery = {} } = data || {};
+      console.log('Destructured - contact:', contact, 'context:', context, 'useCases:', useCases, 'delivery:', delivery);
+
+      // Calculate priorities
+      const results = calculatePriorities(useCases, context?.ld_challenge);
+      const topPriorities = results.filter(r => r.rank);
+
+      // Update hero
+      document.getElementById('hero-title').textContent =
+        `Ihr persönlicher L&D impact-Report`;
+      document.getElementById('hero-subtitle').textContent =
+        `${contact.naam || 'Willkommen'} — ${contact.organisatie || 'Ihre organisation'}`;
+
+      // Show "Plan een gesprek" button in nav if meeting not booked
+      const meetingBooked = delivery?.meeting_booked === true;
+      const planGesprekBtn = document.getElementById('plan-gesprek-btn');
+      if (planGesprekBtn && !meetingBooked) {
+        planGesprekBtn.style.display = 'inline-flex';
+      }
+
+      // Build main content
+      const container = document.getElementById('main-content');
+
+      let html = '';
+
+      // Navigation bar with anchor links
+      html += `
+        <nav class="report-nav">
+          <div class="report-nav-title">Navigation</div>
+          <div class="report-nav-links">
+            <a href="#over-rapport" class="report-nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><circle cx="12" cy="8" r="0.5" fill="currentColor"/></svg>
+              Über diesen Bericht
+            </a>
+            <a href="#jullie-context" class="report-nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Ihr Status Quo
+            </a>
+            <a href="#impact-model" class="report-nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              L&D impact Modell
+            </a>
+            <a href="#focus-usecases" class="report-nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Fokus Use Cases
+            </a>
+            <a href="#alle-scores" class="report-nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              Alle Werte
+            </a>
+            <a href="#aan-de-slag" class="report-nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Jetzt starten
+            </a>
+          </div>
+        </nav>
+      `;
+
+      // About card - NEW COPY from docx
+      html += `
+        <div class="card about-card pdf-section" id="over-rapport">
+          <div class="card-header">
+            <h2 class="card-title">Über diesen Bericht</h2>
+          </div>
+          <p class="about-intro" style="margin-bottom: 16px;">Der L&D impact Scan gibt Ihnen Einblick, wie Lernen und Development aktuell organised sind – im Verhältnis zu ihrer strategischen Bedeutung. Er dient als Instrument zur orientation: Wo can Sie mit L&D derzeit den größten impact erzielen?</p>
+          <p class="about-intro" style="margin-bottom: 16px;">Der Bericht macht sichtbar, wo die Differenz zwischen Anspruch und aktuellem Vorgehen am größten ist. Entscheidend ist: Wo can Sie den Unterschied machen? Genau dort liegt das potential.</p>
+          <p class="about-intro" style="margin-bottom: 20px;">Der Bericht basiert vollständig auf Ihren Antworten im Scan. Diese wurden übersetzt in:</p>
+          <ul style="margin-left: 24px; margin-bottom: 20px; color: var(--st-gray-600);">
+            <li style="margin-bottom: 8px;">Einblick in Ihren Kontext und Ihre Priorityen</li>
+            <li style="margin-bottom: 8px;">Eine overview der relevantesten L&D-Anwendungsfelder</li>
+            <li style="margin-bottom: 8px;">Fokusbereiche, in denen gezielte Aufmerksamkeit mehr impact für employees und organisation create kann</li>
+          </ul>
+          <p class="about-intro" style="font-style: italic; border-left: 3px solid var(--st-blue-500); padding-left: 16px;">Nutzen Sie diesen Bericht als Gesprächsgrundlage. Als Kompass für Priorityen. Und als Basis, um gemeinsam zu entscheiden: Wo investieren wir Zeit, Energie und Ressourcen am wirkungsvollsten?</p>
+
+          <div class="key-concepts-wrapper" id="kernbegrippen-section">
+            <div class="key-concepts-toggle" onclick="toggleKernbegrippen()">
+              <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--st-blue-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <circle cx="12" cy="17" r="0.5" fill="var(--st-blue-500)"></circle>
+                </svg>
+                Zentrale Begriffe
+              </h3>
+              <div class="key-concepts-toggle-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="key-concepts-content">
+              <div class="key-concepts">
+                <div class="key-concept">
+                  <span class="key-concept-bullet">•</span>
+                  <span class="key-concept-text"><strong>L&D impact Modell</strong> — Rahmenwerk zur structureierung und strategischen Ausrichtung Ihres L&D-Ansatzes</span>
+                </div>
+                <div class="key-concept">
+                  <span class="key-concept-bullet">•</span>
+                  <span class="key-concept-text"><strong>Use Case</strong> — Konkretes Anwendungsfeld im L&D-Kontext</span>
+                </div>
+                <div class="key-concept">
+                  <span class="key-concept-bullet">•</span>
+                  <span class="key-concept-text"><strong>Fokus Use Case</strong> — Ein Anwendungsfeld mit vergleichsweise großer Lücke, in dem gezielte Aufmerksamkeit den größten Mehrwert schafft</span>
+                </div>
+                <div class="key-concept">
+                  <span class="key-concept-bullet">•</span>
+                  <span class="key-concept-text"><strong>Gap</strong> — Differenz zwischen strategischer Bedeutung und aktuellem Vorgehen</span>
+                </div>
+                <div class="key-concept">
+                  <span class="key-concept-bullet">•</span>
+                  <span class="key-concept-text"><strong>Success Factors</strong> — Bausteine, die erforderlich sind, um ein Anwendungsfeld wirksam aufzusetzen</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Context card - Jullie Context
+      html += `
+        <div class="card pdf-section" id="jullie-context">
+          <div class="card-header">
+            <h2 class="card-title">Ihr Status Quo</h2>
+          </div>
+          ${context.org_goals_2026 ? `
+          <div style="margin-bottom: 16px; padding: 16px 20px; background: var(--st-gray-75); border-radius: 10px;">
+            <div class="context-label" style="margin-bottom: 8px;">Ihre organisationsziele für 2026</div>
+            <div class="context-value" style="font-style: italic; color: var(--st-gray-700);">"${context.org_goals_2026}"</div>
+          </div>
+          ` : ''}
+          <div class="context-grid" style="margin-bottom: 16px;">
+            <div class="context-item">
+              <div class="context-label">Strategice Priority</div>
+              <div class="context-value">${getLabel(STRATEGIC_GOAL_LABELS, context.strategic_goals_ranked?.[0]) || getLabel(STRATEGIC_GOAL_LABELS, context.strategic_goal) || 'Nicht angegeben'}</div>
+            </div>
+            <div class="context-item">
+              <div class="context-label">Größte Herausforderung</div>
+              <div class="context-value">${getLabel(LD_CHALLENGE_LABELS, context.ld_challenge) || 'Nicht angegeben'}</div>
+            </div>
+          </div>
+          ${topPriorities.length > 0 ? `
+          <div style="background: var(--st-blue-100); padding: 16px 20px; border-radius: 10px;">
+            <div class="context-label" style="margin-bottom: 8px;">Top ${topPriorities.length} Use Case${topPriorities.length !== 1 ? 's' : ''}</div>
+            <div class="focus-chips" style="margin: 0; padding: 0; border: none;">
+              ${topPriorities.map(p => `
+                <div class="focus-chip">
+                  <span class="focus-chip-rank">#${p.rank}</span>
+                  ${p.name}
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          ` : ''}
+        </div>
+      `;
+
+      // L&D impact Model (id="impact-model")
+      const allUseCases = [
+        { id: 'onboarding', name: 'Onboarding', desc: 'Wie neue employees im organisation starten und schnell eigenständig wirksam are.' },
+        { id: 'kennisdeling', name: 'knowledgesmanagement', desc: 'Inwieweit expertise auffindbar, aktuell und anwendbar im organisation ist.' },
+        { id: 'kwalificatie', name: 'Qualifikationsmanagement', desc: 'transparency darüber, welche Zertifizierungen und Pflichten pro role erforderlich sind.' },
+        { id: 'training', name: 'Schulungseinkauf', desc: 'Wie employees Zugang zu externen Schulungen erhalten – mit Budgetkontrolle.' },
+        { id: 'regie', name: 'Eigenverantwortung', desc: 'In welchem Maß employees Ownership über ihre eigene Development haben.' },
+        { id: 'reskilling', name: 'Up- & Reskilling', desc: 'Gezielte Development neuer skills, um bei changes relevant zu bleiben.' },
+        { id: 'strategie', name: 'Strat. Skill-Development', fullName: 'Strategice Skill-Development', desc: 'Gezielte Development von skills, die das organisation strategisch benötigt.' },
+        { id: 'mobiliteit', name: 'Interne Mobilität', desc: 'Förderung interner Weiterentwicklung und Karriereentwicklung.' }
+      ];
+
+      const topPriorityIds = topPriorities.map(p => p.id);
+
+      html += `
+        <div class="card pdf-section" id="impact-model">
+          <div class="card-header">
+            <h2 class="card-title">L&D impact Modell</h2>
+          </div>
+          <div class="impact-model-intro">
+            <p>Das L&D impact Modell ist ein Rahmenwerk, das structure in Ihren L&D-Ansatz bringt. Es umfasst acht klar definierte Anwendungsfelder, die gemeinsam die gesamte Bandbreite von Lernen und Development im organisation abdecken. Es dient als Kompass für die Ausrichtung Ihres L&D-Ansatzes und die Übersetzung Ihrer L&D-Strategie in die Praxis.</p>
+            <p>In vielen organisationen besteht L&D aus einzelnen Initiativen, dringenden Anfragen und ad-hoc Lösungen. Das L&D impact Modell schafft eine gemeinsame Sprache und einen festen Bezugsrahmen, um diese Initiativen zu bündeln und im Zusammenhang zu betrachten. Es hilft, L&D nicht als eine einzige Lösung zu betrachten, sondern als Zusammenspiel verschiedener Themen, die nebeneinander bestehen und sich gegenseitig beeinflussen.</p>
+            <p>Das Modell ist kein Stufenplan und kein Reifegradmodell. Es gibt keine festgelegte Reihenfolge und kein definiertes Endziel. organisationen arbeiten häufig gleichzeitig an mehreren Anwendungsfeldern, jeweils aus eigenem Anlass, eigener Ambition oder eigenem Kontext. Das L&D impact Modell macht dieses Spielfeld transparent und handhabbar.</p>
+            <p style="margin-bottom: 24px;">Durch die Arbeit mit diesem Modell entsteht overview, structure und clarity im Gespräch über Lernen und Development – und eine fundierte Grundlage für strategische Entscheidungen.</p>
+          </div>
+          <div class="use-cases-grid" id="use-cases-grid">
+            ${allUseCases.map(uc => {
+              const isHighlighted = topPriorityIds.includes(uc.id);
+              const rank = topPriorities.find(p => p.id === uc.id)?.rank;
+              return `
+                <div class="use-case-item ${isHighlighted ? 'is-highlighted' : ''}" data-uc-id="${uc.id}" data-short-name="${uc.name}" data-full-name="${uc.fullName || uc.name}" onclick="toggleUseCaseExpand(this)">
+                  <div class="use-case-header">
+                    <div class="use-case-name">${uc.name}</div>
+                    ${rank ? `<span class="use-case-badge">#${rank}</span>` : ''}
+                    <span class="use-case-toggle">+</span>
+                  </div>
+                  <div class="use-case-desc-wrapper">
+                    <div class="use-case-desc">${uc.desc}</div>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+
+          <div class="how-to-read-section" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--st-gray-200);">
+            <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--st-blue-900);">Wie lesen Sie dieses Modell?</h3>
+            <p>Auf Basis Ihrer Antworten im L&D impact Scan wurden pro Anwendungsfeld zwei Elemente ermittelt:</p>
+            <ul style="margin: 12px 0 12px 20px; line-height: 1.8;">
+              <li>die <strong>strategische Bedeutung</strong> dieses Themas für Ihr organisation;</li>
+              <li>und das <strong>aktuelle Vorgehen</strong> zu diesem Thema.</li>
+            </ul>
+            <p>Die Differenz zwischen beiden nennen wir den <strong>Skill Gap</strong>. Dieser gibt Aufschluss darüber, wo die organisation von Lernen und Development noch nicht vollständig dem entspricht, was Ihnen wichtig ist.</p>
+            <p style="margin-top: 12px;">Die markierten Anwendungsfelder (#1, #2, #3) zeigen, wo dieser Gap derzeit am größten ist. Das sind Ihre <strong>Fokus Use Cases</strong>. Nicht, weil dort etwas unzureichend organised ist, but because hier, im Verhältnis zu Ihren Priorityen, Raum für gezielteren Fokus auf Lernen und Development besteht.</p>
+            <p style="margin-top: 12px;">Das Modell soll orientation geben, nicht dazu dienen, alles gleichzeitig anzugehen. Die Fokus Use Cases helfen bei der Priorisierung: Worauf setzen Sie jetzt, und worauf (noch) nicht? So is L&D überschaubar, greifbar und lässt sich besser mit Ihrem Kontext und Ihren Ambitionen verknüpfen.</p>
+          </div>
+        </div>
+      `;
+
+      // Priority cards (gated section - email required for full details)
+      const currentTier = getCurrentTier();
+      const isUnlocked = currentTier === 'email' || currentTier === 'premium';
+
+      if (topPriorities.length > 0) {
+        html += `
+        <div class="gated-section ${!isUnlocked ? 'is-locked' : ''}" data-tier="email" id="focus-usecases">
+          <h2 style="font-size: 24px; font-weight: 600; margin: 40px 0 24px; color: var(--st-blue-900);">Ihre Fokus Use Cases</h2>
+          <div class="gated-content">`;
+
+        topPriorities.forEach(priority => {
+          const content = USE_CASE_CONTENT[priority.contentId];
+          const rationale = RATIONALES[priority.contentId]?.[context.ld_challenge] || '';
+
+          html += `
+            <div class="priority-card pdf-section">
+              <div class="priority-header">
+                <div class="priority-rank">#${priority.rank}</div>
+                <div class="priority-title-area">
+                  <div class="priority-name">${content.name}</div>
+                  <div class="priority-scores">
+                    <span>Bedeutung: ${priority.scoreB}/5</span>
+                    <span>Aktueller Ansatz: ${priority.scoreA}/5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="priority-body">
+                ${rationale ? `<div class="priority-rationale">${rationale}</div>` : ''}
+
+                <div class="priority-section">
+                  <div class="priority-section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--st-blue-500)" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="16" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    ${content.section1Title}
+                  </div>
+                  <div class="priority-section-content">${content.section1Content}</div>
+                </div>
+
+                <div class="priority-section">
+                  <div class="priority-section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--st-blue-500)" stroke-width="2">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    ${content.section2Title}
+                  </div>
+                  <div class="priority-section-content">${content.section2Content}</div>
+                </div>
+
+                <div class="priority-section">
+                  <div class="priority-section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--st-blue-500)" stroke-width="2">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    Konkrete Handlungsfelder
+                  </div>
+                  <div class="items-grid">
+                    ${content.opportunities.map((opp, i) => `
+                      <div class="grid-item">
+                        <div class="grid-item-number">${i + 1}</div>
+                        <div class="grid-item-content">
+                          <div class="grid-item-title">${opp.title}</div>
+                          <div class="grid-item-desc">${opp.desc}</div>
+                        </div>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+
+                <div class="priority-section">
+                  <div class="priority-section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--st-blue-500)" stroke-width="2">
+                      <polyline points="9 11 12 14 22 4"></polyline>
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                    Success Factors
+                  </div>
+                  <div class="success-factors">
+                    ${content.successFactors.map(sf => `
+                      <div class="success-factor">
+                        <svg class="success-factor-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <div class="success-factor-text">
+                          <span class="success-factor-name">${sf.name}</span>
+                          <span class="success-factor-desc">${sf.desc}</span>
+                        </div>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        // Close gated content and add unlock overlay
+        html += `</div>`;  // Close gated-content
+
+        if (!isUnlocked) {
+          html += `
+            <div class="gate-overlay">
+              <div class="gate-overlay-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <h3>Details freischalten</h3>
+              <p>Geben Sie Ihre E-Mail-Adresse ein, um die vollständige Analyse, Handlungsfelder und Success Factors einzusehen.</p>
+              <button class="btn btn-primary" onclick="showEmailGate()" style="width: 100%; justify-content: center;">
+                Vollständigen Bericht freischalten
+              </button>
+            </div>
+          `;
+        }
+
+        html += `</div>`;  // Close gated-section
+      } else {
+        html += `
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Keine dringenden Priorityen</h2>
+              <p class="card-subtitle">Auf Basis Ihrer Antworten ergibt sich derzeit kein Handlungsfeld mit unmittelbarem Handlungsbedarf. Ihr L&D-Ansatz scheint insgesamt gut aufgestellt zu sein.</p>
+            </div>
+          </div>
+        `;
+      }
+
+      // All scores (also gated)
+      html += `
+        <div class="card pdf-section" id="alle-scores">
+          <div class="card-header">
+            <h2 class="card-title">Alle Werte</h2>
+          </div>
+          <div class="alle-scores-intro" style="margin-bottom: 24px;">
+            <p>In dieser overview sehen Sie alle acht Anwendungsfelder des L&D impact Modells mit den jeweiligen Bewertungen. Die Werte geben Aufschluss darüber, wie Ihr aktueller L&D-Ansatz im Verhältnis zu dem steht, was Sie als wichtig erachten.</p>
+            <p style="margin-top: 12px;">Pro Anwendungsfeld are zwei Werte dargestellt:</p>
+            <ul style="margin: 8px 0 8px 20px; line-height: 1.8;">
+              <li>Der <strong>A-Score</strong> zeigt, wie der aktuelle Ansatz zu diesem Thema organised ist.</li>
+              <li>Der <strong>B-Score</strong> gibt an, wie wichtig dieses Thema für Ihre organisation ist.</li>
+            </ul>
+            <p style="margin-top: 12px;">Die Bewertungen dienen der Einordnung, nicht der Beurteilung. Sie machen sichtbar, worauf Ihr Fokus derzeit liegt und wie sich dieser zu Ihren Priorityen verhält. Ein hoher oder niedriger Wert ist weder per se gut noch schlecht – Bedeutung entsteht im Zusammenspiel mit den anderen Ergebnissen.</p>
+            <p style="margin-top: 12px;">Durch die Gegenüberstellung aller Anwendungsfelder entsteht ein Gesamtbild Ihres L&D-Ansatzes. So lassen sich Muster erkennen, Unterschiede einordnen und fundiert diskutieren, wo Sie bewusst investieren – und wo nicht.</p>
+            <p style="margin-top: 12px; font-style: italic; color: var(--st-gray-600);">Nutzen Sie diese overview als Referenz und Kontext für die im weiteren Verlauf des Berichts vertieften Fokusbereiche.</p>
+          </div>
+          <div class="scores-grid">
+            ${results.map(item => `
+              <div class="score-item ${item.rank ? 'is-priority' : ''}">
+                <div class="score-item-header">
+                  <div class="score-item-name">${item.name}</div>
+                  ${item.rank ? `<div class="score-item-badge">#${item.rank}</div>` : ''}
+                </div>
+                <div class="score-bars">
+                  <div class="score-bar-row">
+                    <div class="score-bar-label">Ansatz</div>
+                    <div class="score-bar-track">
+                      <div class="score-bar-fill aanpak" style="width: ${item.scoreA * 20}%"></div>
+                    </div>
+                    <div class="score-bar-value">${item.scoreA}/5</div>
+                  </div>
+                  <div class="score-bar-row">
+                    <div class="score-bar-label">Bedeutung</div>
+                    <div class="score-bar-track">
+                      <div class="score-bar-fill belang" style="width: ${item.scoreB * 20}%"></div>
+                    </div>
+                    <div class="score-bar-value">${item.scoreB}/5</div>
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+
+      // Section 1: Aan de slag met je scan (Downloads) - Light blue accent
+      html += `
+        <div id="aan-de-slag" style="margin-top: 32px; background: linear-gradient(135deg, var(--st-blue-100) 0%, #E8F4FF 100%); border-radius: 16px; padding: 28px; border: 1px solid var(--st-blue-200);">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <div style="width: 44px; height: 44px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(5,109,255,0.15);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--st-blue-500)" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </div>
+            <div>
+              <h2 style="font-size: 20px; margin: 0; color: var(--st-blue-900);">Jetzt starten</h2>
+              <p style="font-size: 14px; color: var(--st-blue-700); margin: 0;">Laden Sie praktische Tools herunter, um Ihre Erkenntnisse in konkrete Maßnahmen zu überführen.</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 400px;">
+            <div style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+              <div style="width: 40px; height: 40px; background: var(--st-blue-100); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--st-blue-500)" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </div>
+              <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 6px; color: var(--st-blue-900);">Executive Summary</h4>
+              <p style="font-size: 14px; color: var(--st-gray-600); margin-bottom: 12px;">Management-overview auf einer Seite.</p>
+              <button class="btn btn-primary btn-sm" onclick="downloadExecutiveSummary()">Download PDF</button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Section 2: Deel je resultaten (Share)
+      html += `
+        <div class="card" style="margin-top: 24px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <div style="width: 40px; height: 40px; background: var(--st-blue-100); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--st-blue-500)" stroke-width="2">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+            </div>
+            <div>
+              <h2 style="font-size: 20px; margin: 0;">Share Sie Ihre Ergebnisse</h2>
+              <p style="font-size: 14px; color: var(--st-gray-600); margin: 0;">Share Sie Ihre Ergebnisse mit Kollegen oder speichern Sie den Link.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button class="btn btn-secondary" onclick="shareViaLinkedIn()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              Auf LinkedIn teilen
+            </button>
+            <button class="btn btn-secondary" onclick="shareViaEmail()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Per E-Mail teilen
+            </button>
+            <button class="btn btn-secondary" onclick="sendToMyEmail()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13"></path>
+                <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+              </svg>
+              An mich selbst senden
+            </button>
+          </div>
+        </div>
+      `;
+
+      // CTA Section - Gated for those who haven't booked (uses meetingBooked from above)
+      html += `
+        <div class="cta-card" id="cta-section" style="margin-top: 24px;">
+          ${!meetingBooked ? `
+          <!-- CTA Content -->
+          <div style="text-align: center; padding: 48px;">
+            <h2 style="color: #ffffff; font-size: 28px; margin-bottom: 12px;">Was ist Ihr nächster Schritt?</h2>
+            <p style="color: rgba(255,255,255,0.85); font-size: 16px; margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto;">Entdecken Sie in einem kurzen Gespräch mit einer unserer L&D-Expertinnen oder einem unserer L&D-Experten, wie Sie Ihre Erkenntnisse in konkrete Maßnahmen übersetzen.</p>
+            <a href="https://meetings.hubspot.com/sarina-fritsche/15-minuten-meeting-kalender-impact-scan" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" style="text-decoration: none; display: inline-flex; align-items: center;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              Book a Meeting (15 Min.)
+            </a>
+            <div class="cta-features" style="margin-top: 24px;">
+              <span class="cta-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Unverbindlich</span>
+              <span class="cta-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> 15 Minuten</span>
+              <span class="cta-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Konkrete Impulse</span>
+            </div>
+          </div>
+          ` : `
+          <!-- Meeting booked state -->
+          <h2>Ihr Termin ist gebucht!</h2>
+          <p>Wir freuen uns darauf, Ihre Ergebnisse gemeinsam zu besprechen und konkrete nächste Schritte abzuleiten.</p>
+
+          <!-- Meeting confirmation -->
+
+          <div class="cta-features">
+            <span class="cta-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Bestätigung versendet</span>
+            <span class="cta-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Kalendereinladung erhalten</span>
+          </div>
+          `}
+        </div>
+      `;
+
+      // Footer
+      html += `
+        <div class="footer">
+          <p class="footer-thanks">Vielen Dank für das Ausfüllen des L&D impact Scans, ${contact.naam}. Wir hoffen, dass dieser Bericht als nützlicher Kompass für Ihre Reise dient.</p>
+          <div class="footer-links">
+            <a href="mailto:info@studytube.de">info@studytube.de</a>
+            <a href="https://studytube.de" target="_blank">studytube.de</a>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    function showError(message, debugInfo = null) {
+      console.error('showError called:', message, debugInfo);
+      document.getElementById('hero-title').textContent = 'Fehler!';
+      document.getElementById('hero-subtitle').textContent = message;
+
+      const debugSection = debugInfo ? `
+        <details style="margin-top: 16px; padding: 12px; background: #f5f5f5; border-radius: 8px; font-size: 12px;">
+          <summary style="cursor: pointer; font-weight: 600;">Technische Details (für Support)</summary>
+          <pre style="margin-top: 8px; white-space: pre-wrap; word-break: break-all;">${JSON.stringify(debugInfo, null, 2)}</pre>
+        </details>
+      ` : '';
+
+      const hasId = new URLSearchParams(window.location.search).get('id');
+      const retryButton = hasId ? `
+        <button onclick="window.location.reload()" class="btn btn-secondary" style="margin-right: 12px;">
+          Erneut versuchen
+        </button>
+      ` : '';
+
+      document.getElementById('main-content').innerHTML = `
+        <div class="card">
+          ${debugSection}
+          <div class="error-state">
+            <h2>Bericht nicht gefunden</h2>
+            <p>${message}</p>
+            <br>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              ${retryButton}
+              <a href="index.html" class="btn btn-primary">Neuen Scan starten</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ============================================
+    // UTILITIES
+    // ============================================
+
+    function toggleCollapsible(button) {
+      const isOpen = button.classList.contains('is-open');
+      const content = button.nextElementSibling;
+
+      if (isOpen) {
+        button.classList.remove('is-open');
+        content.classList.remove('is-open');
+        button.setAttribute('aria-expanded', 'false');
+      } else {
+        button.classList.add('is-open');
+        content.classList.add('is-open');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    function toggleUseCaseExpand(item) {
+      const grid = document.getElementById('use-cases-grid');
+      const allItems = grid.querySelectorAll('.use-case-item');
+      const isExpanded = item.classList.contains('is-expanded');
+      const toggle = item.querySelector('.use-case-toggle');
+      const nameEl = item.querySelector('.use-case-name');
+
+      if (isExpanded) {
+        // Collapse: show all items again, restore short names
+        item.classList.remove('is-expanded');
+        if (toggle) toggle.textContent = '+';
+        if (nameEl) nameEl.textContent = item.dataset.shortName;
+        grid.classList.remove('has-expanded');
+        allItems.forEach(i => {
+          i.classList.remove('is-hidden');
+          const n = i.querySelector('.use-case-name');
+          if (n) n.textContent = i.dataset.shortName;
+        });
+      } else {
+        // Expand: hide other items, show only this one with full name
+        grid.classList.add('has-expanded');
+        allItems.forEach(i => {
+          if (i === item) {
+            i.classList.add('is-expanded');
+            i.classList.remove('is-hidden');
+            const t = i.querySelector('.use-case-toggle');
+            if (t) t.textContent = '−';
+            const n = i.querySelector('.use-case-name');
+            if (n) n.textContent = i.dataset.fullName;
+          } else {
+            i.classList.remove('is-expanded');
+            i.classList.add('is-hidden');
+            const t = i.querySelector('.use-case-toggle');
+            if (t) t.textContent = '+';
+          }
+        });
+      }
+    }
+
+    // Toggle kernbegrippen collapse/expand
+    function toggleKernbegrippen() {
+      const wrapper = document.getElementById('kernbegrippen-section');
+      if (wrapper) {
+        wrapper.classList.toggle('is-expanded');
+      }
+    }
+
+    // Navigation is always visible (sticky, no hide/show)
+
+    function shareReport() {
+      // Show share dropdown instead of native share
+      const dropdown = document.getElementById('share-dropdown');
+      if (dropdown) {
+        dropdown.classList.toggle('is-visible');
+      }
+    }
+
+    function showToast(message, type = 'info') {
+      // Remove existing toast if any
+      const existing = document.querySelector('.toast-notification');
+      if (existing) existing.remove();
+
+      const toast = document.createElement('div');
+      toast.className = `toast-notification toast-${type}`;
+      toast.innerHTML = `
+        <span>${message}</span>
+        <button onclick="this.parentElement.remove()" style="background:none;border:none;color:inherit;cursor:pointer;padding:0 0 0 12px;font-size:18px;">&times;</button>
+      `;
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: ${type === 'success' ? '#16A34A' : type === 'error' ? '#EF5350' : '#1E3A8A'};
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        animation: slideUp 0.3s ease;
+      `;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 5000);
+    }
+
+    function copyLinkToClipboard() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        showToast('Link in die Zwischenablage kopiert!', 'success');
+        hideShareDropdown();
+      });
+    }
+
+    function hideShareDropdown() {
+      const dropdown = document.getElementById('share-dropdown');
+      if (dropdown) dropdown.classList.remove('is-visible');
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.share-container')) {
+        hideShareDropdown();
+      }
+    });
+
+    // Smooth scroll to CTA section
+    function scrollToCTA(event) {
+      event.preventDefault();
+      const ctaSection = document.getElementById('cta-section');
+      if (ctaSection) {
+        ctaSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    function shareViaLinkedIn() {
+      const linkedInText = `Ich habe gerade den L&D impact Scan gemacht. In 5 Minuten bekommt man ein klares Bild davon, wo L&D im eigenen organisation aktuell den größten Hebel hat. Hilfreich, um Priorityen einzuordnen. Empfehlenswert für alle, die L&D strategisch weiterdenken!`;
+
+      const shareUrl = encodeURIComponent('https://scan.studytube.de');
+
+      // Copy suggested text to clipboard, then open LinkedIn share with the link attached
+      navigator.clipboard.writeText(linkedInText).then(() => {
+        showToast('Text kopiert! Fügen Sie ihn in Ihren LinkedIn-Post ein.', 'success');
+      }).catch(() => {
+        // Clipboard failed silently — the link will still be shared
+      });
+
+      // Always open share-offsite so the scan link is included as a preview card
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`, '_blank', 'width=600,height=600');
+    }
+
+    function shareViaEmail() {
+      const resultsData = JSON.parse(localStorage.getItem('ldScanResults') || '{}');
+      const contact = resultsData.contact || {};
+      const subject = encodeURIComponent('Die Ergebnisse von meinem L&D impact Scan ansehen');
+      const body = encodeURIComponent(`Hallo,\n\nich habe gerade den L&D impact Scan von Studytube abgeschlossen. Der Scan gibt Einblick in den Reifegrad von L&D über acht strategische Handlungsfelder hinweg.\n\nMeine Ergebnisse finden Sie hier: ${window.location.href}\n\nWenn Sie neugierig sind, wo Ihr organisation steht, can Sie den Scan hier durchführen:\nhttps://studytube.de/ld-impact-scan\n\nViele Grüße\n${contact.naam || ''}`);
+      window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    }
+
+    function sendToMyEmail() {
+      const resultsData = JSON.parse(localStorage.getItem('ldScanResults') || '{}');
+      const contact = resultsData.contact || {};
+      if (contact.email) {
+        const subject = encodeURIComponent('Die Ergebnisse von Ihrem L&D impact Scan - Studytube');
+        const body = encodeURIComponent(`Hallo ${contact.naam || ''},\n\nhier ist der Link zu Ihren Ergebnissen aus dem L&D impact Scan:\n${window.location.href}\n\nSpeichern Sie diesen Link, um Ihre Ergebnisse später erneut aufzurufen.\n\nViele Grüße\nStudytube`);
+        window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
+      } else {
+        alert('Keine E-Mail-Adresse gefunden. Bitte geben Sie zuerst Ihre Daten ein.');
+      }
+    }
+
+    // ============================================
+    // MEETING SCHEDULING (HubSpot Meetings)
+    // ============================================
+
+    function openMeetingScheduler() {
+      console.log('openMeetingScheduler called');
+      const meetingUrl = MEETING_CONFIG.meetingUrl;
+      console.log('Opening meeting URL:', meetingUrl);
+      window.open(meetingUrl, '_blank', 'width=700,height=750');
+    }
+
+    function downloadPDF() {
+      const resultId = new URLSearchParams(window.location.search).get('id');
+      const url = resultId ? `/report-pdf?id=${resultId}` : '/report-pdf';
+      window.open(url, '_blank');
+    }
+
+    function downloadExecutiveSummary() {
+      const resultId = new URLSearchParams(window.location.search).get('id');
+      const params = new URLSearchParams({ print: 'true' });
+      if (resultId) params.set('id', resultId);
+      window.open(`/executive-summary?${params}`, '_blank');
+    }
+
+    // ============================================
+    // TIER MANAGEMENT
+    // ============================================
+
+    // Tiers: 'free', 'email', 'premium'
+    function getCurrentTier() {
+      const tierData = localStorage.getItem('ldScanTier');
+      if (tierData) {
+        try {
+          const parsed = JSON.parse(tierData);
+          return parsed.tier || 'free';
+        } catch (e) {
+          return 'free';
+        }
+      }
+      return 'free';
+    }
+
+    function setTier(tier, email = null) {
+      const tierData = {
+        tier: tier,
+        email: email,
+        unlockedAt: new Date().toISOString()
+      };
+      localStorage.setItem('ldScanTier', JSON.stringify(tierData));
+      updateTierUI(tier);
+    }
+
+    function updateTierUI(tier) {
+      const tierStatus = document.getElementById('tier-status');
+      const tierLabel = document.getElementById('tier-label');
+      const unlockBtn = document.getElementById('unlock-btn');
+      const downloadBtn = document.getElementById('download-btn');
+
+      // Update tier badge (if element exists - it may have been removed)
+      if (tierStatus) {
+        tierStatus.className = 'tier-status';
+        if (tier === 'email') {
+          tierStatus.classList.add('tier-email');
+          if (tierLabel) tierLabel.textContent = 'Vollversion';
+        } else if (tier === 'premium') {
+          tierStatus.classList.add('tier-premium');
+          if (tierLabel) tierLabel.textContent = 'Premium';
+        } else {
+          if (tierLabel) tierLabel.textContent = 'Basic';
+        }
+      }
+
+      // Show/hide buttons based on tier (if elements exist)
+      if (tier === 'free') {
+        if (unlockBtn) unlockBtn.style.display = 'flex';
+        if (downloadBtn) downloadBtn.style.display = 'none';
+      } else {
+        if (unlockBtn) unlockBtn.style.display = 'none';
+        if (downloadBtn) downloadBtn.style.display = 'flex';
+      }
+
+      // Update gated sections
+      document.querySelectorAll('.gated-section').forEach(section => {
+        const requiredTier = section.dataset.tier || 'email';
+        if (requiredTier === 'email' && (tier === 'email' || tier === 'premium')) {
+          section.classList.remove('is-locked');
+        } else if (requiredTier === 'premium' && tier === 'premium') {
+          section.classList.remove('is-locked');
+        } else if (tier === 'free' && requiredTier === 'email') {
+          section.classList.add('is-locked');
+        }
+      });
+
+      // Note: Premium section removed - downloads are now always visible
+      // CTA section gating is handled by meeting_booked state, not tier
+    }
+
+    function showEmailGate() {
+      document.getElementById('email-gate-modal').classList.add('is-visible');
+    }
+
+    function hideEmailGate() {
+      document.getElementById('email-gate-modal').classList.remove('is-visible');
+    }
+
+    function unlockEmailTier(event) {
+      event.preventDefault();
+      const email = document.getElementById('gate-email').value;
+
+      if (!email) return;
+
+      // Get scan data (use sync version for event handler)
+      const data = getLoadedData();
+      if (!data || !data.contact) {
+        alert('Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.');
+        return;
+      }
+
+      // Store email in results data
+      data.contact.email = email;
+      localStorage.setItem('ldScanResults', JSON.stringify(data));
+
+      // Calculate priorities for HubSpot
+      const results = calculatePriorities(data.useCases, data.context?.ld_challenge);
+      const topPriorities = results.filter(r => r.rank).slice(0, 3);
+
+      // Check if HubSpot is enabled
+      if (HUBSPOT_CONFIG.enabled &&
+          HUBSPOT_CONFIG.portalId !== 'YOUR_PORTAL_ID' &&
+          HUBSPOT_CONFIG.formGuid !== 'YOUR_FORM_GUID') {
+
+        // Prepare HubSpot submission data
+        const hubspotData = {
+          fields: [
+            { name: 'email', value: email },
+            { name: 'firstname', value: data.contact.voornaam || (data.contact.naam ? data.contact.naam.split(' ')[0] : '') },
+            { name: 'lastname', value: data.contact.achternaam || (data.contact.naam ? data.contact.naam.split(' ').slice(1).join(' ') : '') },
+            { name: 'company', value: data.contact.organisatie || '' },
+            { name: 'ld_scan_completed', value: 'true' },
+            { name: 'ld_scan_date', value: new Date().toISOString().split('T')[0] },
+            { name: 'ld_scan_organization', value: data.contact.organisatie || '' },
+            { name: 'ld_strategic_goal', value: data.context?.strategic_goals_ranked?.[0] || data.context?.strategic_goal || '' },
+            { name: 'ld_challenge', value: data.context?.ld_challenge || '' },
+            { name: 'ld_priority_1', value: topPriorities[0]?.name || '' },
+            { name: 'ld_priority_2', value: topPriorities[1]?.name || '' },
+            { name: 'ld_priority_3', value: topPriorities[2]?.name || '' },
+            { name: 'ld_scores_json', value: JSON.stringify(data.useCases) }
+          ],
+          context: {
+            pageUri: window.location.href,
+            pageName: 'L&D impact Scan Results'
+          }
+        };
+
+        // Submit to HubSpot
+        const hubspotUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_CONFIG.portalId}/${HUBSPOT_CONFIG.formGuid}`;
+
+        fetch(hubspotUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(hubspotData)
+        })
+        .then(response => {
+          if (response.ok) {
+            console.log('✅ HubSpot submission successful');
+          } else {
+            console.error('❌ HubSpot submission failed:', response.status);
+          }
+        })
+        .catch(error => {
+          console.error('❌ HubSpot error:', error);
+        });
+      } else {
+        console.log('ℹ️ HubSpot not configured. Email captured locally:', email);
+        console.log('ℹ️ To enable HubSpot, update HUBSPOT_CONFIG at the top of this file.');
+      }
+
+      // Set tier to email and unlock content (always, even if HubSpot fails)
+      setTier('email', email);
+      hideEmailGate();
+
+      // Refresh to show unlocked content
+      location.reload();
+    }
+
+    function unlockPremiumTier() {
+      setTier('premium');
+      // This would typically be triggered after booking a meeting
+    }
+
+    function submitPremiumCapture(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('premium-name').value;
+      const email = document.getElementById('premium-email').value;
+      const phone = document.getElementById('premium-phone').value;
+
+      if (!name || !email) {
+        alert('Bitte geben Sie Ihren Namen und Ihre E-Mail-Adresse ein.');
+        return;
+      }
+
+      // Get scan data (use sync version for event handler)
+      const data = getLoadedData();
+      if (!data) return;
+
+      // Calculate priorities
+      const results = calculatePriorities(data.useCases, data.context?.ld_challenge);
+      const topPriorities = results.filter(r => r.rank).slice(0, 3);
+
+      // Store in localStorage for demo page
+      const premiumRequest = {
+        name: name,
+        email: email,
+        phone: phone,
+        organization: data.contact?.organisatie || '',
+        priorities: topPriorities.map(p => p.name),
+        strategicGoal: data.context?.strategic_goals_ranked?.[0] || data.context?.strategic_goal || '',
+        challenge: data.context?.ld_challenge || '',
+        timestamp: new Date().toISOString()
+      };
+      localStorage.setItem('ldPremiumRequest', JSON.stringify(premiumRequest));
+
+      // Submit to HubSpot if configured
+      if (HUBSPOT_CONFIG.enabled &&
+          HUBSPOT_CONFIG.portalId !== 'YOUR_PORTAL_ID' &&
+          HUBSPOT_CONFIG.formGuid !== 'YOUR_FORM_GUID') {
+
+        const hubspotData = {
+          fields: [
+            { name: 'email', value: email },
+            { name: 'firstname', value: name },
+            { name: 'phone', value: phone },
+            { name: 'company', value: data.contact?.organisatie || '' },
+            { name: 'ld_scan_completed', value: 'true' },
+            { name: 'ld_scan_date', value: new Date().toISOString().split('T')[0] },
+            { name: 'ld_scan_organization', value: data.contact?.organisatie || '' },
+            { name: 'ld_strategic_goal', value: data.context?.strategic_goals_ranked?.[0] || data.context?.strategic_goal || '' },
+            { name: 'ld_challenge', value: data.context?.ld_challenge || '' },
+            { name: 'ld_priority_1', value: topPriorities[0]?.name || '' },
+            { name: 'ld_priority_2', value: topPriorities[1]?.name || '' },
+            { name: 'ld_priority_3', value: topPriorities[2]?.name || '' },
+            { name: 'ld_scores_json', value: JSON.stringify(data.useCases) },
+            { name: 'ld_premium_requested', value: 'true' }
+          ],
+          context: {
+            pageUri: window.location.href,
+            pageName: 'L&D impact Scan - Premium Request'
+          }
+        };
+
+        fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_CONFIG.portalId}/${HUBSPOT_CONFIG.formGuid}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(hubspotData)
+        })
+        .then(response => {
+          console.log(response.ok ? '✅ HubSpot premium request submitted' : '❌ HubSpot submission failed');
+        })
+        .catch(error => {
+          console.error('❌ HubSpot error:', error);
+        });
+      } else {
+        console.log('ℹ️ HubSpot not configured. Premium request stored locally.');
+      }
+
+      // Redirect to demo flow page
+      window.location.href = 'hubspot-demo.html';
+    }
+
+    // Close modal on backdrop click
+    document.addEventListener('click', (e) => {
+      if (e.target.id === 'email-gate-modal') {
+        hideEmailGate();
+      }
+    });
+
+    // ============================================
+    // INIT
+    // ============================================
+
+    async function init() {
+      try {
+        // Show loading state while fetching
+        const mainContent = document.querySelector('.main-content');
+        if (mainContent) {
+          mainContent.style.opacity = '0.5';
+        }
+
+        const data = await loadData();
+
+        // Cache data for sync access
+        cachedScanData = data;
+
+        // Remove loading state
+        if (mainContent) {
+          mainContent.style.opacity = '1';
+        }
+
+        if (!data || !data.useCases || Object.keys(data.useCases).length === 0) {
+          const debugInfo = {
+            url: window.location.href,
+            hasId: !!new URLSearchParams(window.location.search).get('id'),
+            dataExists: !!data,
+            useCasesExists: !!(data?.useCases),
+            useCasesCount: data?.useCases ? Object.keys(data.useCases).length : 0,
+            localStorageAvailable: typeof localStorage !== 'undefined',
+            timestamp: new Date().toISOString()
+          };
+          showError('Es wurden keine Ergebnisse gefunden. Starten Sie einen neuen Scan, um Ihren Bericht zu erstellen.', debugInfo);
+          return;
+        }
+
+        // Check if email was provided during questionnaire
+        const currentTier = getCurrentTier();
+        if (data.contact && data.contact.email && currentTier === 'free') {
+          setTier('email', data.contact.email);
+        }
+
+        renderReport(data);
+
+        // Update UI based on tier
+        updateTierUI(getCurrentTier());
+      } catch (error) {
+        console.error('Error initializing report:', error);
+        showError('Beim Laden Ihres Berichts ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.');
+      }
+    }
+
+    // Run on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  </script>
+</body>
+</html>

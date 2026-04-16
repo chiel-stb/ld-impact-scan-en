@@ -1,0 +1,2843 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L&D Impact Scan | StudyTube</title>
+
+  <!-- HubSpot Meetings Scheduler (EN) -->
+
+  <!-- Euclid Circular B - StudyTube Official Font -->
+  <style>
+    @font-face {
+      font-family: 'Euclid Circular B';
+      src: url('https://f.hubspotusercontent30.net/hubfs/515235/DiamondTube/fonts/EuclidCircularB-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Euclid Circular B';
+      src: url('https://f.hubspotusercontent30.net/hubfs/515235/DiamondTube/fonts/EuclidCircularB-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Euclid Circular B';
+      src: url('https://f.hubspotusercontent30.net/hubfs/515235/DiamondTube/fonts/EuclidCircularB-SemiBold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Euclid Circular B';
+      src: url('https://f.hubspotusercontent30.net/hubfs/515235/DiamondTube/fonts/EuclidCircularB-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <style>
+    :root {
+      /* StudyTube Brand Colors */
+      --st-blue-100: #D7EBFF;
+      --st-blue-200: #B9DCFF;
+      --st-blue-300: #7ABDFF;
+      --st-blue-400: #50A7FF;
+      --st-blue-500: #056DFF;
+      --st-blue-600: #0A5CEB;
+      --st-blue-700: #0F4ABE;
+      --st-blue-900: #11295A;
+
+      --st-gray-50: #F5F7F9;
+      --st-gray-75: #F9FAFB;
+      --st-gray-100: #F2F5F8;
+      --st-gray-200: #E9EDF1;
+      --st-gray-300: #D1D9E0;
+      --st-gray-400: #AFBBC6;
+      --st-gray-500: #8694A2;
+      --st-gray-600: #545E69;
+
+      --st-link: #FF1B51;
+      --st-success: #16A34A;
+      --st-warning: #FACC15;
+      --st-error: #EF5350;
+      --st-cyan: #05D5FF;
+
+      --font-family: 'Euclid Circular B', -apple-system, BlinkMacSystemFont, sans-serif;
+      --header-height: 64px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: var(--st-gray-50);
+      color: var(--st-blue-900);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: white;
+      border-bottom: 1px solid var(--st-gray-200);
+      padding: 0 24px;
+      height: var(--header-height);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-content {
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--st-blue-500);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--st-blue-600);
+    }
+
+    .btn-primary:disabled {
+      background: var(--st-gray-300);
+      cursor: not-allowed;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--st-blue-900);
+      border: 1px solid var(--st-gray-300);
+    }
+
+    .btn-secondary:hover {
+      background: var(--st-gray-75);
+      border-color: var(--st-gray-400);
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--st-blue-900);
+    }
+
+    .btn-white:hover {
+      background: var(--st-gray-100);
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+
+    /* Hero Section - Full Splash Screen */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--st-blue-900) 0%, #0a1f4a 50%, #11295A 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 80%;
+      height: 150%;
+      background: radial-gradient(ellipse at center, rgba(5, 213, 255, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 60%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, rgba(5, 109, 255, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--st-blue-500);
+      background: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      background: rgba(5, 213, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(5, 213, 255, 0.2);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.9) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 28px;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .hero-features {
+      display: inline-flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      padding: 12px 24px;
+      border-radius: 12px;
+    }
+
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .hero-feature-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--st-blue-300);
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-cta .btn-primary {
+      padding: 16px 36px;
+      font-size: 16px;
+      box-shadow: 0 8px 32px rgba(5, 109, 255, 0.4);
+    }
+
+    .hero-cta .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(5, 109, 255, 0.5);
+    }
+
+    .hero-time {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .hero-testimonial {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-quote {
+      font-size: 15px;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+      margin: 0 0 16px 0;
+      position: relative;
+    }
+
+    .hero-quote::before {
+      content: '"';
+      position: absolute;
+      top: -15px;
+      left: -10px;
+      font-size: 50px;
+      color: rgba(5, 213, 255, 0.3);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .hero-quote-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .hero-quote-avatar {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--st-cyan), var(--st-blue-500));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+    }
+
+    .hero-quote-info {
+      text-align: left;
+    }
+
+    .hero-quote-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+    }
+
+    .hero-quote-role {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Main Layout */
+    .assessment-container {
+      display: none;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: calc(var(--header-height) + 40px) 24px 60px;
+    }
+
+    .assessment-container.active {
+      display: block;
+    }
+
+    .assessment-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      position: sticky;
+      top: calc(var(--header-height) + 24px);
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--st-gray-200);
+      padding: 24px;
+    }
+
+    .sidebar-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--st-gray-500);
+      margin-bottom: 16px;
+    }
+
+    .nav-list {
+      list-style: none;
+    }
+
+    .nav-item {
+      margin-bottom: 4px;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--st-gray-500);
+      background: transparent;
+      border: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .nav-link:hover:not(.disabled) {
+      background: var(--st-gray-75);
+      color: var(--st-blue-900);
+    }
+
+    .nav-link.active {
+      background: var(--st-blue-100);
+      color: var(--st-blue-500);
+    }
+
+    .nav-link.completed {
+      color: var(--st-blue-900);
+    }
+
+    .nav-link.disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    .nav-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--st-gray-100);
+      color: var(--st-gray-500);
+      flex-shrink: 0;
+    }
+
+    .nav-link.active .nav-icon {
+      background: var(--st-blue-500);
+      color: white;
+    }
+
+    .nav-link.completed .nav-icon {
+      background: var(--st-success);
+      color: white;
+    }
+
+    .nav-text {
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav-step {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--st-blue-500);
+      background: var(--st-blue-100);
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: auto;
+    }
+
+    .nav-check {
+      opacity: 0;
+      color: var(--st-success);
+    }
+
+    .nav-link.completed .nav-check {
+      opacity: 1;
+    }
+
+    /* Final step badge */
+    .nav-badge-final {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, var(--st-blue-500), var(--st-blue-600));
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
+      white-space: nowrap;
+    }
+
+    .nav-link.active .nav-badge-final {
+      background: linear-gradient(135deg, var(--st-blue-500), var(--st-blue-600));
+    }
+
+    .nav-link.final {
+      margin-top: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--st-gray-200);
+    }
+
+    /* Main Content Area */
+    .main-content {
+      background: white;
+      border-radius: 14px;
+      border: 1px solid var(--st-gray-200);
+      padding: 28px;
+      min-height: auto;
+    }
+
+    /* Top Progress Bar */
+    .top-progress-bar {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--st-gray-200);
+    }
+
+    .top-progress-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .top-progress-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--st-gray-600);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .top-progress-percentage {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--st-blue-500);
+    }
+
+    .top-progress-track {
+      height: 6px;
+      background: var(--st-gray-200);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .top-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--st-blue-500), var(--st-blue-400));
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    /* Section Header */
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: var(--st-blue-100);
+      color: var(--st-blue-900);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+
+    .section-badge.hidden {
+      display: none;
+    }
+
+    .section-badge-result {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--st-blue-500), var(--st-blue-600));
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--st-blue-900);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--st-gray-600);
+    }
+
+    .question-meta {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--st-blue-500);
+      margin-bottom: 6px;
+    }
+
+    /* Question Card */
+    .question-card {
+      background: var(--st-gray-75);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .question-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--st-gray-500);
+      margin-bottom: 6px;
+    }
+
+    .question-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    /* Radio Options */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      background: white;
+      border: 2px solid var(--st-gray-200);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-size: 14px;
+    }
+
+    .option:hover {
+      border-color: var(--st-blue-300);
+      background: white;
+    }
+
+    .option.selected {
+      border-color: var(--st-blue-500);
+      background: var(--st-blue-100);
+    }
+
+    .option input {
+      display: none;
+    }
+
+    .option-radio {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      border: 2px solid var(--st-gray-300);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .option.selected .option-radio {
+      border-color: var(--st-blue-500);
+      background: var(--st-blue-500);
+    }
+
+    .option-radio::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+
+    .option.selected .option-radio::after {
+      opacity: 1;
+    }
+
+    .option-text {
+      font-size: 14px;
+      color: var(--st-blue-900);
+      line-height: 1.4;
+    }
+
+    /* Form Inputs */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--st-blue-900);
+      margin-bottom: 6px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 15px;
+      font-family: inherit;
+      border: 2px solid var(--st-gray-200);
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      color: var(--st-blue-900);
+      background: white;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--st-blue-500);
+      box-shadow: 0 0 0 3px rgba(5, 109, 255, 0.1);
+    }
+
+    .form-input::placeholder {
+      color: var(--st-gray-400);
+    }
+
+    .text-input-large {
+      width: 100%;
+      min-height: 120px;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-family: inherit;
+      border: 2px solid var(--st-gray-200);
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      color: var(--st-blue-900);
+      background: white;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .text-input-large:focus {
+      outline: none;
+      border-color: var(--st-blue-500);
+      box-shadow: 0 0 0 3px rgba(5, 109, 255, 0.1);
+    }
+
+    .text-input-large::placeholder {
+      color: var(--st-gray-400);
+    }
+
+    .char-counter {
+      text-align: right;
+      font-size: 12px;
+      color: var(--st-gray-500);
+      margin-top: 6px;
+    }
+
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23545E69' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 18px;
+      padding-right: 44px;
+    }
+
+    /* Navigation Footer */
+    .nav-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--st-gray-200);
+    }
+
+    /* Checkbox Options */
+    .checkbox-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      background: white;
+      border: 2px solid var(--st-gray-200);
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      margin-bottom: 8px;
+    }
+
+    .checkbox-option:hover {
+      border-color: var(--st-blue-300);
+    }
+
+    .checkbox-option.selected {
+      border-color: var(--st-blue-500);
+      background: var(--st-blue-100);
+    }
+
+    .checkbox-box {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border: 2px solid var(--st-gray-300);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .checkbox-option.selected .checkbox-box {
+      border-color: var(--st-blue-500);
+      background: var(--st-blue-500);
+    }
+
+    .checkbox-box svg {
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+
+    .checkbox-option.selected .checkbox-box svg {
+      opacity: 1;
+    }
+
+    /* Ranking/Sortable List */
+    .ranking-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* Ranking - Two Column Layout */
+    .ranking-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .ranking-source {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ranking-source-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--st-gray-500);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .ranking-targets {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ranking-slot {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ranking-slot-number {
+      width: 28px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--st-gray-400);
+      text-align: center;
+    }
+
+    .ranking-dropzone {
+      flex: 1;
+      min-height: 52px;
+      border: 2px dashed var(--st-gray-300);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      transition: all 0.15s ease;
+    }
+
+    .ranking-dropzone-label {
+      font-size: 13px;
+      color: var(--st-gray-400);
+    }
+
+    .ranking-dropzone.has-item {
+      border-style: solid;
+      border-color: var(--st-blue-300);
+      background: var(--st-blue-50);
+      justify-content: flex-start;
+    }
+
+    .ranking-dropzone.drag-over {
+      border-color: var(--st-blue-500);
+      background: var(--st-blue-100);
+    }
+
+    /* All slots use consistent neutral styling */
+    .ranking-slot .ranking-slot-number { color: var(--st-gray-500); }
+    .ranking-slot .ranking-dropzone.has-item { border-color: var(--st-blue-300); background: var(--st-blue-50); }
+
+    .ranking-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: white;
+      border: 2px solid var(--st-gray-200);
+      border-radius: 8px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+
+    .ranking-item:hover {
+      border-color: var(--st-blue-300);
+      background: var(--st-gray-75);
+    }
+
+    .ranking-item.dragging {
+      opacity: 0.5;
+      cursor: grabbing;
+    }
+
+    .ranking-item.in-slot {
+      padding: 8px 12px;
+      margin: 0;
+    }
+
+    .ranking-handle {
+      color: var(--st-gray-400);
+      display: flex;
+      align-items: center;
+    }
+
+    .ranking-text {
+      flex: 1;
+      font-size: 14px;
+      color: var(--st-blue-900);
+      line-height: 1.3;
+    }
+
+    @media (max-width: 700px) {
+      .ranking-container {
+        grid-template-columns: 1fr;
+      }
+      .ranking-source {
+        order: 2;
+      }
+      .ranking-targets {
+        order: 1;
+      }
+    }
+
+    .ranking-hint {
+      font-size: 13px;
+      color: var(--st-gray-500);
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Results */
+    .results-container {
+      display: none;
+    }
+
+    .results-container.active {
+      display: block;
+    }
+
+    .results-header {
+      background: linear-gradient(135deg, var(--st-blue-900) 0%, #1a3a7a 100%);
+      padding: 60px 24px;
+      margin-top: var(--header-height);
+      color: white;
+      text-align: center;
+    }
+
+    .results-header h1 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .results-header p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .results-content {
+      max-width: 900px;
+      margin: -40px auto 60px;
+      padding: 0 24px;
+    }
+
+    .results-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--st-gray-200);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .results-card h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+      margin-bottom: 24px;
+    }
+
+    .priority-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      background: var(--st-gray-75);
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .priority-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .priority-rank {
+      width: 48px;
+      height: 48px;
+      background: var(--st-blue-500);
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .priority-info {
+      flex: 1;
+    }
+
+    .priority-name {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--st-blue-900);
+      margin-bottom: 4px;
+    }
+
+    .priority-details {
+      font-size: 14px;
+      color: var(--st-gray-600);
+    }
+
+    .priority-bar {
+      width: 100px;
+      flex-shrink: 0;
+    }
+
+    .priority-bar-label {
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      text-align: right;
+    }
+
+    .priority-bar-label.high { color: var(--st-error); }
+    .priority-bar-label.medium { color: var(--st-warning); }
+    .priority-bar-label.low { color: var(--st-success); }
+
+    .priority-bar-track {
+      height: 8px;
+      background: var(--st-gray-200);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .priority-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .priority-bar-fill.high { background: var(--st-error); width: 100%; }
+    .priority-bar-fill.medium { background: var(--st-warning); width: 66%; }
+    .priority-bar-fill.low { background: var(--st-success); width: 33%; }
+
+    .scores-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .score-item {
+      background: var(--st-gray-75);
+      padding: 16px;
+      border-radius: 10px;
+    }
+
+    .score-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .score-item-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--st-blue-900);
+    }
+
+    .score-item-values {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--st-gray-600);
+    }
+
+    .score-value {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .score-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .score-dot.aanpak { background: var(--st-blue-500); }
+    .score-dot.belang { background: var(--st-link); }
+
+    /* CTA Section */
+    .cta-card {
+      background: var(--st-blue-900);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      color: white;
+    }
+
+    .cta-card h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: white;
+    }
+
+    .cta-card p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 24px;
+    }
+
+    /* Tablet Responsive */
+    @media (max-width: 900px) {
+      .assessment-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .sidebar {
+        position: relative;
+        top: 0;
+        padding: 16px;
+        border-radius: 12px;
+      }
+
+      .sidebar-title {
+        display: none;
+      }
+
+      .nav-list {
+        display: flex;
+        overflow-x: auto;
+        gap: 6px;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-item {
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+
+      .nav-link {
+        white-space: nowrap;
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+
+      .nav-text {
+        display: none;
+      }
+
+      .nav-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+
+      .scores-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .priority-bar {
+        display: none;
+      }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+      .header {
+        padding: 0 16px;
+        height: 52px;
+      }
+
+      .logo img {
+        height: 24px;
+      }
+
+      .assessment-container {
+        padding: calc(52px + 12px) 12px 20px;
+      }
+
+      .assessment-layout {
+        gap: 0;
+      }
+
+      /* Hide sidebar on mobile */
+      .sidebar {
+        display: none;
+      }
+
+      .main-content {
+        padding: 20px 16px;
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      }
+
+      /* Simplified progress bar on mobile */
+      .top-progress-bar {
+        margin-bottom: 20px;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .top-progress-label {
+        margin-bottom: 6px;
+      }
+
+      .top-progress-text {
+        font-size: 11px;
+      }
+
+      .top-progress-percentage {
+        font-size: 12px;
+      }
+
+      .top-progress-track {
+        height: 4px;
+      }
+
+      .section-header {
+        margin-bottom: 16px;
+      }
+
+      .section-badge {
+        font-size: 9px;
+        padding: 4px 8px;
+        margin-bottom: 6px;
+      }
+
+      .section-title {
+        font-size: 22px;
+        margin-bottom: 4px;
+      }
+
+      .section-subtitle {
+        font-size: 14px;
+      }
+
+      .question-card {
+        padding: 16px;
+        border-radius: 10px;
+        margin-bottom: 12px;
+      }
+
+      .question-title {
+        font-size: 16px;
+        margin-bottom: 14px;
+        line-height: 1.4;
+      }
+
+      .question-label {
+        font-size: 10px;
+        margin-bottom: 4px;
+      }
+
+      .question-meta {
+        font-size: 10px;
+      }
+
+      .options-list {
+        gap: 10px;
+      }
+
+      .option {
+        padding: 16px 14px;
+        border-radius: 12px;
+        font-size: 15px;
+        gap: 12px;
+        line-height: 1.4;
+      }
+
+      .option-radio {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+      }
+
+      .checkbox-option {
+        padding: 16px 14px;
+        border-radius: 12px;
+        font-size: 15px;
+      }
+
+      .nav-footer {
+        flex-direction: column-reverse;
+        gap: 10px;
+        margin-top: 20px;
+        padding-top: 16px;
+      }
+
+      .nav-footer .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 20px;
+        font-size: 16px;
+      }
+
+      .nav-footer .btn-secondary {
+        background: var(--st-gray-100);
+        padding: 14px 20px;
+      }
+
+      .form-input,
+      .form-select,
+      .text-input-large {
+        font-size: 16px;
+        padding: 14px;
+        border-radius: 10px;
+      }
+
+      .form-label {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      .form-group {
+        margin-bottom: 16px;
+      }
+
+      /* Hero mobile */
+      .hero {
+        min-height: auto;
+        padding: 48px 20px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero-subtitle {
+        font-size: 15px;
+        margin-bottom: 24px;
+      }
+
+      .eyebrow {
+        font-size: 11px;
+        padding: 6px 12px;
+        margin-bottom: 16px;
+      }
+
+      .hero-features {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .hero-feature {
+        font-size: 13px;
+      }
+
+      .hero-feature-icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      .hero-cta .btn-primary {
+        padding: 16px 28px;
+        font-size: 16px;
+        width: 100%;
+      }
+
+      .hero-testimonial {
+        margin-top: 32px;
+        padding-top: 20px;
+      }
+
+      .hero-quote {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .hero-quote::before {
+        display: none;
+      }
+
+      .hero-quote-avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+      }
+
+      .hero-quote-name {
+        font-size: 13px;
+      }
+
+      .hero-quote-role {
+        font-size: 12px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .main-content {
+      animation: fadeIn 0.3s ease;
+    }
+  </style>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <!-- Hero Section - Splash Screen -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="eyebrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--st-blue-500)" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        L&D Impact Scan
+      </div>
+      <h1>Entdecken Sie, wo L&D die größte Wirkung erzielt</h1>
+      <p class="hero-subtitle">Finden Sie heraus, wo Ihre Personalentwicklung derzeit steht und wo Sie dieses Jahr die größtmögliche Wirkung erzielen können. Kein richtig oder falsch - der Fokus allein zählt.</p>
+
+      <div class="hero-features">
+        <div class="hero-feature">
+          <div class="hero-feature-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <span>4-5 Minuten</span>
+        </div>
+        <div class="hero-feature">
+          <div class="hero-feature-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+          </div>
+          <span>Direkter Bericht</span>
+        </div>
+        <div class="hero-feature">
+          <div class="hero-feature-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <span>Top 3 priorities</span>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <button class="btn btn-primary" onclick="startScan()">
+          Starten Sie den Scan
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        <span class="hero-time">Gratis  •  Kein Account notwendig • Ergebnisse sofort einsehbar</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Assessment Container -->
+  <div class="assessment-container" id="assessment">
+    <header class="header">
+      <div class="header-content">
+        <a href="#" class="logo" onclick="location.reload(); return false;"><img src="studytube-logo.png" alt="StudyTube" /></a>
+      </div>
+    </header>
+    <div class="assessment-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-title">Bereiche</div>
+        <nav>
+          <ul class="nav-list" id="nav-list">
+            <!-- Navigation items will be rendered here -->
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content" id="main-content">
+        <!-- Progress bar at top -->
+        <div class="top-progress-bar" id="top-progress-bar">
+          <div class="top-progress-label">
+            <span class="top-progress-text">Progress</span>
+            <span class="top-progress-percentage" id="top-progress-percentage">0%</span>
+          </div>
+          <div class="top-progress-track">
+            <div class="top-progress-fill" id="top-progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+        <!-- Content will be rendered here -->
+        <div id="section-content"></div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Results Container -->
+  <div class="results-container" id="results">
+    <div class="results-header">
+      <h1>Ihr L&D Impact Profil</h1>
+      <p>Based on your responses, here are your top three L&D priorities — the areas where focused attention has the greatest effect within your organisational context.</p>
+    </div>
+
+    <div class="results-content">
+      <div class="results-card">
+        <h2>Top 3 priorities</h2>
+        <div id="priorities-list"></div>
+      </div>
+
+      <div class="results-card">
+        <h2>Alle Werte</h2>
+        <div class="scores-grid" id="scores-grid"></div>
+      </div>
+
+      <div class="cta-card">
+        <h2>Was ist Ihr nächster Schritt?</h2>
+        <p>Entdecken Sie in einem kurzen Gespräch mit einer unserer L&D-Expertinnen oder einem unserer L&D-Experten, wie Sie Ihre Erkenntnisse in konkrete Maßnahmen übersetzen.</p>
+        <button class="btn btn-white">Termin vereinbaren (30 Min.)</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ============================================
+    // SECTIONS CONFIGURATION
+    // ============================================
+
+    const sections = [
+      { id: 'contact', name: 'Ihre Daten', icon: '1' },
+      { id: 'context', name: 'Status Quo', icon: '2' },
+      { id: 'focusareas-intro', name: 'Fokusbereiche', icon: '3' },
+      { id: 'onboarding-A', name: 'Onboarding', ucId: 'onboarding', questionType: 'A' },
+      { id: 'onboarding-B', name: 'Onboarding', ucId: 'onboarding', questionType: 'B' },
+      { id: 'kennisdeling-A', name: 'Wissensmanagement', ucId: 'kennisdeling', questionType: 'A' },
+      { id: 'kennisdeling-B', name: 'Wissensmanagement', ucId: 'kennisdeling', questionType: 'B' },
+      { id: 'kwalificatie-A', name: 'Qualifikationen', ucId: 'kwalificatie', questionType: 'A' },
+      { id: 'kwalificatie-B', name: 'Qualifikationen', ucId: 'kwalificatie', questionType: 'B' },
+      { id: 'training-A', name: 'Schulungseinkauf', ucId: 'training', questionType: 'A' },
+      { id: 'training-B', name: 'Schulungseinkauf', ucId: 'training', questionType: 'B' },
+      { id: 'regie-A', name: 'Selbstgesteuertes Lernen', ucId: 'regie', questionType: 'A' },
+      { id: 'regie-B', name: 'Selbstgesteuertes Lernen', ucId: 'regie', questionType: 'B' },
+      { id: 'reskilling-A', name: 'Up- und Reskilling', ucId: 'reskilling', questionType: 'A' },
+      { id: 'reskilling-B', name: 'Up- und Reskilling', ucId: 'reskilling', questionType: 'B' },
+      { id: 'strategie-A', name: 'Strategie', ucId: 'strategie', questionType: 'A' },
+      { id: 'strategie-B', name: 'Strategie', ucId: 'strategie', questionType: 'B' },
+      { id: 'mobiliteit-A', name: 'Mobilität', ucId: 'mobiliteit', questionType: 'A' },
+      { id: 'mobiliteit-B', name: 'Mobilität', ucId: 'mobiliteit', questionType: 'B' },
+      { id: 'delivery', name: 'Bericht', icon: '4', isFinal: true }
+    ];
+
+    // ============================================
+    // HUBSPOT MEETINGS CONFIGURATION (DE)
+    // ============================================
+
+    const MEETING_CONFIG = {
+      meetingUrl: 'https://meetings.hubspot.com/sarina-fritsche/15-minuten-meeting-kalender-impact-scan',
+      enabled: true
+    };
+
+    // ============================================
+    // QUESTIONNAIRE DATA
+    // ============================================
+
+    const questionnaire = {
+      contact: {
+        badge: 'SCHRITT 1',
+        title: 'Legen wir los',
+        subtitle: 'Geben Sie Ihre geschäftliche E-Mail-Adresse ein, damit wir Your results zuordnen können.',
+        question: {
+          label: 'E-Mail-Adresse',
+          title: 'Wie lautet Ihre geschäftliche E-Mail-Adresse?',
+        },
+        fields: [
+          { id: 'email', label: 'E-Mail-Adresse', type: 'email', placeholder: 'name@organisation.de', required: true, fullWidth: true }
+        ],
+        consent: 'Mit dem Klick auf die Schaltfläche erklären Sie sich damit einverstanden, dass wir Ihre Daten verarbeiten, um Ihnen releofte Informationen und Kommunikation von Studytube zu senden.'
+      },
+      context: {
+        badge: 'STATUS QUO',
+        title: 'Über Your organisation',
+        subtitle: 'Helfen Sie uns, den Status Quo zu verstehen.',
+        textFields: [
+          {
+            id: 'org_goals_2026',
+            label: 'Organisationsziele 2026',
+            title: 'Was sind die Ziele Ihrer Organisation in 2026?',
+            placeholder: 'Beschreiben Sie hier kurz die wichtigsten Ziele…',
+            required: false,
+            maxLength: 500
+          }
+        ],
+        questions: [
+          {
+            id: 'strategic_goals_ranked',
+            label: 'Strategice Zielsetzungen',
+            title: 'Rank your organisation's strategic goals by priority — from most important (1) to least important (5)',
+            type: 'ranking',
+            options: [
+              { value: 'growth', label: 'Wachstum — Umsatz oder Marktanteil steigern' },
+              { value: 'operational_excellence', label: 'Effiziente operative Umsetzung — Effizienz und Qualität verbessern' },
+              { value: 'transformation', label: 'Transformation — Neue Märkte, Produkte oder Geschäftsmodelle erschließen' },
+              { value: 'stability', label: 'Stabilität — Kontinuität sichern und Kosten kontrollieren' },
+              { value: 'talent_development', label: 'Talent development — Invest in employees to strategically differentiate' }
+            ]
+          },
+          {
+            id: 'ld_challenge',
+            label: 'Herausforderungen im L&D',
+            title: 'Was ist die größte Herausforderung im Bereich von L&D in Ihrer Organisation?',
+            options: [
+              { value: 'fast_productive', label: 'Get new employees productive quickly' },
+              { value: 'compliance', label: 'Compliance-Anforderungen und Qualifikationen sicherstellen' },
+              { value: 'change', label: 'Win employees over for changes' },
+              { value: 'talent_retention', label: 'Talente binden und weiterentwickeln' },
+              { value: 'strategic_alignment', label: 'Lernen mit der Organisationsstrategie verknüpfen' }
+            ]
+          }
+        ]
+      },
+      useCases: {
+        onboarding: {
+          badge: 'ONBOARDING',
+          title: 'Onboarding',
+          subtitle: 'How is Onboarding currently set up in your organisation?',
+          A: {
+            label: 'Derzeitiges Vorgehen',
+            title: 'How is Onboarding currently set up in your organisation?',
+            options: [
+              { score: 1, label: 'Das hängt vollständig von der Führungskraft oder dem Team ab' },
+              { score: 2, label: 'Es gibt einen Ansatz, aber er erfordert viel Abstimmung' },
+              { score: 3, label: 'Das unterscheidet sich je nach Abteilung oder Standort' },
+              { score: 4, label: 'Es gibt einen klaren Prozess, der in der Regel gut funktioniert' },
+              { score: 5, label: 'Alle durchlaufen dasselbe strukturierte Programm' }
+            ]
+          },
+          B: {
+            label: 'Moderately importantkeit',
+            title: 'How important is a good start for new employees?',
+            options: [
+              { score: 1, label: 'Low — Employees mostly find their own way' },
+              { score: 2, label: 'Slightly important — Onboarding hilft, hat aber keine Priorität' },
+              { score: 3, label: 'Moderately important — Onboarding bekommt Aufmerksamkeit, aber nicht strukturell' },
+              { score: 4, label: 'Important — Onboarding beschleunigt Produktivität und Engagement' },
+              { score: 5, label: 'Very important — Onboarding ist ausschlaggebend für Bindung, Performance und Kultur' }
+            ]
+          }
+        },
+        kennisdeling: {
+          badge: 'WISSENSMANAGEMENT',
+          title: 'Wissensmanagement',
+          subtitle: 'Wie wird Wissen dokumentiert und geteilt?',
+          A: {
+            label: 'Derzeitiges Vorgehen',
+            title: 'To what extent is colleagues' knowledge documented and findable?',
+            options: [
+              { score: 1, label: 'Wissen steckt vor allem in den Köpfen der Menschen' },
+              { score: 2, label: 'Es gibt Dokumentation, aber sie ist schwer zu finden' },
+              { score: 3, label: 'Teams organisieren Wissen jeweils auf ihre eigene Art' },
+              { score: 4, label: 'Es gibt einen zentralen Ort, aber Inhalte sind nicht vollständig oder aktuell' },
+              { score: 5, label: 'Wissen ist zentral dokumentiert und gut auffindbar' }
+            ]
+          },
+          B: {
+            label: 'Moderately importantkeit',
+            title: 'Wie wichtig ist es, dass Wissen erhalten bleibt?',
+            options: [
+              { score: 1, label: 'Gering — Wissensverlust fangen wir informell auf' },
+              { score: 2, label: 'Slightly important — vor allem spürbar beim Weggang von Schlüsselpersonen' },
+              { score: 3, label: 'Moderately important — wir merken, wenn Wissen verloren geht' },
+              { score: 4, label: 'Important — Wissenssicherung verhindert Risiken und Ineffizienz' },
+              { score: 5, label: 'Very important — ohne Wissenserhalt kommen wir nicht weiter' }
+            ]
+          }
+        },
+        kwalificatie: {
+          badge: 'QUALIFIKATIONEN',
+          title: 'Qualifikationsmanagement',
+          subtitle: 'Wie behalten Sie den Überblick über Zertifizierungen?',
+          A: {
+            label: 'Derzeitiges Vorgehen',
+            title: 'Wie behalten Sie den Überblick über verpflichtende Zertifizierungen und Qualifikationen?',
+            options: [
+              { score: 1, label: 'Es gibt keine zentrale Übersicht oder Nachverfolgung' },
+              { score: 2, label: 'Übersichten existieren, werden aber manuell gepflegt und sind oft nicht aktuell' },
+              { score: 3, label: 'Qualifikationen werden je nach Team oder Funktion unterschiedlich verwaltet' },
+              { score: 4, label: 'Es gibt ein System mit Berichten, aber die Nachverfolgung erfordert manuelle Arbeit' },
+              { score: 5, label: 'Echtzeit-Transparenz mit automatischer Zuweisung, Erinnerungen und Audit-Pfad' }
+            ]
+          },
+          B: {
+            label: 'Moderately importantkeit',
+            title: 'Wie wichtig ist es, dass alle Qualifikationsanforderungen erfüllt werden?',
+            options: [
+              { score: 1, label: 'Gering — das spielt bei uns kaum eine Rolle' },
+              { score: 2, label: 'Slightly important — für einige Rollen releoft' },
+              { score: 3, label: 'Notwendig, um Anforderungen zu erfüllen' },
+              { score: 4, label: 'Important — Non-Compliance birgt Risiken und Sanktionen' },
+              { score: 5, label: 'Very important — Compliance ist Grundvoraussetzung für den Geschäftsbetrieb' }
+            ]
+          }
+        },
+        training: {
+          badge: 'SCHULUNGSEINKAUF',
+          title: 'Schulungseinkauf',
+          subtitle: 'Wie verläuft die Beantragung externer training?',
+          A: {
+            label: 'Derzeitiges Vorgehen',
+            title: 'Wie verläuft die Beantragung externer training?',
+            options: [
+              { score: 1, label: 'Everyone organises training independently, without overview' },
+              { score: 2, label: 'Es gibt einen Prozess, aber er ist zeitaufwendig und wenig transparent' },
+              { score: 3, label: 'Das unterscheidet sich je nach Führungskraft oder Abteilung' },
+              { score: 4, label: 'Es gibt einen klaren Prozess mit grundlegender Kostentransparenz' },
+              { score: 5, label: 'Der Einkauf ist zentral, effizient und mit Transparenz über Nutzung und Ergebnis verknüpft' }
+            ]
+          },
+          B: {
+            label: 'Moderately importantkeit',
+            title: 'Wie wichtig ist die Kontrolle über externe Schulungsbudgets?',
+            options: [
+              { score: 1, label: 'Gering — wir steuern das nicht aktiv' },
+              { score: 2, label: 'Slightly important — wir behalten es grob im Blick' },
+              { score: 3, label: 'Moderately important — wir wollen wissen, wofür Budgets eingesetzt werden' },
+              { score: 4, label: 'Important — Budget control has priority' },
+              { score: 5, label: 'Very important — jeder Euro muss verantwortet werden' }
+            ]
+          }
+        },
+        regie: {
+          badge: 'EIGENVERANTWORTUNG',
+          title: 'Employee Ownership',
+          subtitle: 'How much ownership do employees have over their development?',
+          A: {
+            label: 'Derzeitiges Vorgehen',
+            title: 'Do employees know which skills belong to their role?',
+            options: [
+              { score: 1, label: 'Nein, Erwartungen und developmentsmöglichkeiten sind unklar' },
+              { score: 2, label: 'Limited — Employees must figure this out themselves' },
+              { score: 3, label: 'Das hängt stark von der Führungskraft ab' },
+              { score: 4, label: 'Ja, Transparenz und Begleitung sind vorhanden' },
+              { score: 5, label: 'Yes, employees have full overview and take initiative themselves' }
+            ]
+          },
+          B: {
+            label: 'Moderately importantkeit',
+            title: 'How important is it that employees take responsibility themselves?',
+            options: [
+              { score: 1, label: 'Gering — development steuern wir zentral' },
+              { score: 2, label: 'Slightly important — die Führungskraft bestimmt weitgehend' },
+              { score: 3, label: 'Moderately important — wir wollen, dass Menschen Eigenverantwortung übernehmen' },
+              { score: 4, label: 'Important — das passt zu unserer Kultur' },
+              { score: 5, label: 'Very important — ohne Eigenverantwortung funktioniert development nicht' }
+            ]
+          }
+        },
+        reskilling: {
+          badge: 'UP- & RESKILLING',
+          title: 'Up- & Reskilling',
+          subtitle: 'How are employees prepared for changes?',
+          A: {
+            label: 'Derzeitiges Vorgehen',
+            title: 'How are employees prepared for changes in their work?',
+            options: [
+              { score: 1, label: 'Das geschieht eigentlich nicht strukturiert' },
+              { score: 2, label: 'Reaktiv und ad hoc – wir schauen spontan, wenn sich etwas ändert' },
+              { score: 3, label: 'Das unterscheidet sich stark je nach Team oder Projekt' },
+              { score: 4, label: 'Es gibt Programme, aber nicht immer maßgeschneidert' },
+              { score: 5, label: 'We train specifically for what employees need' }
+            ]
+          },
+          B: {
+            label: 'Moderately importantkeit',
+            title: 'Wie wichtig ist es, employees rechtzeitig vorzubereiten?',
+            options: [
+              { score: 1, label: 'Gering — unsere Arbeit verändert sich nicht so schnell' },
+              { score: 2, label: 'Slightly important — gelegentlich ist training nötig' },
+              { score: 3, label: 'Moderately important — wir sehen Veränderungen kommen' },
+              { score: 4, label: 'Important — wir müssen uns mitbewegen können' },
+              { score: 5, label: 'Very important — ohne Reskilling verpassen wir den Anschluss' }
+            ]
+          }
+        },
+        strategie: {
+          badge: 'STRATEGIE',
+          title: 'Strategice Skill-development',
+          subtitle: 'Wie ist Lernen mit Ihrer Strategie verknüpft?',
+          A: {
+            label: 'Derzeitiges Vorgehen',
+            title: 'To what extent is learning linked to your strategic goals?',
+            options: [
+              { score: 1, label: 'Es gibt keine explizite Verbindung zwischen Lernen und Strategie' },
+              { score: 2, label: 'Gelegentlich, aber nicht strukturell' },
+              { score: 3, label: 'Je nach Initiative wird das unterschiedlich umgesetzt' },
+              { score: 4, label: 'Es gibt eine klare Richtung, aber sie ist nicht überall implementiert' },
+              { score: 5, label: 'Lernen ist direkt mit strategischen Zielen und kritischen skills verknüpft' }
+            ]
+          },
+          B: {
+            label: 'Moderately importantkeit',
+            title: 'Wie wichtig ist es, dass L&D zur Strategie beiträgt?',
+            options: [
+              { score: 1, label: 'Gering — Lernen ist vor allem operativ' },
+              { score: 2, label: 'Slightly important — releoft bei großen Veränderungen' },
+              { score: 3, label: 'Moderately important — L&D unterstützt strategische Ziele' },
+              { score: 4, label: 'Important — L&D bestimmt, wie zukunftsfähig wir sind' },
+              { score: 5, label: 'Very important — L&D ist unser strategischer Differenzierungsfaktor' }
+            ]
+          }
+        },
+        mobiliteit: {
+          badge: 'MOBILITÄT',
+          title: 'Interne Mobilität',
+          subtitle: 'Wie einfach ist es für employees, intern aufzusteigen oder die Rolle zu wechseln?',
+          A: {
+            label: 'Derzeitiges Vorgehen',
+            title: 'Wie einfach ist es für employees, intern aufzusteigen oder die Rolle zu wechseln?',
+            options: [
+              { score: 1, label: 'Interne Mobilität entsteht zufällig und ist nicht strukturiert organisiert' },
+              { score: 2, label: 'Offene Stellen werden überwiegend extern besetzt' },
+              { score: 3, label: 'Das unterscheidet sich je nach Abteilung oder Team' },
+              { score: 4, label: 'Es gibt einen weitgehend klaren Prozess' },
+              { score: 5, label: 'Interne Möglichkeiten sind transparent und für alle zugänglich' }
+            ]
+          },
+          B: {
+            label: 'Moderately importantkeit',
+            title: 'Wie wichtig ist es, Talente aus den eigenen Reihen zu entwickeln?',
+            options: [
+              { score: 1, label: 'Gering — der Fokus liegt auf externer Rekrutierung' },
+              { score: 2, label: 'Slightly important — releoft, wenn externe Einstellungen schwierig sind' },
+              { score: 3, label: 'Moderately important — stärkt Bindung und Engagement' },
+              { score: 4, label: 'Important — Potenziale gezielt zu nutzen hat hohe Priorität' },
+              { score: 5, label: 'Very important — interne Mobilität ist zentraler Bestandteil unserer Talentstrategie' }
+            ]
+          }
+        }
+      },
+      focusareasIntro: {
+        badge: 'FOKUSBEREICHE',
+        title: 'Acht Fokusbereiche, ein klares Bild',
+        subtitle: 'Wir stellen Ihnen Fragen zu acht Bereichen, in denen L&D in Organisationen Wirkung entfaltet. Ihre Antworten helfen dabei festzustellen, wo Your organisation aktuell steht und wo die größten Chancen liegen.',
+        focusAreas: [
+          'Onboarding',
+          'Wissensmanagement',
+          'Compliance',
+          'Schulungseinkauf',
+          'Employee Ownership',
+          'Up- und Reskilling',
+          'Strategic skills',
+          'Interne Mobilität'
+        ],
+        timeEstimate: 'Der Aufwand beträgt etwa 5 Minuten. Ihre persönlichen Ergebnisse erhalten Sie unmittelbar danach.',
+        ctaText: 'Scan starten'
+      },
+      delivery: {
+        badge: 'LETZTER SCHRITT',
+        title: 'Erhalten Sie Ihren Bericht',
+        subtitle: 'Geben Sie Ihre Daten ein und wählen Sie, wie Sie Your results erhalten möchten.',
+        contactFields: [
+          { id: 'voornaam', label: 'Vorname', type: 'text', placeholder: 'Ihr Vorname', required: true },
+          { id: 'achternaam', label: 'Nachname', type: 'text', placeholder: 'Ihr Nachname', required: true },
+          { id: 'email', label: 'Geschäftliche E-Mail-Adresse', type: 'email', placeholder: 'name@organisation.de', required: true },
+          { id: 'organisatie', label: 'Organisation', type: 'text', placeholder: 'Name der Organisation', required: true },
+          { id: 'telefoon', label: 'Telefonnummer', type: 'tel', placeholder: '+49 ...', required: false }
+        ],
+        deliveryOptions: [
+          { value: 'instant', label: 'Direkt im Anschluss anzeigen' },
+          { value: 'email', label: 'Per E-Mail erhalten (PDF)' }
+        ],
+        consultationCTA: {
+          label: 'Nächste Schritte',
+          title: 'Möchten Sie die Ergebnisse direkt mit einem L&D-Experten besprechen?',
+          subtitle: 'Dann buchen Sie sich hier einen Termin.',
+          buttonText: 'Termin buchen',
+          meetingUrl: MEETING_CONFIG.meetingUrl
+        },
+        timeslotQuestion: {
+          label: 'Erreichbarkeit',
+          title: 'Wann sind Sie erreichbar?',
+          options: [
+            { value: 'morning', label: 'Vormittag (9:00–12:00)' },
+            { value: 'afternoon', label: 'Nachmittag (13:00–17:00)' },
+            { value: 'flexible', label: 'Flexibel — kontaktieren Sie mich zur Abstimmung' }
+          ]
+        }
+      }
+    };
+
+    // ============================================
+    // STATE MANAGEMENT
+    // ============================================
+
+    let currentSectionIndex = 0;
+    let scanId = null;
+    let startedLogged = false;
+    let answers = {
+      contact: {},
+      context: {},
+      useCases: {},
+      delivery: { instant: true, email: true, consultation: null, timeslot: null }
+    };
+    let completedSections = new Set();
+
+    // ============================================
+    // STARTED LOGGING
+    // ============================================
+
+    async function logStarted() {
+      if (startedLogged) return;
+      startedLogged = true;
+      try {
+        await fetch('/api/started', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            result_id: scanId,
+            email: answers.contact.email
+          })
+        });
+        console.log('Started log sent - ID:', scanId);
+      } catch (e) {
+        console.error('Failed to log started:', e);
+      }
+    }
+
+    // ============================================
+    // NAVIGATION FUNCTIONS
+    // ============================================
+
+    function startScan() {
+      scanId = crypto.randomUUID();
+      document.getElementById('hero').style.display = 'none';
+      document.getElementById('assessment').classList.add('active');
+      renderNavigation();
+      renderSection();
+    }
+
+    function goToSection(index) {
+      // Can only go to completed sections or the next available one
+      if (index <= getMaxAccessibleIndex()) {
+        currentSectionIndex = index;
+        renderNavigation();
+        renderSection();
+      }
+    }
+
+    function getMaxAccessibleIndex() {
+      return Math.max(completedSections.size, 0);
+    }
+
+    function nextSection() {
+      if (!validateCurrentSection()) return;
+
+      completedSections.add(sections[currentSectionIndex].id);
+
+      if (currentSectionIndex < sections.length - 1) {
+        currentSectionIndex++;
+        renderNavigation();
+        renderSection();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        showResults();
+      }
+    }
+
+    function prevSection() {
+      if (currentSectionIndex > 0) {
+        currentSectionIndex--;
+        renderNavigation();
+        renderSection();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function validateCurrentSection() {
+      const section = sections[currentSectionIndex];
+
+      if (section.id === 'contact') {
+        const email = document.getElementById('input-contact-email')?.value?.trim();
+        if (!email) {
+          alert('Geben Sie Ihre E-Mail-Adresse ein, um fortzufahren.');
+          return false;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+          return false;
+        }
+        answers.contact = { ...answers.contact, email };
+        logStarted();
+        return true;
+      }
+
+      if (section.id === 'context') {
+        // Check that all 5 ranking slots are filled
+        if (!answers.context.strategic_goals_ranked || answers.context.strategic_goals_ranked.length < 5) {
+          alert('Ordnen Sie alle 5 Ziele, um fortzufahren.');
+          return false;
+        }
+        if (!answers.context.ld_challenge) {
+          alert('Beantworten Sie alle Fragen, um fortzufahren.');
+          return false;
+        }
+      }
+
+      if (section.ucId) {
+        const ucId = section.ucId;
+        const qType = section.questionType;
+        if (!answers.useCases[ucId]?.[qType]) {
+          alert('Beantworten Sie die Frage, um fortzufahren.');
+          return false;
+        }
+      }
+
+      if (section.id === 'delivery') {
+        // Validate contact fields
+        const voornaam = document.getElementById('input-voornaam')?.value;
+        const achternaam = document.getElementById('input-achternaam')?.value;
+        const email = document.getElementById('input-email')?.value;
+        const org = document.getElementById('input-organisatie')?.value;
+        if (!voornaam || !achternaam || !email || !org) {
+          alert('Füllen Sie alle Angaben aus, um fortzufahren.');
+          return false;
+        }
+        const telefoon = document.getElementById('input-telefoon')?.value || '';
+        answers.contact = { voornaam, achternaam, naam: `${voornaam} ${achternaam}`, email, organisatie: org, telefoon };
+
+        if (!answers.delivery.instant && !answers.delivery.email) {
+          alert('Wählen Sie mindestens eine Option für die Zustellung des Berichts aus.');
+          return false;
+        }
+        // Consultation is now a direct CTA link — no validation needed
+      }
+
+      return true;
+    }
+
+    // ============================================
+    // RENDER FUNCTIONS
+    // ============================================
+
+    function renderNavigation() {
+      const navList = document.getElementById('nav-list');
+      const maxIndex = getMaxAccessibleIndex();
+
+      // Group sections for display (combine A/B into single nav item)
+      const navItems = [];
+      let navIndex = 1;
+      sections.forEach((section, index) => {
+        // Skip B sections in nav - they share nav item with A
+        if (section.questionType === 'B') return;
+
+        const isUseCase = !!section.ucId;
+        const sectionA = section;
+        const sectionBIndex = isUseCase ? index + 1 : null;
+        const sectionB = sectionBIndex ? sections[sectionBIndex] : null;
+
+        const isCompletedA = completedSections.has(section.id);
+        const isCompletedB = sectionB ? completedSections.has(sectionB.id) : true;
+        const isCompleted = isCompletedA && isCompletedB;
+
+        const isActiveA = index === currentSectionIndex;
+        const isActiveB = sectionBIndex === currentSectionIndex;
+        const isActive = isActiveA || isActiveB;
+
+        const isAccessible = index <= maxIndex;
+
+        navItems.push({
+          index,
+          section,
+          isCompleted,
+          isActive,
+          isAccessible,
+          isUseCase,
+          icon: section.icon || navIndex.toString(),
+          activeStep: isActiveB ? '2/2' : (isActiveA && isUseCase ? '1/2' : null)
+        });
+        navIndex++;
+      });
+
+      navList.innerHTML = navItems.map(item => {
+        let className = 'nav-link';
+        if (item.isActive) className += ' active';
+        else if (item.isCompleted) className += ' completed';
+        if (!item.isAccessible && !item.isCompleted) className += ' disabled';
+
+        const isFinalStep = item.section.id === 'delivery';
+        if (isFinalStep) className += ' final';
+
+        // Special badge for final step
+        if (isFinalStep) {
+          return `
+            <li class="nav-item">
+              <button class="${className}" onclick="goToSection(${item.index})" ${!item.isAccessible && !item.isCompleted ? 'disabled' : ''}>
+                <span class="nav-badge-final">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                  </svg>
+                  Ihr Bericht
+                </span>
+              </button>
+            </li>
+          `;
+        }
+
+        return `
+          <li class="nav-item">
+            <button class="${className}" onclick="goToSection(${item.index})" ${!item.isAccessible && !item.isCompleted ? 'disabled' : ''}>
+              <span class="nav-icon">${item.isCompleted && !item.isActive ? '✓' : item.icon}</span>
+              <span class="nav-text">${item.section.name}</span>
+              ${item.activeStep ? `<span class="nav-step">${item.activeStep}</span>` : ''}
+            </button>
+          </li>
+        `;
+      }).join('');
+    }
+
+    function renderContactSection(container) {
+      const data = questionnaire.contact;
+      container.innerHTML = `
+        <div class="section-header">
+          <div class="section-badge">${data.badge}</div>
+          <h1 class="section-title">${data.title}</h1>
+          <p class="section-subtitle">${data.subtitle}</p>
+        </div>
+        <div class="question-card">
+          <div class="question-label">${data.question.label}</div>
+          <div class="question-title">${data.question.title}</div>
+          <div class="form-row" style="margin-top: 16px;">
+            ${data.fields.map(field => `
+              <div class="form-group${field.fullWidth ? ' full-width' : ''}">
+                <label class="form-label">${field.label}</label>
+                <input type="${field.type}" class="form-input"
+                  id="input-contact-${field.id}"
+                  placeholder="${field.placeholder}"
+                  value="${answers.contact[field.id] || ''}">
+              </div>
+            `).join('')}
+          </div>
+          <p style="color: var(--st-gray-500); font-size: 13px; margin-top: 16px; line-height: 1.5;">
+            ${data.consent}
+          </p>
+        </div>
+        ${renderNavFooter()}
+      `;
+    }
+
+    function renderSection() {
+      const section = sections[currentSectionIndex];
+      const container = document.getElementById('section-content');
+
+      // Update top progress bar
+      updateTopProgressBar();
+
+      if (section.id === 'contact') {
+        renderContactSection(container);
+      } else if (section.id === 'context') {
+        renderContextSection(container);
+      } else if (section.id === 'focusareas-intro') {
+        renderFocusAreasIntroSection(container);
+      } else if (section.id === 'delivery') {
+        renderDeliverySection(container);
+      } else if (section.ucId) {
+        renderUseCaseSection(container, section.ucId, section.questionType);
+      }
+    }
+
+    function updateTopProgressBar() {
+      const progress = (currentSectionIndex / (sections.length - 1)) * 100;
+      document.getElementById('top-progress-fill').style.width = `${progress}%`;
+      document.getElementById('top-progress-percentage').textContent = `${Math.round(progress)}%`;
+    }
+
+    function renderFocusAreasIntroSection(container) {
+      const data = questionnaire.focusareasIntro;
+      container.innerHTML = `
+        <div class="section-header">
+          <div class="section-badge">${data.badge}</div>
+          <h1 class="section-title">${data.title}</h1>
+          <p class="section-subtitle">${data.subtitle}</p>
+        </div>
+
+        <div class="question-card" style="background: linear-gradient(135deg, #D7EBFF 0%, #B9DCFF 100%);">
+          <div class="question-label">Die 8 Fokusbereiche</div>
+          <div class="focus-areas-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px;">
+            ${data.focusAreas.map((area, index) => `
+              <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: white; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--st-blue-900);">
+                <span style="width: 24px; height: 24px; background: var(--st-blue-500); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">${index + 1}</span>
+                ${area}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div style="text-align: center; padding: 24px 0; color: var(--st-gray-600); font-size: 14px;">
+          ${data.timeEstimate}
+        </div>
+
+        ${renderNavFooter('Los geht\'s!')}
+      `;
+    }
+
+    function renderContextSection(container) {
+      const data = questionnaire.context;
+      container.innerHTML = `
+        <div class="section-header">
+          <div class="section-badge">${data.badge}</div>
+          <h1 class="section-title">${data.title}</h1>
+          <p class="section-subtitle">${data.subtitle}</p>
+        </div>
+
+        ${data.textFields ? data.textFields.map(tf => `
+          <div class="question-card">
+            <div class="question-label">${tf.label}</div>
+            <div class="question-title">${tf.title}</div>
+            <textarea
+              id="${tf.id}"
+              class="text-input-large"
+              placeholder="${tf.placeholder || ''}"
+              ${tf.maxLength ? `maxlength="${tf.maxLength}"` : ''}
+              oninput="answers.context['${tf.id}'] = this.value; ${tf.maxLength ? `document.getElementById('${tf.id}-counter').textContent = this.value.length + '/${tf.maxLength}'` : ''}"
+              onchange="answers.context['${tf.id}'] = this.value"
+            >${answers.context[tf.id] || ''}</textarea>
+            ${tf.maxLength ? `<div class="char-counter" id="${tf.id}-counter">${(answers.context[tf.id] || '').length}/${tf.maxLength}</div>` : ''}
+          </div>
+        `).join('') : ''}
+
+        ${data.questions.map(q => {
+          if (q.type === 'ranking') {
+            const savedRanking = answers.context[q.id] || [];
+            const rankedValues = new Set(savedRanking);
+            const unrankedOptions = q.options.filter(o => !rankedValues.has(o.value));
+            return `
+              <div class="question-card">
+                <div class="question-label">${q.label}</div>
+                <div class="question-title">${q.title}</div>
+                <div class="ranking-container" id="ranking-${q.id}">
+                  <div class="ranking-source" id="ranking-source-${q.id}">
+                    <div class="ranking-source-label">Optionen</div>
+                    ${unrankedOptions.map(o => `
+                      <div class="ranking-item" draggable="true" data-value="${o.value}"
+                           ondragstart="handleRankDragStart(event)"
+                           ondragend="handleRankDragEnd(event)"
+                           onclick="handleRankingItemClick(event, '${q.id}')">
+                        <span class="ranking-handle">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="8" y1="6" x2="16" y2="6"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                            <line x1="8" y1="18" x2="16" y2="18"></line>
+                          </svg>
+                        </span>
+                        <span class="ranking-text">${o.label}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                  <div class="ranking-targets" id="ranking-targets-${q.id}">
+                    ${[1,2,3,4,5].map(n => {
+                      const rankedValue = savedRanking[n - 1];
+                      const rankedOption = rankedValue ? q.options.find(o => o.value === rankedValue) : null;
+                      if (rankedOption) {
+                        return `
+                          <div class="ranking-slot" data-slot="${n}">
+                            <span class="ranking-slot-number">${n}</span>
+                            <div class="ranking-dropzone has-item" data-slot="${n}" data-question="${q.id}"
+                                 ondragover="handleRankDragOver(event)"
+                                 ondragleave="handleRankDragLeave(event)"
+                                 ondrop="handleRankDrop(event)">
+                              <div class="ranking-item in-slot" draggable="true" data-value="${rankedOption.value}"
+                                   ondragstart="handleRankDragStart(event)"
+                                   ondragend="handleRankDragEnd(event)"
+                                   onclick="handleRankingItemClick(event, '${q.id}')">
+                                <span class="ranking-handle">
+                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="8" y1="6" x2="16" y2="6"></line>
+                                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                                    <line x1="8" y1="18" x2="16" y2="18"></line>
+                                  </svg>
+                                </span>
+                                <span class="ranking-text">${rankedOption.label}</span>
+                              </div>
+                            </div>
+                          </div>
+                        `;
+                      }
+                      return `
+                        <div class="ranking-slot" data-slot="${n}">
+                          <span class="ranking-slot-number">${n}</span>
+                          <div class="ranking-dropzone" data-slot="${n}" data-question="${q.id}"
+                               ondragover="handleRankDragOver(event)"
+                               ondragleave="handleRankDragLeave(event)"
+                               ondrop="handleRankDrop(event)">
+                            <span class="ranking-dropzone-label">${n === 1 ? 'Am wichtigsten' : n === 5 ? 'Am wenigsten wichtig' : ''}</span>
+                          </div>
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+                <div class="ranking-hint">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                  Klicken oder ziehen Sie die Optionen, um sie zu priorisieren
+                </div>
+              </div>
+            `;
+          }
+          return `
+            <div class="question-card">
+              <div class="question-label">${q.label}</div>
+              <div class="question-title">${q.title}</div>
+              <div class="options-list">
+                ${q.options.map(o => `
+                  <label class="option ${answers.context[q.id] === o.value ? 'selected' : ''}" onclick="selectContextOption('${q.id}', '${o.value}', this)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">${o.label}</span>
+                  </label>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }).join('')}
+
+        ${renderNavFooter()}
+      `;
+
+      // Initialize source dropzone for ranking after DOM update
+      setTimeout(setupSourceDropzone, 0);
+    }
+
+    function renderUseCaseSection(container, ucId, questionType) {
+      const data = questionnaire.useCases[ucId];
+      const ucAnswers = answers.useCases[ucId] || {};
+      const qData = data[questionType];
+      const questionLabel = questionType === 'A' ? 'Frage 1 von 2' : 'Frage 2 von 2';
+
+      container.innerHTML = `
+        <div class="section-header">
+          <h1 class="section-title">${data.title}</h1>
+        </div>
+
+        <div class="question-card">
+          <div class="question-meta">${questionLabel}</div>
+          <div class="question-label">${qData.label}</div>
+          <div class="question-title">${qData.title}</div>
+          <div class="options-list">
+            ${qData.options.map(o => `
+              <label class="option ${ucAnswers[questionType] === o.score ? 'selected' : ''}" onclick="selectUseCaseOption('${ucId}', '${questionType}', ${o.score}, this)">
+                <span class="option-radio"></span>
+                <span class="option-text">${o.label}</span>
+              </label>
+            `).join('')}
+          </div>
+        </div>
+
+        ${renderNavFooter()}
+      `;
+    }
+
+    function renderDeliverySection(container) {
+      const data = questionnaire.delivery;
+
+      container.innerHTML = `
+        <div class="section-header">
+          <div class="section-badge-result">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            ${data.badge}
+          </div>
+          <h1 class="section-title">${data.title}</h1>
+          <p class="section-subtitle">${data.subtitle}</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-label">Ihre Angaben</div>
+          <div class="question-title">Wohin dürfen wir Ihren Bericht senden?</div>
+          <div class="form-row" style="margin-top: 16px;">
+            ${data.contactFields.map(field => `
+              <div class="form-group">
+                <label class="form-label">${field.label}</label>
+                <input type="${field.type}" class="form-input" id="input-${field.id}" placeholder="${field.placeholder}" value="${answers.contact[field.id] || ''}">
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-label">Zustellung des Berichts</div>
+          <div class="question-title">Wie möchten Sie Ihren Bericht erhalten?</div>
+          ${data.deliveryOptions.map(o => `
+            <label class="checkbox-option ${answers.delivery[o.value] ? 'selected' : ''}" onclick="toggleDeliveryOption('${o.value}', this)">
+              <span class="checkbox-box">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span class="option-text">${o.label}</span>
+            </label>
+          `).join('')}
+          <p style="margin: 12px 0 0; color: var(--st-gray-500); font-size: 13px; line-height: 1.5;">Durch betätigen des Buttons erteilen Sie Studytube die Erlaubnis, die erforderlichen Daten zu verarbeiten und Ihnen releofte Informationen zuzusenden.</p>
+        </div>
+
+        <div class="question-card">
+          <div class="question-label">${data.consultationCTA.label}</div>
+          <div class="question-title">${data.consultationCTA.title}</div>
+          <p style="margin: 8px 0 16px; color: var(--st-gray-600); font-size: 15px;">${data.consultationCTA.subtitle}</p>
+          <a href="${data.consultationCTA.meetingUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            ${data.consultationCTA.buttonText}
+          </a>
+        </div>
+
+        ${renderNavFooter(true)}
+      `;
+    }
+
+    function renderNavFooter(isLastOrCustomText = false) {
+      const isLast = isLastOrCustomText === true;
+      const customText = typeof isLastOrCustomText === 'string' ? isLastOrCustomText : null;
+      const buttonText = customText || (isLast ? 'Ergebnisse ansehen' : 'Nächste');
+      const showCheckIcon = isLast;
+
+      return `
+        <div class="nav-footer">
+          <button class="btn btn-secondary" onclick="prevSection()" ${currentSectionIndex === 0 ? 'style="visibility: hidden"' : ''}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Previous
+          </button>
+          <button class="btn btn-primary" onclick="nextSection()">
+            ${buttonText}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              ${showCheckIcon ? '<polyline points="20 6 9 17 4 12"></polyline>' : '<line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>'}
+            </svg>
+          </button>
+        </div>
+      `;
+    }
+
+    // ============================================
+    // SELECTION HANDLERS
+    // ============================================
+
+    function selectContextOption(questionId, value, element) {
+      answers.context[questionId] = value;
+      const card = element.closest('.question-card');
+      card.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      element.classList.add('selected');
+    }
+
+    // Drag and Drop for Ranking (Two-Column Slot System)
+    let draggedRankItem = null;
+
+    function handleRankDragStart(event) {
+      draggedRankItem = event.target.closest('.ranking-item');
+      draggedRankItem.classList.add('dragging');
+      event.dataTransfer.effectAllowed = 'move';
+      event.dataTransfer.setData('text/plain', draggedRankItem.dataset.value);
+    }
+
+    function handleRankDragEnd(event) {
+      if (draggedRankItem) {
+        draggedRankItem.classList.remove('dragging');
+      }
+      document.querySelectorAll('.ranking-dropzone').forEach(dz => {
+        dz.classList.remove('drag-over');
+      });
+      draggedRankItem = null;
+    }
+
+    function handleRankDragOver(event) {
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'move';
+      const dropzone = event.target.closest('.ranking-dropzone');
+      if (dropzone) {
+        dropzone.classList.add('drag-over');
+      }
+    }
+
+    function handleRankDragLeave(event) {
+      const dropzone = event.target.closest('.ranking-dropzone');
+      if (dropzone && !dropzone.contains(event.relatedTarget)) {
+        dropzone.classList.remove('drag-over');
+      }
+    }
+
+    function handleRankDrop(event) {
+      event.preventDefault();
+      const dropzone = event.target.closest('.ranking-dropzone');
+      if (!dropzone || !draggedRankItem) return;
+
+      dropzone.classList.remove('drag-over');
+      const questionId = dropzone.dataset.question;
+      const slot = parseInt(dropzone.dataset.slot);
+
+      // If dropzone already has an item, move it back to source
+      const existingItem = dropzone.querySelector('.ranking-item');
+      if (existingItem) {
+        const source = document.getElementById(`ranking-source-${questionId}`);
+        existingItem.classList.remove('in-slot');
+        source.appendChild(existingItem);
+      }
+
+      // If dragged item was in another slot, clear that slot
+      const previousSlot = draggedRankItem.closest('.ranking-dropzone');
+      if (previousSlot) {
+        previousSlot.classList.remove('has-item');
+        const label = previousSlot.dataset.slot == 1 ? 'Am wichtigsten' : previousSlot.dataset.slot == 5 ? 'Am wenigsten wichtig' : '';
+        previousSlot.innerHTML = `<span class="ranking-dropzone-label">${label}</span>`;
+      }
+
+      // Move item to dropzone
+      dropzone.innerHTML = '';
+      draggedRankItem.classList.add('in-slot');
+      dropzone.appendChild(draggedRankItem);
+      dropzone.classList.add('has-item');
+
+      // Update answers
+      updateRankingAnswers(questionId);
+    }
+
+    function updateRankingAnswers(questionId) {
+      const targets = document.getElementById(`ranking-targets-${questionId}`);
+      const ranking = [];
+      targets.querySelectorAll('.ranking-slot').forEach(slot => {
+        const dropzone = slot.querySelector('.ranking-dropzone');
+        const item = dropzone.querySelector('.ranking-item');
+        if (item) {
+          ranking.push(item.dataset.value);
+        } else {
+          ranking.push(null);
+        }
+      });
+      // Filter out nulls and store
+      answers.context[questionId] = ranking.filter(v => v !== null);
+    }
+
+    // Allow dropping back to source
+    function setupSourceDropzone() {
+      document.querySelectorAll('.ranking-source').forEach(source => {
+        source.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'move';
+        });
+        source.addEventListener('drop', (e) => {
+          e.preventDefault();
+          if (!draggedRankItem) return;
+
+          const previousSlot = draggedRankItem.closest('.ranking-dropzone');
+          if (previousSlot) {
+            previousSlot.classList.remove('has-item');
+            const label = previousSlot.dataset.slot == 1 ? 'Am wichtigsten' : previousSlot.dataset.slot == 5 ? 'Am wenigsten wichtig' : '';
+            previousSlot.innerHTML = `<span class="ranking-dropzone-label">${label}</span>`;
+
+            draggedRankItem.classList.remove('in-slot');
+            source.appendChild(draggedRankItem);
+
+            const questionId = previousSlot.dataset.question;
+            updateRankingAnswers(questionId);
+          }
+        });
+      });
+    }
+
+    // Initialize source dropzones when page loads
+    document.addEventListener('DOMContentLoaded', setupSourceDropzone);
+
+    // Click-to-rank for mobile/touch support
+    function handleRankingItemClick(event, questionId) {
+      const item = event.target.closest('.ranking-item');
+      if (!item) return;
+
+      // If item is already in a slot, return it to source
+      const currentSlot = item.closest('.ranking-dropzone');
+      if (currentSlot) {
+        currentSlot.classList.remove('has-item');
+        const slotNum = currentSlot.dataset.slot;
+        const label = slotNum == 1 ? 'Am wichtigsten' : slotNum == 5 ? 'Am wenigsten wichtig' : '';
+
+        const source = document.getElementById(`ranking-source-${questionId}`);
+        item.classList.remove('in-slot');
+        source.appendChild(item);
+
+        // Re-add empty label
+        if (!currentSlot.querySelector('.ranking-dropzone-label')) {
+          currentSlot.insertAdjacentHTML('afterbegin', `<span class="ranking-dropzone-label">${label}</span>`);
+        }
+
+        updateRankingAnswers(questionId);
+        return;
+      }
+
+      // Find first empty slot
+      const targets = document.getElementById(`ranking-targets-${questionId}`);
+      const emptySlot = targets.querySelector('.ranking-dropzone:not(.has-item)');
+      if (!emptySlot) return; // All slots filled
+
+      // Move item to slot
+      emptySlot.innerHTML = '';
+      item.classList.add('in-slot');
+      emptySlot.appendChild(item);
+      emptySlot.classList.add('has-item');
+
+      updateRankingAnswers(questionId);
+    }
+
+    function selectUseCaseOption(ucId, type, score, element) {
+      if (!answers.useCases[ucId]) answers.useCases[ucId] = {};
+      answers.useCases[ucId][type] = score;
+      const card = element.closest('.question-card');
+      card.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      element.classList.add('selected');
+    }
+
+    function toggleDeliveryOption(value, element) {
+      answers.delivery[value] = !answers.delivery[value];
+      element.classList.toggle('selected', answers.delivery[value]);
+    }
+
+    function openMeetingScheduler() {
+      const meetingUrl = MEETING_CONFIG.meetingUrl;
+      window.open(meetingUrl, '_blank', 'width=700,height=750');
+    }
+
+    // ============================================
+    // RESULTS
+    // ============================================
+
+    function calculatePriority(A, B) {
+      if (B >= 4 && A <= 3) return B * (6 - A);
+      return 0;
+    }
+
+    async function showResults() {
+      const resultId = scanId || crypto.randomUUID();
+
+      const resultsData = {
+        contact: answers.contact,
+        context: answers.context,
+        useCases: answers.useCases,
+        delivery: answers.delivery,
+        meta: {
+          completed_at: new Date().toISOString(),
+          version: '4.0'
+        }
+      };
+
+      // Show loading state
+      const submitBtn = document.querySelector('.nav-footer .btn-primary');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <svg class="spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+            <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round">
+              <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
+            </path>
+          </svg>
+          Speichern...
+        `;
+      }
+
+      // Save to localStorage as backup
+      localStorage.setItem('ldScanResults', JSON.stringify(resultsData));
+
+      let savedToServer = false;
+
+      try {
+        const response = await fetch('/api/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            result_id: resultId,
+            email: answers.contact.email,
+            organisation: answers.contact.organisatie,
+            payload: resultsData
+          })
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`API error ${response.status}: ${errorText}`);
+        }
+
+        const data = await response.json();
+        console.log('Saved to Google Sheets - ID:', resultId, 'Score:', data.score, 'Phase:', data.phase);
+        savedToServer = true;
+      } catch (error) {
+        console.error('Submit failed:', error);
+      }
+
+      if (savedToServer) {
+        window.location.href = `/survey/results-v2?id=${resultId}`;
+      } else {
+        console.warn('Could not save to server. Data saved locally only.');
+        const isLocalTest = window.location.protocol === 'file:' || window.location.hostname === 'localhost';
+        if (!isLocalTest) {
+          alert('Hinweis: Your results konnten nicht auf dem Server gespeichert werden. Sie können sie jetzt einsehen, der Link ist jedoch nicht teilbar. Bitte kontaktieren Sie den Support, falls das Problem weiterhin besteht.');
+        }
+        window.location.href = '/survey/results-v2';
+      }
+    }
+  </script>
+</body>
+</html>
