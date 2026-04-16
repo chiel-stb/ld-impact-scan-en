@@ -1686,28 +1686,28 @@
 
     const questionnaire = {
       contact: {
-        badge: 'STEP 1',
-        title: 'Let's get started',
-        subtitle: 'Enter your work email address so we can assign your results.',
+        badge: 'SCHRITT 1',
+        title: 'Legen wir los',
+        subtitle: 'Geben Sie Ihre geschäftliche E-Mail-Adresse ein, damit wir Your results zuordnen können.',
         question: {
-          label: 'Email address',
-          title: 'What is your work email address?',
+          label: 'E-Mail-Adresse',
+          title: 'Wie lautet Ihre geschäftliche E-Mail-Adresse?',
         },
         fields: [
-          { id: 'email', label: 'Email address', type: 'email', placeholder: 'your.name@organisation.com', required: true, fullWidth: true }
+          { id: 'email', label: 'E-Mail-Adresse', type: 'email', placeholder: 'name@organisation.de', required: true, fullWidth: true }
         ],
-        consent: 'By clicking the button, you agree that we may process your data to send you relevant information and communications from Studytube.'
+        consent: 'Mit dem Klick auf die Schaltfläche erklären Sie sich damit einverstanden, dass wir Ihre Daten verarbeiten, um Ihnen releofte Informationen und Kommunikation von Studytube zu senden.'
       },
       context: {
-        badge: 'CONTEXT',
-        title: 'About your organisation',
-        subtitle: 'Help us understand your current situation.',
+        badge: 'STATUS QUO',
+        title: 'Über Your organisation',
+        subtitle: 'Helfen Sie uns, den Status Quo zu verstehen.',
         textFields: [
           {
             id: 'org_goals_2026',
-            label: 'Organisational goals 2026',
-            title: 'What are your organisation's goals for 2026?',
-            placeholder: 'Briefly describe the most important goals…',
+            label: 'Organisationsziele 2026',
+            title: 'Was sind die Ziele Ihrer Organisation in 2026?',
+            placeholder: 'Beschreiben Sie hier kurz die wichtigsten Ziele…',
             required: false,
             maxLength: 500
           }
@@ -1715,27 +1715,27 @@
         questions: [
           {
             id: 'strategic_goals_ranked',
-            label: 'Strategic priorities',
+            label: 'Strategice Zielsetzungen',
             title: 'Rank your organisation's strategic goals by priority — from most important (1) to least important (5)',
             type: 'ranking',
             options: [
-              { value: 'growth', label: 'Growth — Increase revenue or market share' },
-              { value: 'operational_excellence', label: 'Operational excellence — Improve efficiency and quality' },
-              { value: 'transformation', label: 'Transformation — Enter new markets, products, or business models' },
-              { value: 'stability', label: 'Stability — Ensure continuity and control costs' },
+              { value: 'growth', label: 'Wachstum — Umsatz oder Marktanteil steigern' },
+              { value: 'operational_excellence', label: 'Effiziente operative Umsetzung — Effizienz und Qualität verbessern' },
+              { value: 'transformation', label: 'Transformation — Neue Märkte, Produkte oder Geschäftsmodelle erschließen' },
+              { value: 'stability', label: 'Stabilität — Kontinuität sichern und Kosten kontrollieren' },
               { value: 'talent_development', label: 'Talent development — Invest in employees to strategically differentiate' }
             ]
           },
           {
             id: 'ld_challenge',
-            label: 'LHerausforderungen im L&DD challenges',
-            title: 'What is the biggest challenge in LWas ist die größte Herausforderung im Bereich von L&D in Ihrer Organisation?D at your organisation?',
+            label: 'Herausforderungen im L&D',
+            title: 'Was ist die größte Herausforderung im Bereich von L&D in Ihrer Organisation?',
             options: [
               { value: 'fast_productive', label: 'Get new employees productive quickly' },
-              { value: 'compliance', label: 'Ensure compliance requirements and qualifications' },
+              { value: 'compliance', label: 'Compliance-Anforderungen und Qualifikationen sicherstellen' },
               { value: 'change', label: 'Win employees over for changes' },
-              { value: 'talent_retention', label: 'Retain and develop talent' },
-              { value: 'strategic_alignment', label: 'Link learning with organisational strategy' }
+              { value: 'talent_retention', label: 'Talente binden und weiterentwickeln' },
+              { value: 'strategic_alignment', label: 'Lernen mit der Organisationsstrategie verknüpfen' }
             ]
           }
         ]
@@ -1746,23 +1746,23 @@
           title: 'Onboarding',
           subtitle: 'How is Onboarding currently set up in your organisation?',
           A: {
-            label: 'Current approach',
+            label: 'Derzeitiges Vorgehen',
             title: 'How is Onboarding currently set up in your organisation?',
             options: [
-              { score: 1, label: 'It depends entirely on the manager or team' },
-              { score: 2, label: 'There is an approach, but it requires a lot of coordination' },
-              { score: 3, label: 'It differs by department or location' },
-              { score: 4, label: 'There is a clear process that generally works well' },
-              { score: 5, label: 'Everyone goes through the same structured programme' }
+              { score: 1, label: 'Das hängt vollständig von der Führungskraft oder dem Team ab' },
+              { score: 2, label: 'Es gibt einen Ansatz, aber er erfordert viel Abstimmung' },
+              { score: 3, label: 'Das unterscheidet sich je nach Abteilung oder Standort' },
+              { score: 4, label: 'Es gibt einen klaren Prozess, der in der Regel gut funktioniert' },
+              { score: 5, label: 'Alle durchlaufen dasselbe strukturierte Programm' }
             ]
           },
           B: {
-            label: 'Strategic importance',
+            label: 'Moderately importantkeit',
             title: 'How important is a good start for new employees?',
             options: [
               { score: 1, label: 'Low — Employees mostly find their own way' },
-              { score: 2, label: 'Slightly important — Onboarding helps but is not a priority' },
-              { score: 3, label: 'Moderately important — Onboarding receives attention but not structurally' },
+              { score: 2, label: 'Slightly important — Onboarding hilft, hat aber keine Priorität' },
+              { score: 3, label: 'Moderately important — Onboarding bekommt Aufmerksamkeit, aber nicht strukturell' },
               { score: 4, label: 'Important — Onboarding beschleunigt Produktivität und Engagement' },
               { score: 5, label: 'Very important — Onboarding ist ausschlaggebend für Bindung, Performance und Kultur' }
             ]
@@ -1773,7 +1773,7 @@
           title: 'Wissensmanagement',
           subtitle: 'Wie wird Wissen dokumentiert und geteilt?',
           A: {
-            label: 'Current approach',
+            label: 'Derzeitiges Vorgehen',
             title: 'To what extent is colleagues' knowledge documented and findable?',
             options: [
               { score: 1, label: 'Wissen steckt vor allem in den Köpfen der Menschen' },
@@ -1784,7 +1784,7 @@
             ]
           },
           B: {
-            label: 'Strategic importance',
+            label: 'Moderately importantkeit',
             title: 'Wie wichtig ist es, dass Wissen erhalten bleibt?',
             options: [
               { score: 1, label: 'Gering — Wissensverlust fangen wir informell auf' },
@@ -1800,7 +1800,7 @@
           title: 'Qualifikationsmanagement',
           subtitle: 'Wie behalten Sie den Überblick über Zertifizierungen?',
           A: {
-            label: 'Current approach',
+            label: 'Derzeitiges Vorgehen',
             title: 'Wie behalten Sie den Überblick über verpflichtende Zertifizierungen und Qualifikationen?',
             options: [
               { score: 1, label: 'Es gibt keine zentrale Übersicht oder Nachverfolgung' },
@@ -1811,7 +1811,7 @@
             ]
           },
           B: {
-            label: 'Strategic importance',
+            label: 'Moderately importantkeit',
             title: 'Wie wichtig ist es, dass alle Qualifikationsanforderungen erfüllt werden?',
             options: [
               { score: 1, label: 'Gering — das spielt bei uns kaum eine Rolle' },
@@ -1827,7 +1827,7 @@
           title: 'Schulungseinkauf',
           subtitle: 'Wie verläuft die Beantragung externer training?',
           A: {
-            label: 'Current approach',
+            label: 'Derzeitiges Vorgehen',
             title: 'Wie verläuft die Beantragung externer training?',
             options: [
               { score: 1, label: 'Everyone organises training independently, without overview' },
@@ -1838,7 +1838,7 @@
             ]
           },
           B: {
-            label: 'Strategic importance',
+            label: 'Moderately importantkeit',
             title: 'Wie wichtig ist die Kontrolle über externe Schulungsbudgets?',
             options: [
               { score: 1, label: 'Gering — wir steuern das nicht aktiv' },
@@ -1854,7 +1854,7 @@
           title: 'Employee Ownership',
           subtitle: 'How much ownership do employees have over their development?',
           A: {
-            label: 'Current approach',
+            label: 'Derzeitiges Vorgehen',
             title: 'Do employees know which skills belong to their role?',
             options: [
               { score: 1, label: 'Nein, Erwartungen und developmentsmöglichkeiten sind unklar' },
@@ -1865,7 +1865,7 @@
             ]
           },
           B: {
-            label: 'Strategic importance',
+            label: 'Moderately importantkeit',
             title: 'How important is it that employees take responsibility themselves?',
             options: [
               { score: 1, label: 'Gering — development steuern wir zentral' },
@@ -1881,7 +1881,7 @@
           title: 'Up- & Reskilling',
           subtitle: 'How are employees prepared for changes?',
           A: {
-            label: 'Current approach',
+            label: 'Derzeitiges Vorgehen',
             title: 'How are employees prepared for changes in their work?',
             options: [
               { score: 1, label: 'Das geschieht eigentlich nicht strukturiert' },
@@ -1892,7 +1892,7 @@
             ]
           },
           B: {
-            label: 'Strategic importance',
+            label: 'Moderately importantkeit',
             title: 'Wie wichtig ist es, employees rechtzeitig vorzubereiten?',
             options: [
               { score: 1, label: 'Gering — unsere Arbeit verändert sich nicht so schnell' },
@@ -1908,7 +1908,7 @@
           title: 'Strategice Skill-development',
           subtitle: 'Wie ist Lernen mit Ihrer Strategie verknüpft?',
           A: {
-            label: 'Current approach',
+            label: 'Derzeitiges Vorgehen',
             title: 'To what extent is learning linked to your strategic goals?',
             options: [
               { score: 1, label: 'Es gibt keine explizite Verbindung zwischen Lernen und Strategie' },
@@ -1919,7 +1919,7 @@
             ]
           },
           B: {
-            label: 'Strategic importance',
+            label: 'Moderately importantkeit',
             title: 'Wie wichtig ist es, dass L&D zur Strategie beiträgt?',
             options: [
               { score: 1, label: 'Gering — Lernen ist vor allem operativ' },
@@ -1935,7 +1935,7 @@
           title: 'Interne Mobilität',
           subtitle: 'Wie einfach ist es für employees, intern aufzusteigen oder die Rolle zu wechseln?',
           A: {
-            label: 'Current approach',
+            label: 'Derzeitiges Vorgehen',
             title: 'Wie einfach ist es für employees, intern aufzusteigen oder die Rolle zu wechseln?',
             options: [
               { score: 1, label: 'Interne Mobilität entsteht zufällig und ist nicht strukturiert organisiert' },
@@ -1946,7 +1946,7 @@
             ]
           },
           B: {
-            label: 'Strategic importance',
+            label: 'Moderately importantkeit',
             title: 'Wie wichtig ist es, Talente aus den eigenen Reihen zu entwickeln?',
             options: [
               { score: 1, label: 'Gering — der Fokus liegt auf externer Rekrutierung' },
@@ -1982,7 +1982,7 @@
         contactFields: [
           { id: 'voornaam', label: 'Vorname', type: 'text', placeholder: 'Ihr Vorname', required: true },
           { id: 'achternaam', label: 'Nachname', type: 'text', placeholder: 'Ihr Nachname', required: true },
-          { id: 'email', label: 'Geschäftliche Email address', type: 'email', placeholder: 'your.name@organisation.com', required: true },
+          { id: 'email', label: 'Geschäftliche E-Mail-Adresse', type: 'email', placeholder: 'name@organisation.de', required: true },
           { id: 'organisatie', label: 'Organisation', type: 'text', placeholder: 'Name der Organisation', required: true },
           { id: 'telefoon', label: 'Telefonnummer', type: 'tel', placeholder: '+49 ...', required: false }
         ],
@@ -2101,11 +2101,11 @@
       if (section.id === 'contact') {
         const email = document.getElementById('input-contact-email')?.value?.trim();
         if (!email) {
-          alert('Geben Sie Ihre Email address ein, um fortzufahren.');
+          alert('Geben Sie Ihre E-Mail-Adresse ein, um fortzufahren.');
           return false;
         }
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          alert('Bitte geben Sie eine gültige Email address ein.');
+          alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
           return false;
         }
         answers.contact = { ...answers.contact, email };
