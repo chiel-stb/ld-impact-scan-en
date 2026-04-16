@@ -1401,8 +1401,8 @@
         </svg>
         L&D Impact Scan
       </div>
-      <h1>Ontdek waar jouw L&D het meeste impact maakt</h1>
-      <p class="hero-subtitle">Krijg inzicht in de volwassenheid van je L&D op 8 strategische gebieden en ontvang direct een gepersonaliseerd rapport.</p>
+      <h1>Discover where L&D creates the greatest impact</h1>
+      <p class="hero-subtitle">Gain insight into your L&D maturity across 8 strategic areas and receive an instant personalised report.</p>
 
       <div class="hero-features">
         <div class="hero-feature">
@@ -1412,7 +1412,7 @@
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
           </div>
-          <span>4-5 minuten</span>
+          <span>4-5 minutes</span>
         </div>
         <div class="hero-feature">
           <div class="hero-feature-icon">
@@ -1421,7 +1421,7 @@
               <polyline points="14 2 14 8 20 8"></polyline>
             </svg>
           </div>
-          <span>Direct rapport</span>
+          <span>Instant report</span>
         </div>
         <div class="hero-feature">
           <div class="hero-feature-icon">
@@ -1429,19 +1429,19 @@
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
             </svg>
           </div>
-          <span>Top 3 prioriteiten</span>
+          <span>Top 3 priorities</span>
         </div>
       </div>
 
       <div class="hero-cta">
         <button class="btn btn-primary" onclick="startScan()">
-          Start de gratis scan
+          Start the scan
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </button>
-        <span class="hero-time">Geen account nodig • Resultaat direct beschikbaar</span>
+        <span class="hero-time">Free • No account required • Instant results</span>
       </div>
 
     </div>
@@ -1457,7 +1457,7 @@
     <div class="assessment-layout">
       <!-- Sidebar Navigation -->
       <aside class="sidebar">
-        <div class="sidebar-title">Secties</div>
+        <div class="sidebar-title">Sections</div>
         <nav>
           <ul class="nav-list" id="nav-list">
             <!-- Navigation items will be rendered here -->
@@ -1515,25 +1515,25 @@
     // ============================================
 
     const sections = [
-      { id: 'contact', name: 'Contact', icon: '1' },
+      { id: 'contact', name: 'Your details', icon: '1' },
       { id: 'context', name: 'Context', icon: '2' },
       { id: 'onboarding-A', name: 'Onboarding', ucId: 'onboarding', questionType: 'A' },
       { id: 'onboarding-B', name: 'Onboarding', ucId: 'onboarding', questionType: 'B' },
-      { id: 'kennisdeling-A', name: 'Kennisdeling', ucId: 'kennisdeling', questionType: 'A' },
-      { id: 'kennisdeling-B', name: 'Kennisdeling', ucId: 'kennisdeling', questionType: 'B' },
-      { id: 'kwalificatie-A', name: 'Kwalificaties', ucId: 'kwalificatie', questionType: 'A' },
-      { id: 'kwalificatie-B', name: 'Kwalificaties', ucId: 'kwalificatie', questionType: 'B' },
-      { id: 'training-A', name: 'Trainingsinkoop', ucId: 'training', questionType: 'A' },
-      { id: 'training-B', name: 'Trainingsinkoop', ucId: 'training', questionType: 'B' },
-      { id: 'regie-A', name: 'Regie', ucId: 'regie', questionType: 'A' },
-      { id: 'regie-B', name: 'Regie', ucId: 'regie', questionType: 'B' },
+      { id: 'kennisdeling-A', name: 'Knowledge Sharing', ucId: 'kennisdeling', questionType: 'A' },
+      { id: 'kennisdeling-B', name: 'Knowledge Sharing', ucId: 'kennisdeling', questionType: 'B' },
+      { id: 'kwalificatie-A', name: 'Qualification Management', ucId: 'kwalificatie', questionType: 'A' },
+      { id: 'kwalificatie-B', name: 'Qualification Management', ucId: 'kwalificatie', questionType: 'B' },
+      { id: 'training-A', name: 'Training Procurement', ucId: 'training', questionType: 'A' },
+      { id: 'training-B', name: 'Training Procurement', ucId: 'training', questionType: 'B' },
+      { id: 'regie-A', name: 'Employee Ownership', ucId: 'regie', questionType: 'A' },
+      { id: 'regie-B', name: 'Employee Ownership', ucId: 'regie', questionType: 'B' },
       { id: 'reskilling-A', name: 'Up- & Reskilling', ucId: 'reskilling', questionType: 'A' },
       { id: 'reskilling-B', name: 'Up- & Reskilling', ucId: 'reskilling', questionType: 'B' },
-      { id: 'strategie-A', name: 'Strategie', ucId: 'strategie', questionType: 'A' },
-      { id: 'strategie-B', name: 'Strategie', ucId: 'strategie', questionType: 'B' },
-      { id: 'mobiliteit-A', name: 'Mobiliteit', ucId: 'mobiliteit', questionType: 'A' },
-      { id: 'mobiliteit-B', name: 'Mobiliteit', ucId: 'mobiliteit', questionType: 'B' },
-      { id: 'delivery', name: 'Rapport', icon: '3' }
+      { id: 'strategie-A', name: 'Strategic Skills', ucId: 'strategie', questionType: 'A' },
+      { id: 'strategie-B', name: 'Strategic Skills', ucId: 'strategie', questionType: 'B' },
+      { id: 'mobiliteit-A', name: 'Internal Mobility', ucId: 'mobiliteit', questionType: 'A' },
+      { id: 'mobiliteit-B', name: 'Internal Mobility', ucId: 'mobiliteit', questionType: 'B' },
+      { id: 'delivery', name: 'Report', icon: '3' }
     ];
 
     // ============================================
@@ -1542,25 +1542,25 @@
 
     const questionnaire = {
       contact: {
-        badge: 'STAP 1',
-        title: 'Even kennismaken',
-        subtitle: 'Vul je gegevens in zodat we je rapport kunnen versturen.',
+        badge: 'STEP 1',
+        title: "Let's get started",
+        subtitle: 'Enter your details so we can send you the report.',
         fields: [
-          { id: 'naam', label: 'Naam', type: 'text', placeholder: 'Je naam', required: true },
-          { id: 'email', label: 'E-mailadres', type: 'email', placeholder: 'naam@bedrijf.nl', required: true },
-          { id: 'organisatie', label: 'Organisatie', type: 'text', placeholder: 'Bedrijfsnaam', required: true }
+          { id: 'naam', label: 'Name', type: 'text', placeholder: 'Your name', required: true },
+          { id: 'email', label: 'Email address', type: 'email', placeholder: 'your.name@organisation.com', required: true },
+          { id: 'organisatie', label: 'Organisation', type: 'text', placeholder: 'Company name', required: true }
         ]
       },
       context: {
         badge: 'CONTEXT',
-        title: 'Over jullie organisatie',
-        subtitle: 'Help ons de context te begrijpen.',
+        title: 'About your organisation',
+        subtitle: 'Help us understand the context.',
         textFields: [
           {
             id: 'org_goals_2026',
-            label: 'Organisatiedoelen 2026',
-            title: 'Wat zijn de doelen van jullie organisatie voor 2026?',
-            placeholder: 'Beschrijf hier kort de belangrijkste doelen...',
+            label: 'Organisational goals 2026',
+            title: 'What are your organisation'"'"'s goals for 2026?',
+            placeholder: 'Briefly describe the most important goals...',
             required: false,
             maxLength: 500
           }
@@ -1568,8 +1568,8 @@
         questions: [
           {
             id: 'strategic_goal',
-            label: 'Strategische doelstelling',
-            title: 'Wat is de belangrijkste strategische doelstelling van jullie organisatie?',
+            label: 'Strategic priority',
+            title: 'What is your organisation'"'"'s primary strategic priority?',
             options: [
               { value: 'growth', label: 'Groei — omzet of marktaandeel vergroten' },
               { value: 'operational_excellence', label: 'Operational Excellence — efficiëntie en kwaliteit verhogen' },
@@ -1579,8 +1579,8 @@
           },
           {
             id: 'ld_challenge',
-            label: 'L&D-uitdaging',
-            title: 'Wat is de grootste L&D-uitdaging binnen jullie organisatie?',
+            label: 'L&D challenge',
+            title: 'What is the biggest L&D challenge at your organisation?',
             options: [
               { value: 'fast_productive', label: 'Snel nieuwe mensen productief krijgen' },
               { value: 'compliance', label: 'Compliance en kwalificaties bijhouden' },
@@ -2234,10 +2234,10 @@
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
-            Vorige
+            Previous
           </button>
           <button class="btn btn-primary" onclick="nextSection()">
-            ${isLast ? 'Bekijk resultaten' : 'Volgende'}
+            ${isLast ? 'View results' : 'Next'}
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               ${isLast ? '<polyline points="20 6 9 17 4 12"></polyline>' : '<line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>'}
             </svg>
