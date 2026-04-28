@@ -480,7 +480,7 @@
       <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
       <rect x="6" y="14" width="12" height="8"></rect>
     </svg>
-    PDF drucken / herunterladen
+    Print / Download PDF
   </button>
 
   <div class="page" id="executive-summary">
@@ -492,27 +492,27 @@
       </div>
       <div class="header-right">
         <img src="/assets/studytube-logo.png" alt="StudyTube" class="logo">
-        <p class="meta" id="scan-date">Datum: --</p>
+        <p class="meta" id="scan-date">Date: --</p>
       </div>
     </div>
 
     <!-- Left Column: Results Overview -->
     <div class="results-column">
       <div>
-        <div class="section-title">Ergebnisübersicht</div>
+        <div class="section-title">Results Overview</div>
 
         <!-- Score summary removed per feedback -->
       </div>
 
       <div>
-        <div class="section-title">Top 3 Priorityen</div>
+        <div class="section-title">Top 3 Priorities</div>
         <div class="priorities-list" id="priorities-list">
           <!-- Populated by JS -->
         </div>
       </div>
 
       <div>
-        <div class="section-title">Werte per Dimension</div>
+        <div class="section-title">Scores per Dimension</div>
         <div class="dimensions-grid" id="dimensions-grid">
           <!-- Populated by JS -->
         </div>
@@ -522,11 +522,11 @@
     <!-- Right Column: Recommendations -->
     <div class="recommendations-column">
       <div class="executive-brief">
-        <h3>Für das Management / die Geschäftsführung</h3>
+        <h3>For Management / Leadership</h3>
         <p id="executive-message">
-          Der L&D Impact Scan zeigt, wo Learning & Development the greatest impact erzielen kann.
-          Die drei priorisierten Action Areas sind Bereiche, in denen das aktuelle Vorgehen hinter der strategischen Bedeutung für die Organisation zurückbleibt.
-          Investitionen in diese Felder erhöhen den Beitrag von L&D zur Erreichung Ihrer strategischen Ziele.
+          The L&D Impact Scan reveals where Learning &amp; Development can deliver the greatest impact.
+          The three prioritised action areas are domains where current practice falls short of their strategic importance to the organisation.
+          Investing in these areas increases L&D's contribution to achieving your strategic objectives.
         </p>
       </div>
 
@@ -542,15 +542,15 @@
         <div class="next-steps-list">
           <div class="next-step">
             <span class="next-step-number">1</span>
-            <p>Die drei priorisierten Action Areas mit dem Management-Team oder HR/L&D diskutieren</p>
+            <p>Discuss the three prioritised action areas with your management team or HR/L&D leadership</p>
           </div>
           <div class="next-step">
             <span class="next-step-number">2</span>
-            <p>Gemeinsam festlegen, welche Priority zuerst adressiert wird</p>
+            <p>Agree together on which priority to address first</p>
           </div>
           <div class="next-step">
             <span class="next-step-number">3</span>
-            <p>Ein unverbindliches Gespräch mit Studytube vereinbaren, um konkrete Lösungsansätze zu besprechen</p>
+            <p>Schedule a no-obligation consultation with Studytube to explore concrete solutions</p>
           </div>
         </div>
       </div>
@@ -558,8 +558,8 @@
 
     <!-- Footer -->
     <div class="footer">
-      <span>L&D Impact Scan | <a href="https://studytube.de">studytube.de</a></span>
-      <span>Dieser Bericht wurde auf Grundlage Ihrer Antworten im L&D Impact Scan erstellt.</span>
+      <span>L&D Impact Scan | <a href="https://studytube.nl">studytube.nl</a></span>
+      <span>This report was generated based on your responses in the L&D Impact Scan.</span>
     </div>
   </div>
 
@@ -570,22 +570,22 @@
       kennisdeling: 'Knowledge Management',
       kwalificatie: 'Qualification Management',
       training: 'Training Procurement',
-      regie: 'Eigenverantwortung',
+      regie: 'Self-Directed Learning',
       reskilling: 'Up- & Reskilling',
       strategie: 'Strategy',
-      mobiliteit: 'Mobilität'
+      mobiliteit: 'Internal Mobility'
     };
 
     // Recommendations per use case
     const useCaseRecommendations = {
-      onboarding: 'Onboarding strukturiert aufsetzen und messbar machen, um neue Mitarbeitende schneller produktiv zu machen',
-      kennisdeling: 'Wissensaustausch zentralisieren, damit Expertise erhalten bleibt und leicht zugänglich ist',
-      kwalificatie: 'Qualification Management automatisieren, um Echtzeit-Transparenz und Compliance sicherzustellen',
-      training: 'Den Prozess für externe Schulungen verschlanken und Budgetsteuerung verbessern',
-      regie: 'Mitarbeitenden Transparenz über ihre Developmentspfade geben und Eigenverantwortung stärken',
-      reskilling: 'Proaktive Reskilling-Programme entwickeln, um Veränderungen frühzeitig zu begleiten',
-      strategie: 'Lerninitiativen direkt mit strategischen Unternehmenszielen verknüpfen',
-      mobiliteit: 'Interne Developmentsmöglichkeiten sichtbar und zugänglich machen'
+      onboarding: 'Structure and measure your onboarding programme to get new employees productive faster',
+      kennisdeling: 'Centralise knowledge sharing so expertise is preserved and easily accessible',
+      kwalificatie: 'Automate qualification management to ensure real-time transparency and compliance',
+      training: 'Streamline the process for external training and improve budget control',
+      regie: 'Give employees transparency over their development pathways and strengthen self-directed learning',
+      reskilling: 'Develop proactive reskilling programmes to prepare for change early',
+      strategie: 'Link learning initiatives directly to strategic organisational objectives',
+      mobiliteit: 'Make internal development opportunities visible and accessible'
     };
 
     // Load data from API or localStorage
@@ -619,9 +619,9 @@
       if (!data) {
         document.getElementById('executive-summary').innerHTML = `
           <div style="grid-column: 1 / -1; text-align: center; padding: 60px;">
-            <h2 style="margin-bottom: 16px;">Keine Ergebnisse gefunden</h2>
-            <p style="margin-bottom: 24px; color: var(--st-gray-600);">Bitte führen Sie zunächst den L&D Impact Scan durch, um Ihre Executive Summary zu erstellen.</p>
-            <a href="/" style="color: var(--st-blue-500);">Zum L&D Impact Scan</a>
+            <h2 style="margin-bottom: 16px;">No results found</h2>
+            <p style="margin-bottom: 24px; color: var(--st-gray-600);">Please complete the L&D Impact Scan first to generate your Executive Summary.</p>
+            <a href="/" style="color: var(--st-blue-500);">Go to the L&D Impact Scan</a>
           </div>
         `;
         return;
@@ -633,12 +633,12 @@
       document.getElementById('org-name').textContent = contact.organisatie || 'Organisation';
 
       // Set date
-      const scanDate = data.meta?.completed_at ? new Date(data.meta.completed_at).toLocaleDateString('de-DE', {
+      const scanDate = data.meta?.completed_at ? new Date(data.meta.completed_at).toLocaleDateString('en-GB', {
         day: 'numeric',
         month: 'long',
         year: 'numeric'
-      }) : new Date().toLocaleDateString('de-DE');
-      document.getElementById('scan-date').textContent = `Datum: ${scanDate}`;
+      }) : new Date().toLocaleDateString('en-GB');
+      document.getElementById('scan-date').textContent = `Date: ${scanDate}`;
 
       // Calculate scores and priorities
       const results = [];
@@ -650,8 +650,8 @@
           results.push({
             id: ucId,
             name: useCaseNames[ucId] || ucId,
-            aanpak: uc.A,
-            belang: uc.B,
+            approach: uc.A,
+            importance: uc.B,
             gap: gap,
             priority: priority
           });
@@ -667,7 +667,7 @@
           <div class="priority-rank">${i + 1}</div>
           <div class="priority-info">
             <h4>${r.name}</h4>
-            <p>Approach: ${r.aanpak}/5 | Bedeutung: ${r.belang}/5</p>
+            <p>Approach: ${r.approach}/5 | Importance: ${r.importance}/5</p>
           </div>
           <div class="priority-gap">
             <div class="label">Gap</div>
@@ -681,9 +681,9 @@
       const dimensionsHtml = results.map(r => `
         <div class="dimension-item">
           <span class="dimension-name">${r.name}</span>
-          <span class="dimension-score">${r.aanpak}/5</span>
+          <span class="dimension-score">${r.approach}/5</span>
           <div class="dimension-bar">
-            <div class="dimension-bar-fill" style="width: ${(r.aanpak / 5) * 100}%"></div>
+            <div class="dimension-bar-fill" style="width: ${(r.approach / 5) * 100}%"></div>
           </div>
         </div>
       `).join('');
@@ -700,22 +700,22 @@
             </div>
             <h4>${r.name}</h4>
           </div>
-          <p>${useCaseRecommendations[r.id] || 'Das aktuelle Vorgehen stärker an der strategischen Bedeutung ausrichten'}</p>
+          <p>${useCaseRecommendations[r.id] || 'Align current practice more closely with its strategic importance'}</p>
         </div>
       `).join('');
       document.getElementById('recommendations-list').innerHTML = recommendationsHtml;
 
       // Update executive message based on context
       const context = data.context || {};
-      let execMessage = `Der L&D Impact Scan zeigt, wo Learning & Development the greatest impact erzielen kann bei ${contact.organisatie || 'Ihrer Organisation'}. `;
+      let execMessage = `The L&D Impact Scan reveals where Learning & Development can deliver the greatest impact at ${contact.organisatie || 'your organisation'}. `;
 
       if (context.strategic_goal === 'growth') {
-        execMessage += 'Mit Ihrem Fokus auf Wachstum ist es entscheidend, dass L&D skalierbar ist und neue Mitarbeitende schnell produktiv macht. ';
+        execMessage += 'With your focus on growth, it is crucial that L&D is scalable and gets new employees productive quickly. ';
       } else if (context.strategic_goal === 'transformation') {
-        execMessage += 'In Transformationsphasen ist es wesentlich, dass Mitarbeitende auf Veränderungen vorbereitet sind und gezielt neue Skills entwickeln. ';
+        execMessage += 'During transformation, it is essential that employees are prepared for change and develop new skills in a targeted way. ';
       }
 
-      execMessage += 'Die drei priorisierten Action Areas sind Bereiche, in denen Investitionen the greatest impact erzielen.';
+      execMessage += 'The three prioritised action areas are domains where investment will deliver the greatest impact.';
       document.getElementById('executive-message').textContent = execMessage;
 
       // Auto-print if triggered from results page
