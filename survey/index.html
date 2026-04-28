@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L&D Impact Scan | StudyTube</title>
 
-  <!-- RevenueHero Scheduler -->
-  <script src="https://assets.revenuehero.io/scheduler.min.js"></script>
+  <!-- HubSpot Meetings Scheduler (DE) -->
 
   <!-- Euclid Circular B - StudyTube Official Font -->
   <style>
@@ -223,7 +222,10 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--st-cyan);
+      color: var(--st-blue-500);
+      background: white;
+      padding: 8px 16px;
+      border-radius: 20px;
       margin-bottom: 20px;
       background: rgba(5, 213, 255, 0.1);
       padding: 8px 16px;
@@ -253,11 +255,15 @@
     }
 
     .hero-features {
-      display: flex;
+      display: inline-flex;
       justify-content: center;
-      gap: 28px;
+      gap: 24px;
       margin-bottom: 32px;
       flex-wrap: wrap;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      padding: 12px 24px;
+      border-radius: 12px;
     }
 
     .hero-feature {
@@ -265,18 +271,18 @@
       align-items: center;
       gap: 10px;
       font-size: 14px;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.95);
     }
 
     .hero-feature-icon {
       width: 32px;
       height: 32px;
-      background: rgba(5, 213, 255, 0.15);
+      background: rgba(255, 255, 255, 0.2);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--st-cyan);
+      color: var(--st-blue-300);
     }
 
     .hero-cta {
@@ -874,6 +880,150 @@
       opacity: 1;
     }
 
+    /* Ranking/Sortable List */
+    .ranking-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* Ranking - Two Column Layout */
+    .ranking-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .ranking-source {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ranking-source-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--st-gray-500);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .ranking-targets {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ranking-slot {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ranking-slot-number {
+      width: 28px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--st-gray-400);
+      text-align: center;
+    }
+
+    .ranking-dropzone {
+      flex: 1;
+      min-height: 52px;
+      border: 2px dashed var(--st-gray-300);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      transition: all 0.15s ease;
+    }
+
+    .ranking-dropzone-label {
+      font-size: 13px;
+      color: var(--st-gray-400);
+    }
+
+    .ranking-dropzone.has-item {
+      border-style: solid;
+      border-color: var(--st-blue-300);
+      background: var(--st-blue-50);
+      justify-content: flex-start;
+    }
+
+    .ranking-dropzone.drag-over {
+      border-color: var(--st-blue-500);
+      background: var(--st-blue-100);
+    }
+
+    /* All slots use consistent neutral styling */
+    .ranking-slot .ranking-slot-number { color: var(--st-gray-500); }
+    .ranking-slot .ranking-dropzone.has-item { border-color: var(--st-blue-300); background: var(--st-blue-50); }
+
+    .ranking-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: white;
+      border: 2px solid var(--st-gray-200);
+      border-radius: 8px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+
+    .ranking-item:hover {
+      border-color: var(--st-blue-300);
+      background: var(--st-gray-75);
+    }
+
+    .ranking-item.dragging {
+      opacity: 0.5;
+      cursor: grabbing;
+    }
+
+    .ranking-item.in-slot {
+      padding: 8px 12px;
+      margin: 0;
+    }
+
+    .ranking-handle {
+      color: var(--st-gray-400);
+      display: flex;
+      align-items: center;
+    }
+
+    .ranking-text {
+      flex: 1;
+      font-size: 14px;
+      color: var(--st-blue-900);
+      line-height: 1.3;
+    }
+
+    @media (max-width: 700px) {
+      .ranking-container {
+        grid-template-columns: 1fr;
+      }
+      .ranking-source {
+        order: 2;
+      }
+      .ranking-targets {
+        order: 1;
+      }
+    }
+
+    .ranking-hint {
+      font-size: 13px;
+      color: var(--st-gray-500);
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     /* Results */
     .results-container {
       display: none;
@@ -1207,6 +1357,10 @@
         font-size: 14px;
       }
 
+      .focus-areas-grid {
+        grid-template-columns: 1fr !important;
+      }
+
       .question-card {
         padding: 16px;
         border-radius: 10px;
@@ -1371,23 +1525,7 @@
     }
   </style>
 
-  <!-- InstantScan API Integration -->
-  <script src="instant-client.js"></script>
-  <script>
-    // =============================================
-    // DEPLOYMENT CONFIG - UPDATE FOR PRODUCTION
-    // =============================================
-    // API Configuration - Auto-detect environment
-    // =============================================
-    const API_BASE_URL = window.location.hostname === 'localhost'
-      ? 'http://localhost:3000'
-      : null; // Disable InstantScan in production, use Supabase/Vercel API only
-    // =============================================
-
-    if (API_BASE_URL) {
-      InstantScan.init(API_BASE_URL);
-    }
-  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <!-- Header -->
@@ -1395,14 +1533,14 @@
   <section class="hero" id="hero">
     <div class="hero-content">
       <div class="eyebrow">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--st-blue-500)" stroke-width="2">
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
           <polyline points="22 4 12 14.01 9 11.01"></polyline>
         </svg>
         L&D Impact Scan
       </div>
       <h1>Discover where L&D creates the greatest impact</h1>
-      <p class="hero-subtitle">Gain insight into your L&D maturity across 8 strategic areas and receive an instant personalised report.</p>
+      <p class="hero-subtitle">Discover where your L&D currently stands and where you can achieve the greatest impact this year. There are no right or wrong answers – only your focus matters.</p>
 
       <div class="hero-features">
         <div class="hero-feature">
@@ -1412,7 +1550,7 @@
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
           </div>
-          <span>4-5 minutes</span>
+          <span>4-5 Minutes</span>
         </div>
         <div class="hero-feature">
           <div class="hero-feature-icon">
@@ -1421,7 +1559,7 @@
               <polyline points="14 2 14 8 20 8"></polyline>
             </svg>
           </div>
-          <span>Instant report</span>
+          <span>Instant Report</span>
         </div>
         <div class="hero-feature">
           <div class="hero-feature-icon">
@@ -1429,7 +1567,7 @@
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
             </svg>
           </div>
-          <span>Top 3 priorities</span>
+          <span>Top 3 Priorities</span>
         </div>
       </div>
 
@@ -1441,7 +1579,7 @@
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </button>
-        <span class="hero-time">Free • No account required • Instant results</span>
+        <span class="hero-time">Free  •  No account needed • Results available immediately</span>
       </div>
 
     </div>
@@ -1470,7 +1608,7 @@
         <!-- Progress bar at top -->
         <div class="top-progress-bar" id="top-progress-bar">
           <div class="top-progress-label">
-            <span class="top-progress-text">Voortgang</span>
+            <span class="top-progress-text">Progress</span>
             <span class="top-progress-percentage" id="top-progress-percentage">0%</span>
           </div>
           <div class="top-progress-track">
@@ -1486,25 +1624,25 @@
   <!-- Results Container -->
   <div class="results-container" id="results">
     <div class="results-header">
-      <h1>Jouw L&D Impact Profiel</h1>
-      <p>Op basis van je antwoorden hebben we je top 3 prioriteiten bepaald — de gebieden waar je met de minste moeite de meeste impact kunt maken.</p>
+      <h1>Your L&D Impact Profile</h1>
+      <p>Based on your answers, we have identified your three most important priorities — the areas where you can achieve the greatest impact with the least effort.</p>
     </div>
 
     <div class="results-content">
       <div class="results-card">
-        <h2>Top 3 Prioriteiten</h2>
+        <h2>Top 3 Priorities</h2>
         <div id="priorities-list"></div>
       </div>
 
       <div class="results-card">
-        <h2>Alle Scores</h2>
+        <h2>All Scores</h2>
         <div class="scores-grid" id="scores-grid"></div>
       </div>
 
       <div class="cta-card">
-        <h2>Klaar om de volgende stap te zetten?</h2>
-        <p>Bespreek je resultaten met een L&D-expert en ontdek hoe StudyTube je kan helpen.</p>
-        <button class="btn btn-white">Plan een vrijblijvend gesprek</button>
+        <h2>What is your next step?</h2>
+        <p>Discover in a brief conversation with one of our L&D experts how you can translate your insights into concrete actions.</p>
+        <button class="btn btn-white">Book a meeting (30 min.)</button>
       </div>
     </div>
   </div>
@@ -1517,24 +1655,34 @@
     const sections = [
       { id: 'contact', name: 'Your details', icon: '1' },
       { id: 'context', name: 'Context', icon: '2' },
+      { id: 'focusareas-intro', name: 'Focus areas', icon: '3' },
       { id: 'onboarding-A', name: 'Onboarding', ucId: 'onboarding', questionType: 'A' },
       { id: 'onboarding-B', name: 'Onboarding', ucId: 'onboarding', questionType: 'B' },
-      { id: 'kennisdeling-A', name: 'Knowledge Sharing', ucId: 'kennisdeling', questionType: 'A' },
-      { id: 'kennisdeling-B', name: 'Knowledge Sharing', ucId: 'kennisdeling', questionType: 'B' },
-      { id: 'kwalificatie-A', name: 'Qualification Management', ucId: 'kwalificatie', questionType: 'A' },
-      { id: 'kwalificatie-B', name: 'Qualification Management', ucId: 'kwalificatie', questionType: 'B' },
-      { id: 'training-A', name: 'Training Procurement', ucId: 'training', questionType: 'A' },
-      { id: 'training-B', name: 'Training Procurement', ucId: 'training', questionType: 'B' },
-      { id: 'regie-A', name: 'Employee Ownership', ucId: 'regie', questionType: 'A' },
-      { id: 'regie-B', name: 'Employee Ownership', ucId: 'regie', questionType: 'B' },
-      { id: 'reskilling-A', name: 'Up- & Reskilling', ucId: 'reskilling', questionType: 'A' },
-      { id: 'reskilling-B', name: 'Up- & Reskilling', ucId: 'reskilling', questionType: 'B' },
-      { id: 'strategie-A', name: 'Strategic Skills', ucId: 'strategie', questionType: 'A' },
-      { id: 'strategie-B', name: 'Strategic Skills', ucId: 'strategie', questionType: 'B' },
-      { id: 'mobiliteit-A', name: 'Internal Mobility', ucId: 'mobiliteit', questionType: 'A' },
-      { id: 'mobiliteit-B', name: 'Internal Mobility', ucId: 'mobiliteit', questionType: 'B' },
-      { id: 'delivery', name: 'Report', icon: '3' }
+      { id: 'kennisdeling-A', name: 'Knowledge management', ucId: 'kennisdeling', questionType: 'A' },
+      { id: 'kennisdeling-B', name: 'Knowledge management', ucId: 'kennisdeling', questionType: 'B' },
+      { id: 'kwalificatie-A', name: 'Qualifications', ucId: 'kwalificatie', questionType: 'A' },
+      { id: 'kwalificatie-B', name: 'Qualifications', ucId: 'kwalificatie', questionType: 'B' },
+      { id: 'training-A', name: 'Training procurement', ucId: 'training', questionType: 'A' },
+      { id: 'training-B', name: 'Training procurement', ucId: 'training', questionType: 'B' },
+      { id: 'regie-A', name: 'Self-directed learning', ucId: 'regie', questionType: 'A' },
+      { id: 'regie-B', name: 'Self-directed learning', ucId: 'regie', questionType: 'B' },
+      { id: 'reskilling-A', name: 'Up- & reskilling', ucId: 'reskilling', questionType: 'A' },
+      { id: 'reskilling-B', name: 'Up- & reskilling', ucId: 'reskilling', questionType: 'B' },
+      { id: 'strategie-A', name: 'Strategy', ucId: 'strategie', questionType: 'A' },
+      { id: 'strategie-B', name: 'Strategy', ucId: 'strategie', questionType: 'B' },
+      { id: 'mobiliteit-A', name: 'Mobility', ucId: 'mobiliteit', questionType: 'A' },
+      { id: 'mobiliteit-B', name: 'Mobility', ucId: 'mobiliteit', questionType: 'B' },
+      { id: 'delivery', name: 'Report', icon: '4', isFinal: true }
     ];
+
+    // ============================================
+    // HUBSPOT MEETINGS CONFIGURATION (EN)
+    // ============================================
+
+    const MEETING_CONFIG = {
+      meetingUrl: 'https://studytube.schedulehero.io/inbound/l-d-quick-scan-router',
+      enabled: true
+    };
 
     // ============================================
     // QUESTIONNAIRE DATA
@@ -1543,50 +1691,55 @@
     const questionnaire = {
       contact: {
         badge: 'STEP 1',
-        title: "Let's get started",
-        subtitle: 'Enter your details so we can send you the report.',
+        title: 'Let\'s get started',
+        subtitle: 'Enter your business email address so we can link your results.',
+        question: {
+          label: 'Email address',
+          title: 'What is your business email address?',
+        },
         fields: [
-          { id: 'naam', label: 'Name', type: 'text', placeholder: 'Your name', required: true },
-          { id: 'email', label: 'Email address', type: 'email', placeholder: 'your.name@organisation.com', required: true },
-          { id: 'organisatie', label: 'Organisation', type: 'text', placeholder: 'Company name', required: true }
-        ]
+          { id: 'email', label: 'Email address', type: 'email', placeholder: 'name@organisation.com', required: true, fullWidth: true }
+        ],
+        consent: 'By clicking the button, you agree that we may process your data to send you relevant information and communications from Studytube.'
       },
       context: {
-        badge: 'CONTEXT',
+        badge: 'CURRENT STATUS',
         title: 'About your organisation',
-        subtitle: 'Help us understand the context.',
+        subtitle: 'Help us understand the current situation.',
         textFields: [
           {
             id: 'org_goals_2026',
-            label: 'Organisational goals 2026',
-            title: "What are your organisation's goals for 2026?",
-            placeholder: 'Briefly describe the most important goals...',
+            label: 'Organisation goals 2026',
+            title: 'What are your organisation\'s goals for 2026?',
+            placeholder: 'Briefly describe the main goals here...',
             required: false,
             maxLength: 500
           }
         ],
         questions: [
           {
-            id: 'strategic_goal',
-            label: 'Strategic priority',
-            title: "What is your organisation's primary strategic priority?",
+            id: 'strategic_goals_ranked',
+            label: 'Strategic objectives',
+            title: 'Rank your company\'s strategic objectives by priority – from most important (1) to least important (5)',
+            type: 'ranking',
             options: [
-              { value: 'growth', label: 'Groei — omzet of marktaandeel vergroten' },
-              { value: 'operational_excellence', label: 'Operational Excellence — efficiëntie en kwaliteit verhogen' },
-              { value: 'transformation', label: 'Transformatie — nieuwe markten, producten of businessmodellen' },
-              { value: 'stability', label: 'Stabiliteit — focus op continuïteit en kostenbeheersing' }
+              { value: 'growth', label: 'Growth — increase revenue or market share' },
+              { value: 'operational_excellence', label: 'Operational Excellence — improve efficiency and quality' },
+              { value: 'transformation', label: 'Transformation — new markets, products or business models' },
+              { value: 'stability', label: 'Stability — ensure continuity and control costs' },
+              { value: 'talent_development', label: 'Talent Development — invest in employees as a strategic differentiator' }
             ]
           },
           {
             id: 'ld_challenge',
-            label: 'L&D challenge',
-            title: 'What is the biggest L&D challenge at your organisation?',
+            label: 'L&D Challenges',
+            title: 'What is the biggest L&D challenge in your organisation?',
             options: [
-              { value: 'fast_productive', label: 'Snel nieuwe mensen productief krijgen' },
-              { value: 'compliance', label: 'Compliance en kwalificaties bijhouden' },
-              { value: 'change', label: 'Medewerkers meenemen in veranderingen' },
-              { value: 'talent_retention', label: 'Talent behouden en doorontwikkelen' },
-              { value: 'strategic_alignment', label: 'Leren verbinden aan strategie' }
+              { value: 'fast_productive', label: 'Getting new employees productive quickly' },
+              { value: 'compliance', label: 'Ensuring compliance requirements and qualifications' },
+              { value: 'change', label: 'Getting employees on board with change' },
+              { value: 'talent_retention', label: 'Retaining and developing talent' },
+              { value: 'strategic_alignment', label: 'Linking learning to organisational strategy' }
             ]
           }
         ]
@@ -1595,244 +1748,266 @@
         onboarding: {
           badge: 'ONBOARDING',
           title: 'Onboarding',
-          subtitle: 'Hoe is onboarding van nieuwe medewerkers ingericht?',
+          subtitle: 'How is onboarding of new employees organised?',
           A: {
-            label: 'Huidige aanpak',
-            title: 'Hoe is onboarding van nieuwe medewerkers ingericht?',
+            label: 'Current approach',
+            title: 'How is onboarding of new employees organised?',
             options: [
-              { score: 1, label: 'Dat hangt volledig af van de manager of het team' },
-              { score: 2, label: 'Er is een aanpak, maar die vraagt veel afstemming' },
-              { score: 3, label: 'Het verschilt per afdeling of locatie' },
-              { score: 4, label: 'Er is een duidelijk proces dat meestal goed werkt' },
-              { score: 5, label: 'Iedereen doorloopt hetzelfde gestructureerde programma' }
+              { score: 1, label: 'It depends entirely on the manager or team' },
+              { score: 2, label: 'There is an approach, but it requires a lot of coordination' },
+              { score: 3, label: 'It varies by department or location' },
+              { score: 4, label: 'There is a clear process that generally works well' },
+              { score: 5, label: 'Everyone goes through the same structured program' }
             ]
           },
           B: {
-            label: 'Belang',
-            title: 'Hoe belangrijk is een goede start voor nieuwe medewerkers?',
+            label: 'Importance',
+            title: 'How important is a good start for new employees?',
             options: [
-              { score: 1, label: 'Beperkt — medewerkers redden zich vooral zelf' },
-              { score: 2, label: 'Enigszins — onboarding helpt, maar is geen prioriteit' },
-              { score: 3, label: 'Belangrijk — onboarding krijgt aandacht, maar niet structureel' },
-              { score: 4, label: 'Zeer belangrijk — onboarding versnelt productiviteit en betrokkenheid' },
-              { score: 5, label: 'Cruciaal — onboarding is bepalend voor retentie, performance en cultuur' }
+              { score: 1, label: 'Limited — employees mostly figure it out themselves' },
+              { score: 2, label: 'Rather low — onboarding helps, but is not a priority' },
+              { score: 3, label: 'Important — onboarding gets attention, but not structurally' },
+              { score: 4, label: 'Very important — onboarding accelerates productivity and engagement' },
+              { score: 5, label: 'Critical — onboarding is decisive for retention, performance and culture' }
             ]
           }
         },
         kennisdeling: {
-          badge: 'KENNISDELING',
-          title: 'Kennisdeling',
-          subtitle: 'Hoe wordt kennis vastgelegd en gedeeld?',
+          badge: 'KNOWLEDGE MANAGEMENT',
+          title: 'Knowledge Management',
+          subtitle: 'How is knowledge documented and shared?',
           A: {
-            label: 'Huidige aanpak',
-            title: 'In hoeverre is kennis van collega\'s vastgelegd en vindbaar?',
+            label: 'Current approach',
+            title: 'To what extent is colleague knowledge documented and findable?',
             options: [
-              { score: 1, label: 'Kennis zit vooral in de hoofden van mensen' },
-              { score: 2, label: 'Er is wel documentatie, maar die is lastig te vinden' },
-              { score: 3, label: 'Teams organiseren kennis ieder op hun eigen manier' },
-              { score: 4, label: 'Er is één centrale plek, maar content is niet compleet of actueel' },
-              { score: 5, label: 'Kennis is centraal vastgelegd en goed vindbaar' }
+              { score: 1, label: 'Knowledge mainly exists in people\'s heads' },
+              { score: 2, label: 'Documentation exists, but it\'s hard to find' },
+              { score: 3, label: 'Teams organize knowledge in their own way' },
+              { score: 4, label: 'There is a central location, but content is not complete or current' },
+              { score: 5, label: 'Knowledge is centrally documented and easy to find' }
             ]
           },
           B: {
-            label: 'Belang',
-            title: 'Hoe belangrijk is het dat kennis behouden blijft?',
+            label: 'Importance',
+            title: 'How important is it that knowledge is retained?',
             options: [
-              { score: 1, label: 'Beperkt — kennisverlies vangen we informeel op' },
-              { score: 2, label: 'Enigszins — vooral merkbaar bij vertrek van sleutelpersonen' },
-              { score: 3, label: 'Belangrijk — we merken het als kennis verdwijnt' },
-              { score: 4, label: 'Zeer belangrijk — kennisborging voorkomt risico\'s en inefficiëntie' },
-              { score: 5, label: 'Cruciaal — zonder kennisbehoud lopen we vast' }
+              { score: 1, label: 'Low — we handle knowledge loss informally' },
+              { score: 2, label: 'Rather low — mainly noticeable when key people leave' },
+              { score: 3, label: 'Important — we notice when knowledge is lost' },
+              { score: 4, label: 'Very important — knowledge retention prevents risks and inefficiency' },
+              { score: 5, label: 'Critical — without knowledge retention we cannot progress' }
             ]
           }
         },
         kwalificatie: {
-          badge: 'KWALIFICATIES',
-          title: 'Kwalificatiemanagement',
-          subtitle: 'Hoe houden jullie grip op certificeringen?',
+          badge: 'QUALIFICATIONS',
+          title: 'Qualification Management',
+          subtitle: 'How do you keep track of certifications?',
           A: {
-            label: 'Huidige aanpak',
-            title: 'Hoe houden jullie grip op verplichte certificeringen en kwalificaties?',
+            label: 'Current approach',
+            title: 'How do you keep track of mandatory certifications and qualifications?',
             options: [
-              { score: 1, label: 'Er is geen centraal overzicht of opvolging' },
-              { score: 2, label: 'Overzichten bestaan, maar zijn handmatig en vaak niet actueel' },
-              { score: 3, label: 'Kwalificaties worden per team of functie verschillend beheerd' },
-              { score: 4, label: 'Er is een systeem met rapportages, maar opvolging vraagt handmatig werk' },
-              { score: 5, label: 'Real-time inzicht met automatische toewijzing, herinneringen en audittrail' }
+              { score: 1, label: 'There is no central overview or tracking' },
+              { score: 2, label: 'Overviews exist but are maintained manually and are often not current' },
+              { score: 3, label: 'Qualifications are managed differently by team or function' },
+              { score: 4, label: 'There is a system with reports, but tracking requires manual effort' },
+              { score: 5, label: 'Real-time visibility with automatic assignment, reminders and audit trail' }
             ]
           },
           B: {
-            label: 'Belang',
-            title: 'Hoe belangrijk is het dat iedereen aan kwalificatie-eisen voldoet?',
+            label: 'Importance',
+            title: 'How important is it that all qualification requirements are met?',
             options: [
-              { score: 1, label: 'Beperkt — dit speelt bij ons nauwelijks' },
-              { score: 2, label: 'Enigszins — voor sommige rollen relevant' },
-              { score: 3, label: 'Noodzakelijk om aan eisen te voldoen' },
-              { score: 4, label: 'Zeer belangrijk — non-compliance brengt risico\'s en sancties' },
-              { score: 5, label: 'Cruciaal — compliance is randvoorwaarde om te mogen opereren' }
+              { score: 1, label: 'Low — this hardly plays a role for us' },
+              { score: 2, label: 'Rather low — relevant for some roles' },
+              { score: 3, label: 'Necessary to meet requirements' },
+              { score: 4, label: 'Very important — non-compliance carries risks and sanctions' },
+              { score: 5, label: 'Critical — compliance is a fundamental requirement for business operations' }
             ]
           }
         },
         training: {
-          badge: 'TRAININGSINKOOP',
-          title: 'Trainingsinkoop',
-          subtitle: 'Hoe verloopt het aanvragen van externe trainingen?',
+          badge: 'TRAINING PROCUREMENT',
+          title: 'Training Procurement',
+          subtitle: 'How does the application for external training work?',
           A: {
-            label: 'Huidige aanpak',
-            title: 'Hoe verloopt het aanvragen van externe trainingen?',
+            label: 'Current approach',
+            title: 'How does the application for external training work?',
             options: [
-              { score: 1, label: 'Iedereen regelt trainingen op eigen initiatief, zonder overzicht' },
-              { score: 2, label: 'Er is een proces, maar dit is tijdrovend en weinig transparant' },
-              { score: 3, label: 'Dit verschilt per manager of afdeling' },
-              { score: 4, label: 'Er is een duidelijk proces met basisinzicht in kosten' },
-              { score: 5, label: 'De inkoop is centraal, efficiënt en gekoppeld aan inzicht in gebruik en rendement' }
+              { score: 1, label: 'Everyone organizes training independently, without oversight' },
+              { score: 2, label: 'There is a process, but it is time-consuming and lacks transparency' },
+              { score: 3, label: 'It varies by manager or department' },
+              { score: 4, label: 'There is a clear process with basic cost transparency' },
+              { score: 5, label: 'Procurement is centralised, efficient and linked to transparency on usage and results' }
             ]
           },
           B: {
-            label: 'Belang',
-            title: 'Hoe belangrijk is grip op externe trainingsbudgetten?',
+            label: 'Importance',
+            title: 'How important is control over external training budgets?',
             options: [
-              { score: 1, label: 'Beperkt — we sturen hier niet actief op' },
-              { score: 2, label: 'Enigszins — we houden het globaal in de gaten' },
-              { score: 3, label: 'Belangrijk — we willen weten waar geld naartoe gaat' },
-              { score: 4, label: 'Zeer belangrijk — budgetbeheersing is prioriteit' },
-              { score: 5, label: 'Cruciaal — elke euro moet verantwoord worden' }
+              { score: 1, label: 'Low — we don\'t actively manage this' },
+              { score: 2, label: 'Rather low — we keep a rough overview' },
+              { score: 3, label: 'Important — we want to know what budgets are spent on' },
+              { score: 4, label: 'Very important — budget control is a priority' },
+              { score: 5, label: 'Critical — every euro must be accounted for' }
             ]
           }
         },
         regie: {
-          badge: 'REGIE',
-          title: 'Regie bij de medewerker',
-          subtitle: 'Hoeveel regie hebben medewerkers over hun ontwikkeling?',
+          badge: 'EMPLOYEE OWNERSHIP',
+          title: 'Employee Ownership',
+          subtitle: 'How much ownership do employees have over their development?',
           A: {
-            label: 'Huidige aanpak',
-            title: 'Weten medewerkers welke vaardigheden bij hun rol horen?',
+            label: 'Current approach',
+            title: 'Do employees know which skills belong to their role?',
             options: [
-              { score: 1, label: 'Nee, verwachtingen en ontwikkelmogelijkheden zijn onduidelijk' },
-              { score: 2, label: 'Beperkt — medewerkers moeten dit zelf uitzoeken' },
-              { score: 3, label: 'Dit hangt sterk af van de manager' },
-              { score: 4, label: 'Ja, er is inzicht en begeleiding beschikbaar' },
-              { score: 5, label: 'Ja, medewerkers hebben volledig overzicht en nemen zelf initiatief' }
+              { score: 1, label: 'No, expectations and development opportunities are unclear' },
+              { score: 2, label: 'Limited — employees have to figure this out themselves' },
+              { score: 3, label: 'It depends heavily on the manager' },
+              { score: 4, label: 'Yes, transparency and guidance are in place' },
+              { score: 5, label: 'Yes, employees have full overview and take initiative themselves' }
             ]
           },
           B: {
-            label: 'Belang',
-            title: 'Hoe belangrijk is het dat medewerkers zelf de regie hebben?',
+            label: 'Importance',
+            title: 'How important is it that employees take responsibility themselves?',
             options: [
-              { score: 1, label: 'Beperkt — ontwikkeling sturen we centraal aan' },
-              { score: 2, label: 'Enigszins — maar de manager bepaalt grotendeels' },
-              { score: 3, label: 'Belangrijk — we willen dat mensen eigenaarschap nemen' },
-              { score: 4, label: 'Zeer belangrijk — dit past bij onze cultuur' },
-              { score: 5, label: 'Cruciaal — zonder eigenaarschap werkt ontwikkeling niet' }
+              { score: 1, label: 'Low — we manage development centrally' },
+              { score: 2, label: 'Rather low — the manager largely decides' },
+              { score: 3, label: 'Important — we want people to take ownership' },
+              { score: 4, label: 'Very important — this fits our culture' },
+              { score: 5, label: 'Critical — without ownership, development doesn\'t work' }
             ]
           }
         },
         reskilling: {
           badge: 'UP- & RESKILLING',
           title: 'Up- & Reskilling',
-          subtitle: 'Hoe worden medewerkers voorbereid op veranderingen?',
+          subtitle: 'How are employees prepared for changes?',
           A: {
-            label: 'Huidige aanpak',
-            title: 'Hoe worden medewerkers voorbereid op veranderingen in hun werk?',
+            label: 'Current approach',
+            title: 'How are employees prepared for changes in their work?',
             options: [
-              { score: 1, label: 'Dat gebeurt eigenlijk niet structureel' },
-              { score: 2, label: 'Reactief en ad hoc — als er iets verandert, kijken we dan wel' },
-              { score: 3, label: 'Dit verschilt sterk per team of project' },
-              { score: 4, label: 'Er zijn trajecten, maar niet altijd op maat' },
-              { score: 5, label: 'We trainen gericht op wat mensen nodig hebben' }
+              { score: 1, label: 'This doesn\'t really happen in a structured way' },
+              { score: 2, label: 'Reactive and ad hoc — we respond spontaneously when things change' },
+              { score: 3, label: 'It varies significantly by team or project' },
+              { score: 4, label: 'There are programs, but not always tailored' },
+              { score: 5, label: 'We train specifically on what employees need' }
             ]
           },
           B: {
-            label: 'Belang',
-            title: 'Hoe belangrijk is het om medewerkers tijdig klaar te stomen?',
+            label: 'Importance',
+            title: 'How important is it to prepare employees in time?',
             options: [
-              { score: 1, label: 'Beperkt — ons werk verandert niet zo snel' },
-              { score: 2, label: 'Enigszins — af en toe is bijscholing nodig' },
-              { score: 3, label: 'Belangrijk — we zien veranderingen aankomen' },
-              { score: 4, label: 'Zeer belangrijk — we moeten kunnen meebewegen' },
-              { score: 5, label: 'Cruciaal — zonder reskilling missen we de boot' }
+              { score: 1, label: 'Low — our work doesn\'t change that quickly' },
+              { score: 2, label: 'Rather low — occasionally further training is needed' },
+              { score: 3, label: 'Important — we see changes coming' },
+              { score: 4, label: 'Very important — we need to be able to move with the times' },
+              { score: 5, label: 'Critical — without reskilling we fall behind' }
             ]
           }
         },
         strategie: {
-          badge: 'STRATEGIE',
-          title: 'Strategische Skillontwikkeling',
-          subtitle: 'Hoe is leren verbonden aan jullie strategie?',
+          badge: 'STRATEGIC SKILLS',
+          title: 'Strategic Skill Development',
+          subtitle: 'How is learning linked to your strategy?',
           A: {
-            label: 'Huidige aanpak',
-            title: 'In hoeverre is leren verbonden aan jullie strategische doelen?',
+            label: 'Current approach',
+            title: 'To what extent is learning linked to your strategic objectives?',
             options: [
-              { score: 1, label: 'Er is geen expliciete koppeling tussen leren en strategie' },
-              { score: 2, label: 'Soms, maar niet structureel' },
-              { score: 3, label: 'Per initiatief wordt dit anders ingevuld' },
-              { score: 4, label: 'Er is een duidelijke richting, maar niet overal doorgevoerd' },
-              { score: 5, label: 'Leren is direct gekoppeld aan strategische doelen en kritieke skills' }
+              { score: 1, label: 'There is no explicit connection between learning and strategy' },
+              { score: 2, label: 'Occasionally, but not structurally' },
+              { score: 3, label: 'This is implemented differently depending on the initiative' },
+              { score: 4, label: 'There is a clear direction, but it is not implemented everywhere' },
+              { score: 5, label: 'Learning is directly linked to strategic goals and critical skills' }
             ]
           },
           B: {
-            label: 'Belang',
-            title: 'Hoe belangrijk is het dat L&D bijdraagt aan de strategie?',
+            label: 'Importance',
+            title: 'How important is it that L&D contributes to strategy?',
             options: [
-              { score: 1, label: 'Beperkt — leren is vooral operationeel' },
-              { score: 2, label: 'Enigszins — relevant bij grote veranderingen' },
-              { score: 3, label: 'Belangrijk — skills ondersteunen strategische doelen' },
-              { score: 4, label: 'Zeer belangrijk — skills bepalen toekomstbestendigheid' },
-              { score: 5, label: 'Cruciaal — strategische skills zijn onderscheidend vermogen' }
+              { score: 1, label: 'Low — learning is mainly operational' },
+              { score: 2, label: 'Rather low — relevant during major changes' },
+              { score: 3, label: 'Important — L&D supports strategic objectives' },
+              { score: 4, label: 'Very important — L&D determines how future-proof we are' },
+              { score: 5, label: 'Critical — L&D is our strategic differentiator' }
             ]
           }
         },
         mobiliteit: {
-          badge: 'MOBILITEIT',
-          title: 'Interne Mobiliteit',
-          subtitle: 'Hoe makkelijk kunnen medewerkers doorgroeien?',
+          badge: 'INTERNAL MOBILITY',
+          title: 'Internal Mobility',
+          subtitle: 'How easy is it for employees to advance internally or switch roles?',
           A: {
-            label: 'Huidige aanpak',
-            title: 'Hoe makkelijk kunnen medewerkers doorgroeien of intern wisselen?',
+            label: 'Current approach',
+            title: 'How easy is it for employees to advance internally or switch roles?',
             options: [
-              { score: 1, label: 'Interne doorstroom is toeval en niet georganiseerd' },
-              { score: 2, label: 'Beperkt — vacatures worden vooral extern ingevuld' },
-              { score: 3, label: 'Dit verschilt per afdeling of team' },
-              { score: 4, label: 'Er is een redelijk duidelijk proces' },
-              { score: 5, label: 'Interne kansen zijn zichtbaar en toegankelijk voor iedereen' }
+              { score: 1, label: 'Internal mobility happens randomly and is not organised structurally' },
+              { score: 2, label: 'Open positions are mostly filled externally' },
+              { score: 3, label: 'It varies by department or team' },
+              { score: 4, label: 'There is a largely clear process' },
+              { score: 5, label: 'Internal opportunities are transparent and accessible to all' }
             ]
           },
           B: {
-            label: 'Belang',
-            title: 'Hoe belangrijk is het om talent van binnenuit te laten doorgroeien?',
+            label: 'Importance',
+            title: 'How important is it to develop talent from within?',
             options: [
-              { score: 1, label: 'Beperkt — focus ligt op externe instroom' },
-              { score: 2, label: 'Enigszins — relevant bij schaarste van externe instroom' },
-              { score: 3, label: 'Belangrijk — ondersteunt retentie en betrokkenheid' },
-              { score: 4, label: 'Zeer belangrijk — benutten van potentieel is prioriteit' },
-              { score: 5, label: 'Cruciaal — interne mobiliteit is kern van de talentstrategie' }
+              { score: 1, label: 'Low — the focus is on external recruitment' },
+              { score: 2, label: 'Rather low — relevant when external hiring is difficult' },
+              { score: 3, label: 'Important — strengthens retention and engagement' },
+              { score: 4, label: 'Very important — strategically utilizing potential is a high priority' },
+              { score: 5, label: 'Critical — internal mobility is a central part of our talent strategy' }
             ]
           }
         }
       },
-      delivery: {
-        badge: 'RAPPORT',
-        title: 'Je rapport ontvangen',
-        subtitle: 'Hoe wil je je resultaten bekijken?',
-        deliveryOptions: [
-          { value: 'instant', label: 'Direct bekijken na het invullen' },
-          { value: 'email', label: 'Per e-mail ontvangen (PDF)' }
+      focusareasIntro: {
+        badge: 'FOCUS AREAS',
+        title: 'Eight focus areas, one clear picture',
+        subtitle: 'We ask questions about eight areas where L&D creates impact in organisations. Your answers help determine where your organisation currently stands and where the biggest opportunities lie.',
+        focusAreas: [
+          'Onboarding',
+          'Knowledge Management',
+          'Compliance',
+          'Training Procurement',
+          'Employee Ownership',
+          'Up- & Reskilling',
+          'Strategic Skills',
+          'Internal Mobility'
         ],
-        consultationQuestion: {
-          label: 'Opvolging',
-          title: 'Wil je de resultaten bespreken met een L&D-expert?',
-          options: [
-            { value: 'yes_call', label: 'Ja, plan een vrijblijvend gesprek (30 min)' },
-            { value: 'yes_later', label: 'Misschien later — neem contact met me op' },
-            { value: 'no', label: 'Nee, ik bekijk eerst het rapport' }
-          ]
+        timeEstimate: 'This takes about 5 minutes. You will receive your personal results immediately afterwards.',
+        ctaText: 'Start scan'
+      },
+      delivery: {
+        badge: 'FINAL STEP',
+        title: 'Receive your report',
+        subtitle: 'Enter your details and choose how you want to receive your results.',
+        contactFields: [
+          { id: 'voornaam', label: 'First name', type: 'text', placeholder: 'Your first name', required: true },
+          { id: 'achternaam', label: 'Last name', type: 'text', placeholder: 'Your last name', required: true },
+          { id: 'email', label: 'Business email address', type: 'email', placeholder: 'name@organisation.com', required: true },
+          { id: 'organisatie', label: 'Organisation', type: 'text', placeholder: 'Your organisation', required: true },
+          { id: 'telefoon', label: 'Phone number', type: 'tel', placeholder: '+44 ...', required: false }
+        ],
+        deliveryOptions: [
+          { value: 'instant', label: 'View immediately afterwards' },
+          { value: 'email', label: 'Receive by email (PDF)' }
+        ],
+        consultationCTA: {
+          label: 'Next steps',
+          title: 'Would you like to discuss the results directly with an L&D expert?',
+          subtitle: 'Book an appointment here.',
+          buttonText: 'Book appointment',
+          meetingUrl: MEETING_CONFIG.meetingUrl
         },
         timeslotQuestion: {
-          label: 'Bereikbaarheid',
-          title: 'Wanneer ben je bereikbaar?',
+          label: 'Availability',
+          title: 'When are you available?',
           options: [
-            { value: 'morning', label: 'Ochtend (9:00–12:00)' },
-            { value: 'afternoon', label: 'Middag (13:00–17:00)' },
-            { value: 'flexible', label: 'Flexibel — neem contact op voor afstemming' }
+            { value: 'morning', label: 'Morning (9:00–12:00)' },
+            { value: 'afternoon', label: 'Afternoon (13:00–17:00)' },
+            { value: 'flexible', label: 'Flexible — contact me to arrange' }
           ]
         }
       }
@@ -1843,19 +2018,44 @@
     // ============================================
 
     let currentSectionIndex = 0;
+    let scanId = null;
+    let startedLogged = false;
     let answers = {
       contact: {},
       context: {},
       useCases: {},
-      delivery: { instant: true, email: false, consultation: null, timeslot: null }
+      delivery: { instant: true, email: true, consultation: null, timeslot: null }
     };
     let completedSections = new Set();
+
+    // ============================================
+    // STARTED LOGGING
+    // ============================================
+
+    async function logStarted() {
+      if (startedLogged) return;
+      startedLogged = true;
+      try {
+        await fetch('/api/started', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            result_id: scanId,
+            email: answers.contact.email
+          })
+        });
+        console.log('Started log sent - ID:', scanId);
+      } catch (e) {
+        console.error('Failed to log started:', e);
+      }
+    }
 
     // ============================================
     // NAVIGATION FUNCTIONS
     // ============================================
 
     function startScan() {
+      scanId = crypto.randomUUID();
       document.getElementById('hero').style.display = 'none';
       document.getElementById('assessment').classList.add('active');
       renderNavigation();
@@ -1903,19 +2103,28 @@
       const section = sections[currentSectionIndex];
 
       if (section.id === 'contact') {
-        const naam = document.getElementById('input-naam')?.value;
-        const email = document.getElementById('input-email')?.value;
-        const org = document.getElementById('input-organisatie')?.value;
-        if (!naam || !email || !org) {
-          alert('Vul alle velden in om verder te gaan.');
+        const email = document.getElementById('input-contact-email')?.value?.trim();
+        if (!email) {
+          alert('Enter your email address to continue.');
           return false;
         }
-        answers.contact = { naam, email, organisatie: org };
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          alert('Please enter a valid email address.');
+          return false;
+        }
+        answers.contact = { ...answers.contact, email };
+        logStarted();
+        return true;
       }
 
       if (section.id === 'context') {
-        if (!answers.context.strategic_goal || !answers.context.ld_challenge) {
-          alert('Beantwoord alle vragen om verder te gaan.');
+        // Check that all 5 ranking slots are filled
+        if (!answers.context.strategic_goals_ranked || answers.context.strategic_goals_ranked.length < 5) {
+          alert('Rank all 5 objectives to continue.');
+          return false;
+        }
+        if (!answers.context.ld_challenge) {
+          alert('Answer all questions to continue.');
           return false;
         }
       }
@@ -1924,22 +2133,29 @@
         const ucId = section.ucId;
         const qType = section.questionType;
         if (!answers.useCases[ucId]?.[qType]) {
-          alert('Beantwoord de vraag om verder te gaan.');
+          alert('Answer the question to continue.');
           return false;
         }
       }
 
       if (section.id === 'delivery') {
+        // Validate contact fields
+        const voornaam = document.getElementById('input-voornaam')?.value;
+        const achternaam = document.getElementById('input-achternaam')?.value;
+        const email = document.getElementById('input-email')?.value;
+        const org = document.getElementById('input-organisatie')?.value;
+        if (!voornaam || !achternaam || !email || !org) {
+          alert('Fill in all details to continue.');
+          return false;
+        }
+        const telefoon = document.getElementById('input-telefoon')?.value || '';
+        answers.contact = { voornaam, achternaam, naam: `${voornaam} ${achternaam}`, email, organisatie: org, telefoon };
+
         if (!answers.delivery.instant && !answers.delivery.email) {
-          alert('Selecteer minstens één optie voor rapportlevering.');
+          alert('Select at least one report delivery option.');
           return false;
         }
-        if (!answers.delivery.consultation) {
-          alert('Geef aan of je de resultaten wilt bespreken.');
-          return false;
-        }
-        // Note: No longer require timeslot - RevenueHero handles scheduling
-        // or user can skip and we follow up later
+        // Consultation is now a direct CTA link — no validation needed
       }
 
       return true;
@@ -2009,7 +2225,7 @@
                     <line x1="16" y1="13" x2="8" y2="13"></line>
                     <line x1="16" y1="17" x2="8" y2="17"></line>
                   </svg>
-                  Jouw rapport
+                  Your Report
                 </span>
               </button>
             </li>
@@ -2028,6 +2244,36 @@
       }).join('');
     }
 
+    function renderContactSection(container) {
+      const data = questionnaire.contact;
+      container.innerHTML = `
+        <div class="section-header">
+          <div class="section-badge">${data.badge}</div>
+          <h1 class="section-title">${data.title}</h1>
+          <p class="section-subtitle">${data.subtitle}</p>
+        </div>
+        <div class="question-card">
+          <div class="question-label">${data.question.label}</div>
+          <div class="question-title">${data.question.title}</div>
+          <div class="form-row" style="margin-top: 16px;">
+            ${data.fields.map(field => `
+              <div class="form-group${field.fullWidth ? ' full-width' : ''}">
+                <label class="form-label">${field.label}</label>
+                <input type="${field.type}" class="form-input"
+                  id="input-contact-${field.id}"
+                  placeholder="${field.placeholder}"
+                  value="${answers.contact[field.id] || ''}">
+              </div>
+            `).join('')}
+          </div>
+          <p style="color: var(--st-gray-500); font-size: 13px; margin-top: 16px; line-height: 1.5;">
+            ${data.consent}
+          </p>
+        </div>
+        ${renderNavFooter()}
+      `;
+    }
+
     function renderSection() {
       const section = sections[currentSectionIndex];
       const container = document.getElementById('section-content');
@@ -2039,6 +2285,8 @@
         renderContactSection(container);
       } else if (section.id === 'context') {
         renderContextSection(container);
+      } else if (section.id === 'focusareas-intro') {
+        renderFocusAreasIntroSection(container);
       } else if (section.id === 'delivery') {
         renderDeliverySection(container);
       } else if (section.ucId) {
@@ -2052,8 +2300,8 @@
       document.getElementById('top-progress-percentage').textContent = `${Math.round(progress)}%`;
     }
 
-    function renderContactSection(container) {
-      const data = questionnaire.contact;
+    function renderFocusAreasIntroSection(container) {
+      const data = questionnaire.focusareasIntro;
       container.innerHTML = `
         <div class="section-header">
           <div class="section-badge">${data.badge}</div>
@@ -2061,28 +2309,23 @@
           <p class="section-subtitle">${data.subtitle}</p>
         </div>
 
-        <div class="form-row">
-          ${data.fields.map(field => {
-            if (field.type === 'select') {
-              return `
-                <div class="form-group">
-                  <label class="form-label">${field.label}</label>
-                  <select class="form-input form-select" id="input-${field.id}">
-                    ${field.options.map(o => `<option value="${o.value}" ${answers.contact[field.id] === o.value ? 'selected' : ''}>${o.label}</option>`).join('')}
-                  </select>
-                </div>
-              `;
-            }
-            return `
-              <div class="form-group">
-                <label class="form-label">${field.label}</label>
-                <input type="${field.type}" class="form-input" id="input-${field.id}" placeholder="${field.placeholder}" value="${answers.contact[field.id] || ''}">
+        <div class="question-card" style="background: linear-gradient(135deg, #D7EBFF 0%, #B9DCFF 100%);">
+          <div class="question-label">The 8 focus areas</div>
+          <div class="focus-areas-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px;">
+            ${data.focusAreas.map((area, index) => `
+              <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: white; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--st-blue-900);">
+                <span style="width: 24px; height: 24px; min-width: 24px; flex-shrink: 0; background: var(--st-blue-500); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">${index + 1}</span>
+                ${area}
               </div>
-            `;
-          }).join('')}
+            `).join('')}
+          </div>
         </div>
 
-        ${renderNavFooter()}
+        <div style="text-align: center; padding: 24px 0; color: var(--st-gray-600); font-size: 14px;">
+          ${data.timeEstimate}
+        </div>
+
+        ${renderNavFooter('Let\'s go!')}
       `;
     }
 
@@ -2111,30 +2354,116 @@
           </div>
         `).join('') : ''}
 
-        ${data.questions.map(q => `
-          <div class="question-card">
-            <div class="question-label">${q.label}</div>
-            <div class="question-title">${q.title}</div>
-            <div class="options-list">
-              ${q.options.map(o => `
-                <label class="option ${answers.context[q.id] === o.value ? 'selected' : ''}" onclick="selectContextOption('${q.id}', '${o.value}', this)">
-                  <span class="option-radio"></span>
-                  <span class="option-text">${o.label}</span>
-                </label>
-              `).join('')}
+        ${data.questions.map(q => {
+          if (q.type === 'ranking') {
+            const savedRanking = answers.context[q.id] || [];
+            const rankedValues = new Set(savedRanking);
+            const unrankedOptions = q.options.filter(o => !rankedValues.has(o.value));
+            return `
+              <div class="question-card">
+                <div class="question-label">${q.label}</div>
+                <div class="question-title">${q.title}</div>
+                <div class="ranking-container" id="ranking-${q.id}">
+                  <div class="ranking-source" id="ranking-source-${q.id}">
+                    <div class="ranking-source-label">Options</div>
+                    ${unrankedOptions.map(o => `
+                      <div class="ranking-item" draggable="true" data-value="${o.value}"
+                           ondragstart="handleRankDragStart(event)"
+                           ondragend="handleRankDragEnd(event)"
+                           onclick="handleRankingItemClick(event, '${q.id}')">
+                        <span class="ranking-handle">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="8" y1="6" x2="16" y2="6"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                            <line x1="8" y1="18" x2="16" y2="18"></line>
+                          </svg>
+                        </span>
+                        <span class="ranking-text">${o.label}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                  <div class="ranking-targets" id="ranking-targets-${q.id}">
+                    ${[1,2,3,4,5].map(n => {
+                      const rankedValue = savedRanking[n - 1];
+                      const rankedOption = rankedValue ? q.options.find(o => o.value === rankedValue) : null;
+                      if (rankedOption) {
+                        return `
+                          <div class="ranking-slot" data-slot="${n}">
+                            <span class="ranking-slot-number">${n}</span>
+                            <div class="ranking-dropzone has-item" data-slot="${n}" data-question="${q.id}"
+                                 ondragover="handleRankDragOver(event)"
+                                 ondragleave="handleRankDragLeave(event)"
+                                 ondrop="handleRankDrop(event)">
+                              <div class="ranking-item in-slot" draggable="true" data-value="${rankedOption.value}"
+                                   ondragstart="handleRankDragStart(event)"
+                                   ondragend="handleRankDragEnd(event)"
+                                   onclick="handleRankingItemClick(event, '${q.id}')">
+                                <span class="ranking-handle">
+                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="8" y1="6" x2="16" y2="6"></line>
+                                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                                    <line x1="8" y1="18" x2="16" y2="18"></line>
+                                  </svg>
+                                </span>
+                                <span class="ranking-text">${rankedOption.label}</span>
+                              </div>
+                            </div>
+                          </div>
+                        `;
+                      }
+                      return `
+                        <div class="ranking-slot" data-slot="${n}">
+                          <span class="ranking-slot-number">${n}</span>
+                          <div class="ranking-dropzone" data-slot="${n}" data-question="${q.id}"
+                               ondragover="handleRankDragOver(event)"
+                               ondragleave="handleRankDragLeave(event)"
+                               ondrop="handleRankDrop(event)">
+                            <span class="ranking-dropzone-label">${n === 1 ? 'Most important' : n === 5 ? 'Least important' : ''}</span>
+                          </div>
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+                <div class="ranking-hint">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                  Click or drag the options to prioritize them
+                </div>
+              </div>
+            `;
+          }
+          return `
+            <div class="question-card">
+              <div class="question-label">${q.label}</div>
+              <div class="question-title">${q.title}</div>
+              <div class="options-list">
+                ${q.options.map(o => `
+                  <label class="option ${answers.context[q.id] === o.value ? 'selected' : ''}" onclick="selectContextOption('${q.id}', '${o.value}', this)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">${o.label}</span>
+                  </label>
+                `).join('')}
+              </div>
             </div>
-          </div>
-        `).join('')}
+          `;
+        }).join('')}
 
         ${renderNavFooter()}
       `;
+
+      // Initialize source dropzone for ranking after DOM update
+      setTimeout(setupSourceDropzone, 0);
     }
 
     function renderUseCaseSection(container, ucId, questionType) {
       const data = questionnaire.useCases[ucId];
       const ucAnswers = answers.useCases[ucId] || {};
       const qData = data[questionType];
-      const questionLabel = questionType === 'A' ? 'Vraag 1 van 2' : 'Vraag 2 van 2';
+      const questionLabel = questionType === 'A' ? 'Frage 1 von 2' : 'Frage 2 von 2';
 
       container.innerHTML = `
         <div class="section-header">
@@ -2161,7 +2490,6 @@
 
     function renderDeliverySection(container) {
       const data = questionnaire.delivery;
-      const showTimeslot = answers.delivery.consultation === 'yes_call';
 
       container.innerHTML = `
         <div class="section-header">
@@ -2172,15 +2500,28 @@
               <line x1="16" y1="13" x2="8" y2="13"></line>
               <line x1="16" y1="17" x2="8" y2="17"></line>
             </svg>
-            Jouw rapport
+            ${data.badge}
           </div>
           <h1 class="section-title">${data.title}</h1>
           <p class="section-subtitle">${data.subtitle}</p>
         </div>
 
         <div class="question-card">
-          <div class="question-label">Rapportlevering</div>
-          <div class="question-title">Hoe wil je je rapport ontvangen?</div>
+          <div class="question-label">Your details</div>
+          <div class="question-title">Where should we send your report?</div>
+          <div class="form-row" style="margin-top: 16px;">
+            ${data.contactFields.map(field => `
+              <div class="form-group">
+                <label class="form-label">${field.label}</label>
+                <input type="${field.type}" class="form-input" id="input-${field.id}" placeholder="${field.placeholder}" value="${answers.contact[field.id] || ''}">
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-label">Report delivery</div>
+          <div class="question-title">How would you like to receive your report?</div>
           ${data.deliveryOptions.map(o => `
             <label class="checkbox-option ${answers.delivery[o.value] ? 'selected' : ''}" onclick="toggleDeliveryOption('${o.value}', this)">
               <span class="checkbox-box">
@@ -2191,42 +2532,34 @@
               <span class="option-text">${o.label}</span>
             </label>
           `).join('')}
+          <p style="margin: 12px 0 0; color: var(--st-gray-500); font-size: 13px; line-height: 1.5;">By clicking the button, you give Studytube permission to process the necessary data and send you relevant information.</p>
         </div>
 
         <div class="question-card">
-          <div class="question-label">${data.consultationQuestion.label}</div>
-          <div class="question-title">${data.consultationQuestion.title}</div>
-          <div class="options-list">
-            ${data.consultationQuestion.options.map(o => `
-              <label class="option ${answers.delivery.consultation === o.value ? 'selected' : ''}" onclick="selectConsultationOption('${o.value}', this)">
-                <span class="option-radio"></span>
-                <span class="option-text">${o.label}</span>
-              </label>
-            `).join('')}
-          </div>
-        </div>
-
-        <!-- RevenueHero Scheduling (shown when 'yes_call' selected) -->
-        <div class="question-card" id="revenuehero-card" style="display: ${showTimeslot ? 'block' : 'none'}">
-          <div class="question-label">Plan je gesprek</div>
-          <div class="question-title">Kies een moment dat je uitkomt</div>
-          <div id="revenuehero-inline-embed" style="margin-top: 12px;">
-            <div style="text-align: center; padding: 24px; color: var(--st-gray-500);">
-              <p>Kalender laden...</p>
-            </div>
-          </div>
-          <p id="skip-scheduling" style="text-align: center; margin-top: 12px; font-size: 13px; color: var(--st-gray-500);">
-            <a href="#" onclick="skipScheduling(); return false;" style="color: var(--st-blue-500);">
-              Sla over en bekijk eerst je resultaten →
-            </a>
-          </p>
+          <div class="question-label">${data.consultationCTA.label}</div>
+          <div class="question-title">${data.consultationCTA.title}</div>
+          <p style="margin: 8px 0 16px; color: var(--st-gray-600); font-size: 15px;">${data.consultationCTA.subtitle}</p>
+          <a href="${data.consultationCTA.meetingUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            ${data.consultationCTA.buttonText}
+          </a>
         </div>
 
         ${renderNavFooter(true)}
       `;
     }
 
-    function renderNavFooter(isLast = false) {
+    function renderNavFooter(isLastOrCustomText = false) {
+      const isLast = isLastOrCustomText === true;
+      const customText = typeof isLastOrCustomText === 'string' ? isLastOrCustomText : null;
+      const buttonText = customText || (isLast ? 'View results' : 'Next');
+      const showCheckIcon = isLast;
+
       return `
         <div class="nav-footer">
           <button class="btn btn-secondary" onclick="prevSection()" ${currentSectionIndex === 0 ? 'style="visibility: hidden"' : ''}>
@@ -2237,9 +2570,9 @@
             Previous
           </button>
           <button class="btn btn-primary" onclick="nextSection()">
-            ${isLast ? 'View results' : 'Next'}
+            ${buttonText}
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              ${isLast ? '<polyline points="20 6 9 17 4 12"></polyline>' : '<line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>'}
+              ${showCheckIcon ? '<polyline points="20 6 9 17 4 12"></polyline>' : '<line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>'}
             </svg>
           </button>
         </div>
@@ -2257,6 +2590,162 @@
       element.classList.add('selected');
     }
 
+    // Drag and Drop for Ranking (Two-Column Slot System)
+    let draggedRankItem = null;
+
+    function handleRankDragStart(event) {
+      draggedRankItem = event.target.closest('.ranking-item');
+      draggedRankItem.classList.add('dragging');
+      event.dataTransfer.effectAllowed = 'move';
+      event.dataTransfer.setData('text/plain', draggedRankItem.dataset.value);
+    }
+
+    function handleRankDragEnd(event) {
+      if (draggedRankItem) {
+        draggedRankItem.classList.remove('dragging');
+      }
+      document.querySelectorAll('.ranking-dropzone').forEach(dz => {
+        dz.classList.remove('drag-over');
+      });
+      draggedRankItem = null;
+    }
+
+    function handleRankDragOver(event) {
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'move';
+      const dropzone = event.target.closest('.ranking-dropzone');
+      if (dropzone) {
+        dropzone.classList.add('drag-over');
+      }
+    }
+
+    function handleRankDragLeave(event) {
+      const dropzone = event.target.closest('.ranking-dropzone');
+      if (dropzone && !dropzone.contains(event.relatedTarget)) {
+        dropzone.classList.remove('drag-over');
+      }
+    }
+
+    function handleRankDrop(event) {
+      event.preventDefault();
+      const dropzone = event.target.closest('.ranking-dropzone');
+      if (!dropzone || !draggedRankItem) return;
+
+      dropzone.classList.remove('drag-over');
+      const questionId = dropzone.dataset.question;
+      const slot = parseInt(dropzone.dataset.slot);
+
+      // If dropzone already has an item, move it back to source
+      const existingItem = dropzone.querySelector('.ranking-item');
+      if (existingItem) {
+        const source = document.getElementById(`ranking-source-${questionId}`);
+        existingItem.classList.remove('in-slot');
+        source.appendChild(existingItem);
+      }
+
+      // If dragged item was in another slot, clear that slot
+      const previousSlot = draggedRankItem.closest('.ranking-dropzone');
+      if (previousSlot) {
+        previousSlot.classList.remove('has-item');
+        const label = previousSlot.dataset.slot == 1 ? 'Most important' : previousSlot.dataset.slot == 5 ? 'Least important' : '';
+        previousSlot.innerHTML = `<span class="ranking-dropzone-label">${label}</span>`;
+      }
+
+      // Move item to dropzone
+      dropzone.innerHTML = '';
+      draggedRankItem.classList.add('in-slot');
+      dropzone.appendChild(draggedRankItem);
+      dropzone.classList.add('has-item');
+
+      // Update answers
+      updateRankingAnswers(questionId);
+    }
+
+    function updateRankingAnswers(questionId) {
+      const targets = document.getElementById(`ranking-targets-${questionId}`);
+      const ranking = [];
+      targets.querySelectorAll('.ranking-slot').forEach(slot => {
+        const dropzone = slot.querySelector('.ranking-dropzone');
+        const item = dropzone.querySelector('.ranking-item');
+        if (item) {
+          ranking.push(item.dataset.value);
+        } else {
+          ranking.push(null);
+        }
+      });
+      // Filter out nulls and store
+      answers.context[questionId] = ranking.filter(v => v !== null);
+    }
+
+    // Allow dropping back to source
+    function setupSourceDropzone() {
+      document.querySelectorAll('.ranking-source').forEach(source => {
+        source.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'move';
+        });
+        source.addEventListener('drop', (e) => {
+          e.preventDefault();
+          if (!draggedRankItem) return;
+
+          const previousSlot = draggedRankItem.closest('.ranking-dropzone');
+          if (previousSlot) {
+            previousSlot.classList.remove('has-item');
+            const label = previousSlot.dataset.slot == 1 ? 'Most important' : previousSlot.dataset.slot == 5 ? 'Least important' : '';
+            previousSlot.innerHTML = `<span class="ranking-dropzone-label">${label}</span>`;
+
+            draggedRankItem.classList.remove('in-slot');
+            source.appendChild(draggedRankItem);
+
+            const questionId = previousSlot.dataset.question;
+            updateRankingAnswers(questionId);
+          }
+        });
+      });
+    }
+
+    // Initialize source dropzones when page loads
+    document.addEventListener('DOMContentLoaded', setupSourceDropzone);
+
+    // Click-to-rank for mobile/touch support
+    function handleRankingItemClick(event, questionId) {
+      const item = event.target.closest('.ranking-item');
+      if (!item) return;
+
+      // If item is already in a slot, return it to source
+      const currentSlot = item.closest('.ranking-dropzone');
+      if (currentSlot) {
+        currentSlot.classList.remove('has-item');
+        const slotNum = currentSlot.dataset.slot;
+        const label = slotNum == 1 ? 'Most important' : slotNum == 5 ? 'Least important' : '';
+
+        const source = document.getElementById(`ranking-source-${questionId}`);
+        item.classList.remove('in-slot');
+        source.appendChild(item);
+
+        // Re-add empty label
+        if (!currentSlot.querySelector('.ranking-dropzone-label')) {
+          currentSlot.insertAdjacentHTML('afterbegin', `<span class="ranking-dropzone-label">${label}</span>`);
+        }
+
+        updateRankingAnswers(questionId);
+        return;
+      }
+
+      // Find first empty slot
+      const targets = document.getElementById(`ranking-targets-${questionId}`);
+      const emptySlot = targets.querySelector('.ranking-dropzone:not(.has-item)');
+      if (!emptySlot) return; // All slots filled
+
+      // Move item to slot
+      emptySlot.innerHTML = '';
+      item.classList.add('in-slot');
+      emptySlot.appendChild(item);
+      emptySlot.classList.add('has-item');
+
+      updateRankingAnswers(questionId);
+    }
+
     function selectUseCaseOption(ucId, type, score, element) {
       if (!answers.useCases[ucId]) answers.useCases[ucId] = {};
       answers.useCases[ucId][type] = score;
@@ -2270,83 +2759,9 @@
       element.classList.toggle('selected', answers.delivery[value]);
     }
 
-    // RevenueHero configuration
-    const REVENUEHERO_CONFIG = {
-      routerId: '4842',
-      schedulerUrl: 'https://studytube.schedulehero.io/inbound/l-d-quick-scan-router',
-      enabled: true
-    };
-
-    function selectConsultationOption(value, element) {
-      answers.delivery.consultation = value;
-      const card = element.closest('.question-card');
-      card.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
-      element.classList.add('selected');
-
-      // Show/hide RevenueHero scheduler based on selection
-      const rhCard = document.getElementById('revenuehero-card');
-      if (value === 'yes_call') {
-        rhCard.style.display = 'block';
-        rhCard.style.animation = 'fadeIn 0.3s ease';
-        initRevenueHeroInline();
-      } else {
-        rhCard.style.display = 'none';
-        answers.delivery.meeting_booked = false;
-      }
-    }
-
-    function initRevenueHeroInline() {
-      const container = document.getElementById('revenuehero-inline-embed');
-      if (!container) return;
-
-      if (!REVENUEHERO_CONFIG.enabled) {
-        container.innerHTML = `
-          <div style="text-align: center; padding: 20px; background: var(--st-gray-75); border-radius: 10px;">
-            <p style="color: var(--st-gray-500); font-size: 13px;">We nemen na afloop contact met je op om een gesprek in te plannen.</p>
-          </div>
-        `;
-        return;
-      }
-
-      // Show button to open scheduler in new window
-      container.innerHTML = `
-        <div style="text-align: center; padding: 20px; background: var(--st-gray-75); border-radius: 10px;">
-          <button class="btn btn-primary" onclick="openRevenueHeroScheduler()" style="font-size: 14px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
-            Plan gesprek (30 min)
-          </button>
-        </div>
-      `;
-    }
-
-    function openRevenueHeroScheduler() {
-      // Build URL with pre-filled data and ref tracking
-      const params = new URLSearchParams();
-      params.set('ref', 'ld-impact-scan-form');
-
-      if (answers.contact.email) params.set('email', answers.contact.email);
-      if (answers.contact.naam) {
-        params.set('firstName', answers.contact.naam.split(' ')[0]);
-        const lastName = answers.contact.naam.split(' ').slice(1).join(' ');
-        if (lastName) params.set('lastName', lastName);
-      }
-      if (answers.contact.organisatie) params.set('company', answers.contact.organisatie);
-
-      const schedulerUrl = `${REVENUEHERO_CONFIG.schedulerUrl}?${params.toString()}`;
-      console.log('Opening scheduler URL:', schedulerUrl);
-
-      window.open(schedulerUrl, '_blank', 'width=700,height=750');
-    }
-
-    function skipScheduling() {
-      answers.delivery.meeting_booked = false;
-      answers.delivery.consultation = 'yes_later'; // Change to 'later' since they skipped
-      nextSection();
+    function openMeetingScheduler() {
+      const meetingUrl = MEETING_CONFIG.meetingUrl;
+      window.open(meetingUrl, '_blank', 'width=700,height=750');
     }
 
     // ============================================
@@ -2359,7 +2774,8 @@
     }
 
     async function showResults() {
-      // Prepare data for results page
+      const resultId = scanId || crypto.randomUUID();
+
       const resultsData = {
         contact: answers.contact,
         context: answers.context,
@@ -2367,19 +2783,9 @@
         delivery: answers.delivery,
         meta: {
           completed_at: new Date().toISOString(),
-          version: '3.1'
+          version: '4.0'
         }
       };
-
-      // Enhanced logging for debugging
-      console.log('=== SCAN SUBMISSION DEBUG ===');
-      console.log('Scan completed:', resultsData);
-      console.log('Contact:', answers.contact);
-      console.log('Contact email:', answers.contact?.email);
-      console.log('Context:', answers.context);
-      console.log('UseCases:', answers.useCases);
-      console.log('UseCases count:', Object.keys(answers.useCases || {}).length);
-      console.log('Delivery:', answers.delivery);
 
       // Show loading state
       const submitBtn = document.querySelector('.nav-footer .btn-primary');
@@ -2392,87 +2798,48 @@
               <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
             </path>
           </svg>
-          Opslaan...
+          Saving...
         `;
       }
 
-      // Always save to localStorage first as backup
+      // Save to localStorage as backup
       localStorage.setItem('ldScanResults', JSON.stringify(resultsData));
-      localStorage.setItem('ldScanPendingSync', 'true');
 
       let savedToServer = false;
-      let resultId = null;
 
-      // Try InstantDB first (if configured)
-      if (InstantScan.isReady()) {
-        try {
-          const { id, score, phase } = await InstantScan.saveResult(resultsData);
-          console.log('Saved to InstantDB - ID:', id, 'Score:', score, 'Phase:', phase);
+      try {
+        const response = await fetch('/api/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            result_id: resultId,
+            email: answers.contact.email,
+            organisation: answers.contact.organisatie,
+            payload: resultsData
+          })
+        });
 
-          if (id) {
-            savedToServer = true;
-            resultId = id;
-            localStorage.removeItem('ldScanPendingSync');
-          }
-        } catch (error) {
-          console.error('InstantDB save failed:', error);
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`API error ${response.status}: ${errorText}`);
         }
+
+        const data = await response.json();
+        console.log('Saved to Google Sheets - ID:', resultId, 'Score:', data.score, 'Phase:', data.phase);
+        savedToServer = true;
+      } catch (error) {
+        console.error('Submit failed:', error);
       }
 
-      // If InstantDB didn't work, try Supabase API with retry
-      if (!savedToServer) {
-        const maxRetries = 3;
-        for (let attempt = 1; attempt <= maxRetries; attempt++) {
-          try {
-            console.log(`Supabase API attempt ${attempt}/${maxRetries}...`);
-            const response = await fetch('/api/submit', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                email: answers.contact.email,
-                organisation: answers.contact.organisatie,
-                payload: resultsData
-              })
-            });
-
-            if (!response.ok) {
-              const errorText = await response.text();
-              throw new Error(`API error ${response.status}: ${errorText}`);
-            }
-
-            const { result_id, score, phase } = await response.json();
-            console.log('Saved to Supabase - ID:', result_id, 'Score:', score, 'Phase:', phase);
-
-            savedToServer = true;
-            resultId = result_id;
-            localStorage.removeItem('ldScanPendingSync');
-            break; // Success, exit retry loop
-
-          } catch (error) {
-            console.error(`API attempt ${attempt} failed:`, error);
-            if (attempt < maxRetries) {
-              await new Promise(r => setTimeout(r, 1000 * attempt)); // Exponential backoff
-            }
-          }
-        }
-      }
-
-      // Navigate to results
-      console.log('=== NAVIGATION DEBUG ===');
-      console.log('savedToServer:', savedToServer);
-      console.log('resultId:', resultId);
-      console.log('localStorage ldScanResults exists:', !!localStorage.getItem('ldScanResults'));
-
-      if (savedToServer && resultId) {
-        const targetUrl = `results-v2.html?id=${resultId}`;
-        console.log('Navigating to:', targetUrl);
-        window.location.href = targetUrl;
+      if (savedToServer) {
+        window.location.href = `/survey/results-v2?id=${resultId}`;
       } else {
-        // Show warning but still navigate - data is in localStorage
         console.warn('Could not save to server. Data saved locally only.');
-        console.log('localStorage ldScanResults:', localStorage.getItem('ldScanResults')?.substring(0, 200) + '...');
-        alert('Let op: je resultaten konden niet worden opgeslagen op de server. Je kunt ze nu wel bekijken, maar de link is niet deelbaar. Neem contact op met support als dit probleem aanhoudt.');
-        window.location.href = 'results-v2.html';
+        const isLocalTest = window.location.protocol === 'file:' || window.location.hostname === 'localhost';
+        if (!isLocalTest) {
+          alert('Note: Your results could not be saved on the server. You can view them now, but the link is not shareable. Please contact support if this problem persists.');
+        }
+        window.location.href = '/survey/results-v2';
       }
     }
   </script>

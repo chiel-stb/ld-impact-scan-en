@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L&D Impact Scan Bericht | Studytube</title>
+  <title>L&D Impact Scan Report | Studytube</title>
   <style>
     /* ===========================================
        STUDYTUBE PDF REPORT STYLES
@@ -217,7 +217,7 @@
       .cover-pattern,
       .back-cover-pattern,
       .back-cover-page,
-      .meer-weten-page {
+      .learn-more-page {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
@@ -634,31 +634,31 @@
     }
 
     /* ===========================================
-       MEER WETEN PAGE
+       LEARN MORE PAGE
        =========================================== */
 
-    .meer-weten-page {
+    .learn-more-page {
       background: white;
       padding: 0;
       position: relative;
       overflow: hidden;
     }
 
-    .meer-weten-photo {
+    .learn-more-photo {
       width: 210mm;
       height: 140mm;
       position: relative;
       overflow: hidden;
     }
 
-    .meer-weten-photo img {
+    .learn-more-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
     }
 
-    .meer-weten-photo .geometric-accent {
+    .learn-more-photo .geometric-accent {
       position: absolute;
       bottom: -1px;
       right: 0;
@@ -667,29 +667,29 @@
       pointer-events: none;
     }
 
-    .meer-weten-logo {
+    .learn-more-logo {
       position: absolute;
       top: 105mm;
       right: 20mm;
       z-index: 2;
     }
 
-    .meer-weten-logo img {
+    .learn-more-logo img {
       height: 20px;
     }
 
-    .meer-weten-body {
+    .learn-more-body {
       padding: 24mm 20mm 0 20mm;
     }
 
-    .meer-weten-body h2 {
+    .learn-more-body h2 {
       font-size: 24pt;
       font-weight: 700;
       color: var(--st-blue-900);
       margin-bottom: 12px;
     }
 
-    .meer-weten-body p {
+    .learn-more-body p {
       font-size: 11pt;
       line-height: 1.7;
       color: var(--st-blue-900);
@@ -697,7 +697,7 @@
       margin-bottom: 20px;
     }
 
-    .meer-weten-btn {
+    .learn-more-btn {
       display: inline-block;
       background: var(--st-orange);
       color: white;
@@ -870,7 +870,7 @@
 
     <div class="cover-content">
       <div class="cover-tag">L&D IMPACT SCAN</div>
-      <h1 class="cover-title">Ihr L&D<br>Impact Profil</h1>
+      <h1 class="cover-title">Your L&D<br>Impact Profile</h1>
       <div class="cover-meta">
         <strong id="cover-name">{{CONTACT_NAME}}</strong><br>
         <span id="cover-org">{{ORG_NAME}}</span>
@@ -903,29 +903,29 @@
        ========================================= -->
   <div class="page">
     <div class="page-content">
-      <div class="section-tag">ÜBER DIESEN BERICHT</div>
-      <h1>Über diesen Bericht</h1>
+      <div class="section-tag">ABOUT THIS REPORT</div>
+      <h1>About this report</h1>
 
-      <p>Der L&D Impact Scan gibt Ihnen Einblick, wie Lernen und Development aktuell organised sind – im Verhältnis zu ihrer strategischen Bedeutung. Er dient als Instrument zur orientation: Wo können Sie mit L&D derzeit the greatest impact erzielen?</p>
+      <p>The L&D Impact Scan gives you insight into how Learning and Development is currently organised within your organisation &mdash; in relation to its strategic importance. It serves as an orientation tool: where can L&D currently make the greatest impact?</p>
 
-      <p>Der Bericht ist nicht dazu gedacht, Ihren L&D-Approach zu bewerten oder seinen „Reifegrad" zu messen. Ziel ist es, sichtbar zu machen, wo die Differenz zwischen Anspruch und aktuellem Vorgehen am größten ist. Genau dort liegt das Potenzial.</p>
+      <p>This report is not intended to evaluate your L&D approach or measure its "maturity level". The goal is to make visible where the gap between ambition and current practice is greatest. That is precisely where the potential lies.</p>
 
-      <p>Der Bericht basiert vollständig auf den Antworten, die Sie im Scan gegeben haben. Diese wurden übersetzt in:</p>
+      <p>The report is based entirely on the answers you provided in the scan. These have been translated into:</p>
       <ul class="success-list" style="margin-bottom: 16px;">
-        <li>Einblick in Ihren Kontext und Ihre Priorityen</li>
-        <li>Eine Overview der relevantesten L&D-Anwendungsfelder</li>
-        <li>Fokusbereiche, in denen gezielte Aufmerksamkeit the greatest impact für employees und organisation erzielen kann</li>
+        <li>Insight into your context and priorities</li>
+        <li>An overview of the most relevant L&D use cases</li>
+        <li>Focus areas where targeted attention can deliver the greatest impact for employees and the organisation</li>
       </ul>
 
-      <p style="font-size: 10pt; font-style: italic; border-left: 2px solid var(--st-blue-500); padding-left: 12px; margin: 12px 0;">Nutzen Sie diesen Bericht als Gesprächsgrundlage. Als Kompass für Priorityen. Und als Basis, um gemeinsam zu entscheiden: Wo investieren wir Zeit, Energie und Ressourcen am wirkungsvollsten?</p>
+      <p style="font-size: 10pt; font-style: italic; border-left: 2px solid var(--st-blue-500); padding-left: 12px; margin: 12px 0;">Use this report as a basis for conversation. As a compass for priorities. And as a foundation for deciding together: where should we invest time, energy and resources most effectively?</p>
 
-      <h3>Zentrale Begriffe</h3>
+      <h3>Key terms</h3>
       <ul class="success-list">
-        <li><strong>L&D Impact Modell</strong> — Rahmenwerk zur structureierung und strategischen Ausrichtung Ihres L&D-Approaches</li>
-        <li><strong>Use Case</strong> — Konkretes Anwendungsfeld im L&D-Kontext</li>
-        <li><strong>Fokus Use Case</strong> — Ein Anwendungsfeld mit vergleichsweise großer Lücke, in dem gezielte Aufmerksamkeit den größten Mehrwert schafft</li>
-        <li><strong>Gap</strong> — Differenz zwischen strategischer Bedeutung und aktuellem Vorgehen</li>
-        <li><strong>Success Factors</strong> — Bausteine, die erforderlich sind, um ein Anwendungsfeld wirksam aufzusetzen</li>
+        <li><strong>L&D Impact Model</strong> &mdash; Framework for structuring and strategically aligning your L&D approach</li>
+        <li><strong>Use Case</strong> &mdash; A specific area of application within the L&D context</li>
+        <li><strong>Focus use case</strong> &mdash; A use case with a comparatively large gap, where targeted attention creates the greatest value</li>
+        <li><strong>Gap</strong> &mdash; The difference between strategic importance and current approach</li>
+        <li><strong>Success Factors</strong> &mdash; Building blocks required to effectively set up a use case</li>
       </ul>
 
     </div>
@@ -936,28 +936,28 @@
   </div>
 
   <!-- =========================================
-       PAGE 3: DIT VERTELDE JE ONS
+       PAGE 3: WHAT YOU TOLD US
        ========================================= -->
   <div class="page">
     <div class="page-content">
-      <div class="section-tag">IHR KONTEXT</div>
-      <h1>Das haben Sie uns mitgeteilt</h1>
-      <p id="context-org" style="color: var(--st-gray-600); margin-bottom: 16px;">Sie arbeiten bei <strong style="color: var(--st-blue-900);">{{ORG_NAME}}</strong></p>
+      <div class="section-tag">YOUR CONTEXT</div>
+      <h1>What you told us</h1>
+      <p id="context-org" style="color: var(--st-gray-600); margin-bottom: 16px;">You work at <strong style="color: var(--st-blue-900);">{{ORG_NAME}}</strong></p>
 
       <div id="org-goals-section" style="display: none;">
         <div class="card">
-          <div class="context-label">Ihre organisationsziele für 2026</div>
+          <div class="context-label">Your organisation goals for 2026</div>
           <p id="context-goals" style="margin: 0; color: var(--st-blue-900); word-break: break-word; overflow-wrap: break-word;">{{ORG_GOALS}}</p>
         </div>
       </div>
 
       <div class="context-grid">
         <div class="context-item">
-          <div class="context-label">Ihre strategische Priority</div>
+          <div class="context-label">Your strategic priority</div>
           <div class="context-value" id="context-strategic">{{STRATEGIC_GOAL}}</div>
         </div>
         <div class="context-item">
-          <div class="context-label">Ihre größte Herausforderung</div>
+          <div class="context-label">Your biggest challenge</div>
           <div class="context-value" id="context-challenge">{{LD_CHALLENGE}}</div>
         </div>
       </div>
@@ -973,25 +973,25 @@
   </div>
 
   <!-- =========================================
-       PAGE 4: L&D IMPACT MODEL (was 3)
+       PAGE 4: L&D IMPACT MODEL
        ========================================= -->
   <div class="page">
     <div class="page-content">
       <div class="section-tag">L&D IMPACT MODEL</div>
-      <h1>L&D Impact Modell</h1>
+      <h1>L&D Impact Model</h1>
 
-      <p>Das L&D Impact Modell ist ein Rahmenwerk, das structure in Ihren L&D-Approach bringt. Es umfasst acht klar definierte Anwendungsfelder, die gemeinsam die gesamte Bandbreite von Lernen und Development im organisation abdecken.</p>
+      <p>The L&D Impact Model is a framework that brings structure to your L&D approach. It encompasses eight clearly defined use cases that together cover the full breadth of Learning and Development within an organisation.</p>
 
-      <p style="font-size: 10pt;">In vielen organisationen besteht L&D aus einzelnen Initiativen, dringenden Anfragen und ad-hoc Lösungen. Das L&D Impact Modell schafft eine gemeinsame Sprache und einen festen Bezugsrahmen, um diese Initiativen zu bündeln und im Zusammenhang zu betrachten. Das Modell ist kein Stufenplan und kein Reifegradmodell — es gibt keine festgelegte Reihenfolge und kein definiertes Endziel.</p>
+      <p style="font-size: 10pt;">In many organisations, L&D consists of individual initiatives, urgent requests and ad-hoc solutions. The L&D Impact Model provides a shared language and a fixed frame of reference for bundling these initiatives and viewing them in context. The model is not a step-by-step plan or a maturity model &mdash; there is no fixed sequence and no defined end goal.</p>
 
       <div class="use-cases-grid" id="use-cases-grid">
         <!-- Dynamically populated -->
       </div>
 
       <div class="card card-blue" style="margin-top: 16px;">
-        <h4 style="margin-top: 0;">Wie lesen Sie dieses Modell?</h4>
-        <p style="margin-bottom: 8px; font-size: 10pt;">Für jedes Anwendungsfeld wurden zwei Werte ermittelt: die strategische <strong>Bedeutung</strong> des Themas für Ihr organisation und das <strong>aktuelle Vorgehen</strong>. Die Differenz zwischen beiden bildet die <strong>Lücke</strong>.</p>
-        <p style="margin-bottom: 0; font-size: 10pt;">Die markierten Anwendungsfelder (#1, #2, #3) zeigen, wo diese Lücke am größten ist. Das sind Ihre <strong>Fokus Use Cases</strong> — nicht, weil dort etwas „schlecht" organised ist, sondern weil hier, im Verhältnis zu Ihren Priorityen, das größte Potenzial für Impact liegt.</p>
+        <h4 style="margin-top: 0;">How to read this model</h4>
+        <p style="margin-bottom: 8px; font-size: 10pt;">For each use case, two values were determined: the strategic <strong>importance</strong> of the topic for your organisation and the <strong>current approach</strong>. The difference between the two forms the <strong>gap</strong>.</p>
+        <p style="margin-bottom: 0; font-size: 10pt;">The highlighted use cases (#1, #2, #3) show where this gap is greatest. These are your <strong>focus use cases</strong> &mdash; not because something is "poorly" organised there, but because this is where, relative to your priorities, the greatest potential for impact lies.</p>
       </div>
     </div>
     <div class="page-footer">
@@ -1001,14 +1001,14 @@
   </div>
 
   <!-- =========================================
-       PAGE 5: ALLE SCORES
+       PAGE 5: ALL SCORES
        ========================================= -->
   <div class="page">
     <div class="page-content">
-      <div class="section-tag">ALLE WERTE</div>
-      <h1>Alle Werte per Use Case</h1>
+      <div class="section-tag">ALL SCORES</div>
+      <h1>All scores per use case</h1>
 
-      <p>Nachfolgend finden Sie eine Overview aller acht Anwendungsfelder mit Ihren Bewertungen. Der <strong>A-Score</strong> zeigt, wie Ihr aktuelles Vorgehen ausgeprägt ist (1–5). Der <strong>B-Score</strong> gibt an, wie wichtig dieses Thema für Sie ist (1–5).</p>
+      <p>Below you will find an overview of all eight use cases with your scores. The <strong>A-Score</strong> shows how your current approach is developed (1&ndash;5). The <strong>B-Score</strong> indicates how important this topic is to you (1&ndash;5).</p>
 
       <div class="all-scores-list" id="all-scores-list">
         <!-- Dynamically populated -->
@@ -1026,7 +1026,7 @@
        ========================================= -->
   <div class="page" id="priority-page-1">
     <div class="page-content">
-      <div class="section-tag">FOKUS USE CASE #1</div>
+      <div class="section-tag">FOCUS USE CASE #1</div>
       <div class="priority-card" id="priority-1">
         <!-- Dynamically populated -->
       </div>
@@ -1039,7 +1039,7 @@
 
   <div class="page" id="priority-page-2">
     <div class="page-content">
-      <div class="section-tag">FOKUS USE CASE #2</div>
+      <div class="section-tag">FOCUS USE CASE #2</div>
       <div class="priority-card" id="priority-2">
         <!-- Dynamically populated -->
       </div>
@@ -1052,7 +1052,7 @@
 
   <div class="page" id="priority-page-3">
     <div class="page-content">
-      <div class="section-tag">FOKUS USE CASE #3</div>
+      <div class="section-tag">FOCUS USE CASE #3</div>
       <div class="priority-card" id="priority-3">
         <!-- Dynamically populated -->
       </div>
@@ -1064,17 +1064,17 @@
   </div>
 
   <!-- =========================================
-       PAGE 9: MEER WETEN
+       PAGE 9: LEARN MORE
        ========================================= -->
-  <div class="page meer-weten-page">
-    <div class="meer-weten-photo">
-      <img src="./assets/meer-weten-image.png" alt="Zusammenarbeit im Team">
+  <div class="page learn-more-page">
+    <div class="learn-more-photo">
+      <img src="./assets/meer-weten-image.png" alt="Team collaboration">
     </div>
 
-    <div class="meer-weten-body">
-      <h2>Möchten Sie mehr erfahren?</h2>
-      <p>Wenn Sie Ihre employeesn bestmöglich beim lebenslangen Lernen unterstützen möchten, sprechen Sie mit einem unserer Expert:innen. Wir zeigen Ihnen, wie die All-in-One-Lernplattform von Studytube organisation dabei unterstützt.</p>
-      <a href="https://www.studytube.com/de/demo" class="meer-weten-btn">Demo buchen</a>
+    <div class="learn-more-body">
+      <h2>Want to learn more?</h2>
+      <p>If you want to give your employees the best possible support for lifelong learning, speak with one of our experts. We will show you how Studytube&rsquo;s all-in-one learning platform supports organisations.</p>
+      <a href="https://www.studytube.com/en/demo" class="learn-more-btn">Book a demo</a>
     </div>
 
     <div class="page-footer">
@@ -1096,18 +1096,18 @@
     </div>
 
     <div class="back-cover-tagline">
-      Lernen, skills und<br>Qualifikationen<br>zentral steuern.
+      Manage learning, skills<br>and qualifications<br>from one place.
     </div>
 
     <div class="back-cover-footer">
       <div class="back-cover-footer-left">
-        <a href="https://www.studytube.de">www.studytube.de</a><br>
-        Erftstraße 15-17<br>
-        50672 Köln
+        <a href="https://www.studytube.com">www.studytube.com</a><br>
+        Keizersgracht 555<br>
+        1017 DR Amsterdam
       </div>
       <div class="back-cover-footer-right">
-        <a href="mailto:info@studytube.de">info@studytube.de</a><br>
-        Telefon: +49 (0) 221 8282 9160
+        <a href="mailto:info@studytube.com">info@studytube.com</a><br>
+        Phone: +31 (0) 20 261 67 50
       </div>
     </div>
   </div>
@@ -1120,233 +1120,233 @@
     const USE_CASE_CONTENT = {
       onboarding: {
         name: 'Onboarding',
-        section1Title: 'Onboarding als struktureller Ausgangspunkt',
-        section1Content: 'Onboarding entscheidet darüber, wie neue employees im organisation starten – und wie schnell sie eigenständig wirksam werden. It's about orientation in der ersten Phase: knowledge, was von einem erwartet wird, wissen, wo relevante Informationen zu finden sind undw issen, wie Erfolg in der jeweiligen role definiert ist. Onboarding gibt es in nahezu jeder organisation. The difference lies nicht in seiner Existenz, sondern darin, wie konsequent und skalierbar der process aufgesetzt ist.',
-        section2Title: 'Wo Onboarding Potenzial zeigt',
-        section2Content: 'Viele organisationen erleben, dass Onboarding grundsätzlich geregelt ist, in der Praxis jedoch zunehmend Abstimmung erfordert. Was wir häufig beobachten: Neue employees erhalten Informationen, müssen Priorityen jedoch selbst festlegen. Eine klare Abfolge oder gezielte orientation fehlt. This is precisely where liegt das Potenzial von Onboarding – nicht weil es fehlt, sondern weil es an Richtung, structure und transparency mangelt.',
+        section1Title: 'Onboarding as a structural starting point',
+        section1Content: 'Onboarding determines how new employees start within the organisation \u2014 and how quickly they become independently effective. It\\'s about orientation in the initial phase: knowing what is expected of them, knowing where to find relevant information, and knowing how success is defined in their role. Onboarding exists in virtually every organisation. The difference lies not in its existence, but in how consistently and scalably the process is set up.',
+        section2Title: 'Where onboarding shows potential',
+        section2Content: 'Many organisations find that onboarding is fundamentally in place, but in practice requires increasing coordination. What we frequently observe: new employees receive information, but must set priorities themselves. A clear sequence or targeted orientation is missing. This is precisely where the potential of onboarding lies \u2014 not because it is absent, but because it lacks direction, structure and transparency.',
         opportunities: [
-          { title: 'An role und Kontext ausrichten', desc: 'Durch die Ausrichtung je Funktion entsteht clarity darüber, was relevant ist.' },
-          { title: 'Rhythmus und Verlässlichkeit create', desc: 'Wenn Onboarding zeitlich gestaffelt erfolgt, lässt sich Lernen besser mit der Praxis verknüpfen.' },
-          { title: 'orientation vor dem ersten Arbeitstag geben', desc: 'Beginnt Onboarding bereits vor dem ersten Tag, starten neue employees vorbereitet.' }
+          { title: 'Align with role and context', desc: 'By tailoring onboarding to each function, clarity is created about what is relevant.' },
+          { title: 'Create rhythm and reliability', desc: 'When onboarding is delivered in a staggered timeline, learning can be better connected to practice.' },
+          { title: 'Provide orientation before the first day', desc: 'When onboarding begins before the first day, new employees start prepared.' }
         ],
         successFactors: [
-          'LMS mit Automatisierung',
-          'rolenprofile mit skills',
-          'Willkommens- und Kulturinhalte',
-          'Onboarding-Pfade je Themengebiet'
+          'LMS with automation',
+          'Role profiles with skills',
+          'Welcome and culture content',
+          'Onboarding paths per topic area'
         ]
       },
       kennisdeling: {
         name: 'Knowledge Management',
-        section1Title: 'Knowledge Management als struktureller Ausgangspunkt',
-        section1Content: 'knowledgesaustausch entscheidet darüber, in welchem Maß expertise im organisation verfügbar bleibt. Dabei stehen drei Kernfragen im Mittelpunkt: Auffindbarkeit (Können employees knowledge schnell finden?), Aktualität (Ist das knowledge auf dem neuesten Stand?) und Anwendbarkeit (Lässt es sich mit der täglichen Arbeit verknüpfen?). In vielen organisationen ist knowledge vorhanden, jedoch verteilt. The difference lies nicht in der Menge des knowledges, sondern darin, wie zugänglich und wiederverwendbar es organised ist.',
-        section2Title: 'Wo knowledgesaustausch Potenzial zeigt',
-        section2Content: 'In practice hängt knowledgesaustausch häufig von einzelnen Personen oder vom Zufall ab. employees suchen Informationen, wissen jedoch nicht, wo sie beginnen sollen. Die Folge: Fragen werden mehrfach gestellt, Expertinnen und Experten werden überlastet, und wertvolles knowledge geht verloren, wenn Personen das organisation verlassen. This is precisely where liegt das Potenzial – nicht aufgrund fehlender Expertise, sondern weil knowledge unzureichend dokumentiert, strukturiert und aktiv geteilt wird.',
+        section1Title: 'Knowledge Management as a structural starting point',
+        section1Content: 'Knowledge sharing determines the extent to which expertise remains available within the organisation. Three core questions are central: findability (can employees find knowledge quickly?), currency (is the knowledge up to date?) and applicability (can it be connected to daily work?). In many organisations, knowledge exists but is scattered. The difference lies not in the volume of knowledge, but in how accessible and reusable it is organised.',
+        section2Title: 'Where knowledge sharing shows potential',
+        section2Content: 'In practice, knowledge sharing often depends on individuals or on chance. Employees search for information, but don\\'t know where to start. The result: questions are asked multiple times, experts become overloaded, and valuable knowledge is lost when people leave the organisation. This is precisely where the potential lies \u2014 not because expertise is lacking, but because knowledge is insufficiently documented, structured and actively shared.',
         opportunities: [
-          { title: 'Einen klar erkennbaren Ausgangspunkt create', desc: 'Wird knowledge an einem zentralen Ort gebündelt, entsteht Overview und orientation.' },
-          { title: 'knowledgesaustausch in die Arbeit integrieren', desc: 'Durch die professionelle organisation und Dokumentation von knowledgesformaten wird Austausch strukturiert und wiederholbar.' },
-          { title: 'Expertinnen und Experten sichtbar und aktiv einbinden', desc: 'Indem erfahrene employees gezielt dabei unterstützt werden, ihre Expertise zu dokumentieren.' }
+          { title: 'Create a clearly recognisable starting point', desc: 'When knowledge is bundled in a central location, an overview and orientation emerge.' },
+          { title: 'Integrate knowledge sharing into the workflow', desc: 'By professionally organising and documenting knowledge formats, sharing becomes structured and repeatable.' },
+          { title: 'Make experts visible and actively involve them', desc: 'By purposefully supporting experienced employees in documenting their expertise.' }
         ],
         successFactors: [
-          'Zentrale Akademie mit Suchfunktion',
-          'Seminarmanagement mit Benachrichtigungen',
-          'Authoring-Tool für Expertinnen und Experten',
-          'Klare structure und Kategorien'
+          'Central academy with search functionality',
+          'Seminar management with notifications',
+          'Authoring tool for subject-matter experts',
+          'Clear structure and categories'
         ]
       },
       kwalificatie: {
         name: 'Qualification Management',
-        section1Title: 'Kontrolle über verpflichtende Kenntnisse und Zertifizierungen',
-        section1Content: 'Qualification Management bedeutet transparency darüber, welches knowledge, welche Zertifizierungen und welche Verpflichtungen erforderlich sind. Zentrale Fragen sind: Wer muss wofür qualifiziert sein? Wann sind Wiederholungen erforderlich? Sind alle auf dem aktuellen Stand? Ist das Qualification Management gut organised, entsteht Sicherheit. employees wissen, wo sie stehen – und Audits werden nicht zur Last-Minute-Aktion.',
-        section2Title: 'Wo Qualification Management Potenzial zeigt',
-        section2Content: 'In practice ist Qualification Management häufig stark von manueller Nachverfolgung geprägt: Overviewen in Excel, Erinnerungen per E-Mail und hoher Abstimmungsaufwand. Typische Anzeichen: Unklarheit darüber, wer was absolvieren muss, zu spät erkannte abgelaufene Zertifikate und erhöhter Druck im Vorfeld von Audits. This is precisely where liegt das Potenzial – nicht weil Regeln unklar wären, sondern weil der process zu wenig transparency und Kontinuität bietet.',
+        section1Title: 'Control over mandatory knowledge and certifications',
+        section1Content: 'Qualification Management means transparency about which knowledge, certifications and obligations are required. Central questions include: who needs to be qualified for what? When are renewals required? Is everyone up to date? When Qualification Management is well organised, it creates confidence. Employees know where they stand \u2014 and audits don\\'t become a last-minute scramble.',
+        section2Title: 'Where Qualification Management shows potential',
+        section2Content: 'In practice, Qualification Management is often heavily reliant on manual tracking: spreadsheet overviews, email reminders and significant coordination effort. Typical signs: uncertainty about who needs to complete what, expired certificates discovered too late, and increased pressure in the run-up to audits. This is precisely where the potential lies \u2014 not because rules are unclear, but because the process provides too little transparency and continuity.',
         opportunities: [
-          { title: 'clarity je role create', desc: 'Wird eindeutig definiert, welche Anforderungen für welche role gelten, entsteht Overview.' },
-          { title: 'Verpflichtungen verständlich machen', desc: 'Werden Richtlinien in kurze Lerneinheiten übersetzt, lassen sie sich besser in den Arbeitsalltag integrieren.' },
-          { title: 'Fortschritt kontinuierlich sichtbar machen', desc: 'Ist der Fortschritt transparent, können Maßnahmen frühzeitig angepasst werden.' }
+          { title: 'Create clarity per role', desc: 'When requirements are clearly defined per role, an overview emerges.' },
+          { title: 'Make obligations understandable', desc: 'When policies are translated into short learning units, they can be better integrated into daily work.' },
+          { title: 'Make progress continuously visible', desc: 'When progress is transparent, measures can be adjusted early.' }
         ],
         successFactors: [
-          'Qualification Management mit Wiederholungslogik',
-          'Audit-Trail und Reports',
-          'Zertifikatsverwaltung',
-          'Tools zur Übersetzung von Richtlinien'
+          'Qualification Management with renewal logic',
+          'Audit trail and reports',
+          'Certificate management',
+          'Tools for translating policies into learning'
         ]
       },
       training: {
         name: 'Training Procurement',
-        section1Title: 'Kontrolle über externe Schulungen und Budgets',
-        section1Content: 'Die Beschaffung externer Schulungen beschreibt, wie employees Zugang zu externen Lernangeboten erhalten. Dabei geht es um das Gleichgewicht zwischen Entscheidungsfreiheit und transparency: employees möchten schnell mit relevanten Schulungen starten, die organisation möchte wissen, wofür Budgets eingesetzt werden. Ist die Beschaffung externer Schulungen gut organised, finden employees schnell passende Angebote – während das organisation Kosten und quality im Blick behält.',
-        section2Title: 'Wo die Beschaffung externer Schulungen Potenzial zeigt',
-        section2Content: 'In practice ist die Beantragung externer Schulungen häufig langsam und wenig transparent. Typische Muster: employees wissen nicht, welche Angebote verfügbar sind, Antragsprozesse sind unklar, und Budgets werden erst im Nachhinein statt in Echtzeit überprüft. This is precisely where liegt das Potenzial – nicht wegen fehlender Angebote, sondern weil processe zu wenig effizient und transparent gestaltet sind.',
+        section1Title: 'Control over external training and budgets',
+        section1Content: 'Training procurement describes how employees gain access to external learning offerings. It\\'s about the balance between decision-making freedom and transparency: employees want to start relevant training quickly, whilst the organisation wants to know how budgets are being spent. When training procurement is well organised, employees find suitable offerings quickly \u2014 whilst the organisation keeps costs and quality in view.',
+        section2Title: 'Where training procurement shows potential',
+        section2Content: 'In practice, requesting external training is often slow and lacking in transparency. Typical patterns: employees don\\'t know which offerings are available, request processes are unclear, and budgets are reviewed after the fact rather than in real time. This is precisely where the potential lies \u2014 not because offerings are lacking, but because processes are not efficient or transparent enough.',
         opportunities: [
-          { title: 'Einen klaren Antragsprozess create', desc: 'Durch die zentrale Steuerung von Anfragen wissen employees, an wen sie sich wenden können.' },
-          { title: 'quality im Vorfeld sicherstellen', desc: 'Durch die Prüfung von Anbietern steigt die quality, ohne zusätzlichen Aufwand pro Anfrage.' },
-          { title: 'Budgets in Echtzeit transparent machen', desc: 'Werden Ausgaben sichtbar, lassen sich Anpassungen frühzeitig vornehmen.' }
+          { title: 'Create a clear request process', desc: 'By centrally managing requests, employees know where to turn.' },
+          { title: 'Ensure quality upfront', desc: 'By vetting providers, quality increases without additional effort per request.' },
+          { title: 'Make budgets transparent in real time', desc: 'When spending is visible, adjustments can be made early.' }
         ],
         successFactors: [
-          'Katalog für externe Schulungen',
-          'Genehmigungs-Workflows mit klaren rolen',
-          'Budgetmanagement je Team',
-          'Integration mit Anbietern'
+          'Catalogue for external training',
+          'Approval workflows with clear roles',
+          'Budget management per team',
+          'Integration with providers'
         ]
       },
       regie: {
-        name: 'Eigenverantwortung der employeesn',
-        section1Title: 'Verantwortung für die eigene Development übernehmen',
-        section1Content: 'Eigenverantwortung beschreibt, in welchem Maß employees transparency über ihre eigene Development haben. Im Kern geht es um Ownership: knowledge, welche skills zur eigenen role gehören, transparency über eigene Stärken und Developmentspotenziale und clarity über sinnvolle nächste Schritte. Ist Eigenverantwortung gut verankert, ergreifen employees selbst Initiative. Sie treiben ihre Development aktiv voran und übernehmen Verantwortung für ihr Wachstum.',
-        section2Title: 'Wo Eigenverantwortung Potenzial zeigt',
-        section2Content: 'In practice fehlt employeesn häufig die clarity darüber, welche skills von ihnen erwartet werden. Was wir beobachten: Development wird vertagt, Gespräche bleiben oberflächlich, und Lernen findet vor allem dann statt, wenn es erforderlich ist – nicht, wenn es sinnvoll wäre. This is precisely where liegt das Potenzial – nicht aufgrund mangelnder Motivation, sondern weil geeignete Instrumente zur Selbststeuerung fehlen.',
+        name: 'Employee Ownership',
+        section1Title: 'Taking responsibility for your own development',
+        section1Content: 'Employee ownership describes the extent to which employees have transparency over their own development. At its core, it\\'s about ownership: knowing which skills belong to their role, transparency about their own strengths and development potential, and clarity about sensible next steps. When employee ownership is well embedded, employees take the initiative themselves. They actively drive their development and take responsibility for their growth.',
+        section2Title: 'Where employee ownership shows potential',
+        section2Content: 'In practice, employees often lack clarity about which skills are expected of them. What we observe: development is postponed, conversations remain superficial, and learning happens primarily when it\\'s required \u2014 not when it would be beneficial. This is precisely where the potential lies \u2014 not due to a lack of motivation, but because suitable instruments for self-direction are missing.',
         opportunities: [
-          { title: 'skills je role sichtbar machen', desc: 'Durch klare Definitionen wird deutlich, welche capabilities zu einer Funktion gehören.' },
-          { title: 'Selbsterkenntnis fördern', desc: 'Mithilfe von Assessments können employees ihre Developmentspotenziale erkennen.' },
-          { title: 'Individuelle Lernempfehlungen enable', desc: 'Relevante Inhalte werden auf Basis von role und Erfahrungsniveau vorgeschlagen.' }
+          { title: 'Make skills visible per role', desc: 'Through clear definitions, it becomes apparent which capabilities belong to a function.' },
+          { title: 'Foster self-awareness', desc: 'Using assessments, employees can recognise their development potential.' },
+          { title: 'Enable personalised learning recommendations', desc: 'Relevant content is suggested based on role and experience level.' }
         ],
         successFactors: [
-          'Skill-Profile je Funktion',
-          'Persönliches Dashboard',
-          'Self-Assessments',
-          'Personalisierte Lernempfehlungen'
+          'Skill profiles per function',
+          'Personal dashboard',
+          'Self-assessments',
+          'Personalised learning recommendations'
         ]
       },
       reskilling: {
         name: 'Up- & Reskilling',
-        section1Title: 'employees auf Veränderung vorbereiten',
-        section1Content: 'Up- und Reskilling beschreibt die gezielte Development von skills, die für zukünftige Veränderungen erforderlich sind. Im Kern geht es um Zukunftsorientierung: Nicht nur für den aktuellen Bedarf schulen, sondern auf kommende Anforderungen vorbereiten, damit employees sich gemeinsam mit der organisation weiterdevelop können. Ist Reskilling gut organised, wird Veränderung nicht zur Bedrohung, sondern zur Wachstumschance.',
-        section2Title: 'Wo Up- und Reskilling Potenzial zeigt',
-        section2Content: 'In practice erfolgt Reskilling häufig reaktiv. Erst wenn systeme verändert werden, Umstrukturierungen anstehen oder Funktionen wegfallen, wird gehandelt. Das Risiko: Wer zu spät startet, setzt employees unter Druck – oder verliert Talente, die anderswo bessere Perspektiven sehen. This is precisely where liegt das Potenzial – nicht wegen fehlender Dringlichkeit, sondern weil der Blick nicht weit genug in die Zukunft reicht.',
+        section1Title: 'Preparing employees for change',
+        section1Content: 'Up- and reskilling describes the targeted development of skills required for future changes. At its core, it\\'s about future orientation: not just training for current needs, but preparing for upcoming requirements, so employees can develop together with the organisation. When reskilling is well organised, change becomes an opportunity for growth rather than a threat.',
+        section2Title: 'Where up- and reskilling shows potential',
+        section2Content: 'In practice, reskilling often happens reactively. Only when systems change, restructurings are announced, or roles are eliminated does action follow. The risk: starting too late puts employees under pressure \u2014 or leads to losing talent who see better prospects elsewhere. This is precisely where the potential lies \u2014 not because urgency is lacking, but because the view doesn\\'t reach far enough into the future.',
         opportunities: [
-          { title: 'Zukünftige Skill-Bedarfe ableiten', desc: 'Durch die Übersetzung strategischer Pläne in konkrete, benötigte skills entsteht clarity über künftige Anforderungen.' },
-          { title: 'Lernpfade für Übergänge design', desc: 'Gezielte Programme unterstützen bei rolenveränderungen.' },
-          { title: 'Zeit und Raum für Development create', desc: 'Reskilling wird als fester Bestandteil der Arbeit eingeplant.' }
+          { title: 'Derive future skill requirements', desc: 'By translating strategic plans into specific required skills, clarity about future needs is created.' },
+          { title: 'Design learning paths for transitions', desc: 'Targeted programmes support employees through role changes.' },
+          { title: 'Create time and space for development', desc: 'Reskilling is scheduled as a fixed part of work.' }
         ],
         successFactors: [
-          'Skill-Gap-Analyse',
-          'Lernpfade für Übergänge',
-          'Blended-Learning-Formate',
-          'Fortschrittsmonitoring'
+          'Skill Gap analysis',
+          'Learning paths for transitions',
+          'Blended learning formats',
+          'Progress monitoring'
         ]
       },
       strategie: {
-        name: 'Strategice Skill-Development',
-        section1Title: 'Lernen mit strategischen Zielen verknüpfen',
-        section1Content: 'Strategice Skill-Development beschreibt, in welchem Maß L&D-Investitionen zur Erreichung der organisationsziele beitragen. Im Kern geht es um Ausrichtung: Nicht Lernen um des Lernens willen, sondern gezielte Development von skills mit strategischer Relevanz und mit messbarem Impact auf die organisationsziele. Ist dies gut organised, wird L&D nicht als Kostenstelle wahrgenommen, sondern als strategischer Partner, der aktiv zum organisationserfolg beiträgt.',
-        section2Title: 'Wo strategische Skill-Development Potenzial zeigt',
-        section2Content: 'In practice bietet L&D häufig ein breites Spektrum ohne klare Priorisierung. Es gibt viele Optionen, doch es bleibt unklar, was wirklich relevant ist. Die Folge: Investitionen in Lernen wirken wie „nice to have" statt „must have", und die Verbindung zur Strategy fehlt im Dialog mit dem Management. This is precisely where liegt das Potenzial – nicht wegen fehlender Angebote, sondern weil die Anbindung an die organisationsziele nicht konsequent hergestellt wird.',
+        name: 'Strategic Skill Development',
+        section1Title: 'Connecting learning to strategic goals',
+        section1Content: 'Strategic Skill Development describes the extent to which L&D investments contribute to achieving organisational goals. At its core, it\\'s about alignment: not learning for learning\\'s sake, but targeted development of skills with strategic relevance and measurable impact on organisational objectives. When this is well organised, L&D is not perceived as a cost centre, but as a strategic partner that actively contributes to organisational success.',
+        section2Title: 'Where Strategic Skill Development shows potential',
+        section2Content: 'In practice, L&D often offers a broad spectrum without clear prioritisation. There are many options, yet it remains unclear what is truly relevant. The result: investments in learning come across as "nice to have" rather than "must have", and the connection to strategy is missing from conversations with management. This is precisely where the potential lies \u2014 not because offerings are lacking, but because the link to organisational goals is not consistently established.',
         opportunities: [
-          { title: 'Strategice skills definieren', desc: 'Klar benennen, welche capabilities für die Umsetzung der Strategy entscheidend sind.' },
-          { title: 'Lerninitiativen nach Impact priorisieren', desc: 'Investitionen auf ihren strategischen Beitrag prüfen.' },
-          { title: 'Impact sichtbar machen', desc: 'Fortschritte bei strategischen skills messen und transparent berichten.' }
+          { title: 'Define strategic skills', desc: 'Clearly identify which capabilities are critical for executing the strategy.' },
+          { title: 'Prioritise learning initiatives by impact', desc: 'Evaluate investments based on their strategic contribution.' },
+          { title: 'Make impact visible', desc: 'Measure and transparently report progress on strategic skills.' }
         ],
         successFactors: [
-          'Strategice Skill-Taxonomie',
-          'Skill-basiertes Reporting',
-          'Integration in den HR-Zyklus',
-          'Einbindung relevanter Stakeholder'
+          'Strategic skill taxonomy',
+          'Skill-based reporting',
+          'Integration into the HR cycle',
+          'Engagement of relevant stakeholders'
         ]
       },
       mobiliteit: {
         name: 'Internal Mobility',
-        section1Title: 'Talente im organisation develop',
-        section1Content: 'Internal Mobility beschreibt, in welchem Maß employees sich weiterdevelop oder intern die role wechseln können. Im Kern geht es um Perspektive: Wahrnehmen, dass es in der organisation Developmentsmöglichkeiten gibt, wissen, wie der Weg dorthin aussieht und erleben, dass die organisation in die Development ihrer employeesn investiert. Ist interne Mobilität gut organised, sehen employees eine Zukunft im organisation – und bleiben.',
-        section2Title: 'Wo interne Mobilität Potenzial zeigt',
-        section2Content: 'In practice hängt Weiterentwicklung häufig vom Zufall oder vom eigenen Netzwerk ab. Wer nicht sichtbar ist, bleibt unberücksichtigt. Typische Anzeichen: Talente verlassen das organisation, während interne Stellen schwer zu besetzen sind, und employees wissen nicht, welche Möglichkeiten ihnen offenstehen. This is precisely where liegt das Potenzial – nicht wegen fehlender Talente, sondern weil Opportunities nicht transparent sind und processe unklar bleiben.',
+        section1Title: 'Developing talent within the organisation',
+        section1Content: 'Internal Mobility describes the extent to which employees can develop further or change roles internally. At its core, it\\'s about perspective: recognising that development opportunities exist within the organisation, knowing what the path towards them looks like, and experiencing that the organisation invests in its employees\\' development. When internal mobility is well organised, employees see a future within the organisation \u2014 and stay.',
+        section2Title: 'Where internal mobility shows potential',
+        section2Content: 'In practice, career development often depends on chance or personal networks. Those who aren\\'t visible are overlooked. Typical signs: talent leaves the organisation whilst internal positions are hard to fill, and employees don\\'t know which opportunities are available to them. This is precisely where the potential lies \u2014 not because talent is lacking, but because opportunities aren\\'t transparent and processes remain unclear.',
         opportunities: [
-          { title: 'Interne Vakanzen sichtbar machen', desc: 'Durch transparency über offene rolen erkennen employees, welche Möglichkeiten es gibt.' },
-          { title: 'Karrierepfade visualisieren', desc: 'Klar darstellen, welche Developmentsschritte von einer role aus sinnvoll sind.' },
-          { title: 'skills mit Opportunities verknüpfen', desc: 'capabilities gezielt mit internen Möglichkeiten verbinden.' }
+          { title: 'Make internal vacancies visible', desc: 'Through transparency about open roles, employees can see which opportunities exist.' },
+          { title: 'Visualise career paths', desc: 'Clearly show which development steps are sensible from any given role.' },
+          { title: 'Connect skills to opportunities', desc: 'Purposefully link capabilities to internal opportunities.' }
         ],
         successFactors: [
-          'Interne Stellenbörse',
-          'Visualisierte Karrierepfade',
+          'Internal job board',
+          'Visualised career paths',
           'Talent Marketplace',
-          'Mobilitätsrichtlinie'
+          'Mobility policy'
         ]
       }
     };
 
     const RATIONALES = {
       onboarding: {
-        fast_productive: 'Ihr Fokus darauf, neue employees schnell produktiv zu machen, macht strukturiertes Onboarding zu einer logischen ersten Priority.',
-        compliance: 'Auch bei starkem Compliance-Fokus ist Onboarding relevant: Neue employees müssen von Beginn an wissen, welche Regeln gelten.',
-        change: 'In Veränderungsphasen ist ein guter Start besonders wichtig — neue Kolleginnen und Kollegen bringen häufig die frische Perspektive mit, die benötigt wird.',
-        talent_retention: 'Eine starke Onboarding-Erfahrung ist entscheidend für Bindung. Wer gut startet, bleibt länger.',
-        strategic_alignment: 'Onboarding ist der Moment, neue employees direkt mit der strategischen Ausrichtung zu verbinden.'
+        fast_productive: 'Your focus on getting new employees productive quickly makes structured onboarding a logical first priority.',
+        compliance: 'Even with a strong compliance focus, onboarding is relevant: new employees need to know the rules from day one.',
+        change: 'During periods of change, a good start is especially important \u2014 new colleagues often bring the fresh perspective that is needed.',
+        talent_retention: 'A strong onboarding experience is crucial for retention. Those who start well, stay longer.',
+        strategic_alignment: 'Onboarding is the moment to directly connect new employees with the strategic direction.'
       },
       kennisdeling: {
-        fast_productive: 'Gut zugänglicher knowledgesaustausch beschleunigt Onboarding: Neue employees finden Antworten selbstständig.',
-        compliance: 'knowledgesaustausch unterstützt Compliance, da processe und Best Practices auffindbar und aktuell bleiben.',
-        change: 'In Veränderungsphasen ist knowledgesaustausch zentral: Erkenntnisse müssen schnell geteilt werden.',
-        talent_retention: 'knowledgesaustausch stärkt die Bindung — wer von Kolleginnen und Kollegen lernen kann, fühlt sich wertgeschätzt.',
-        strategic_alignment: 'Strategicer knowledgesaustausch sorgt dafür, dass Erkenntnisse organisationsweit verbreitet werden.'
+        fast_productive: 'Well-accessible knowledge sharing accelerates onboarding: new employees find answers independently.',
+        compliance: 'Knowledge sharing supports compliance, as processes and best practices remain findable and current.',
+        change: 'During periods of change, knowledge sharing is central: insights need to be shared quickly.',
+        talent_retention: 'Knowledge sharing strengthens retention \u2014 those who can learn from colleagues feel valued.',
+        strategic_alignment: 'Strategic knowledge sharing ensures that insights are disseminated across the organisation.'
       },
       kwalificatie: {
-        fast_productive: 'Sind Qualifikationen sofort klar, können neue employees schneller eigenständig arbeiten.',
-        compliance: 'Ihr Compliance-Fokus macht Qualification Management zu einer zentralen Priority.',
-        change: 'In Veränderungsphasen ist es entscheidend, dass alle wissen, welche (neuen) Qualifikationen erforderlich sind.',
-        talent_retention: 'Ein klares Qualification Management gibt employeesn Sicherheit über ihren Status.',
-        strategic_alignment: 'Strategice Ziele führen häufig zu neuen Anforderungen — ein strukturiertes Qualification Management macht diese steuerbar.'
+        fast_productive: 'When qualifications are immediately clear, new employees can work independently sooner.',
+        compliance: 'Your compliance focus makes Qualification Management a central priority.',
+        change: 'During periods of change, it is crucial that everyone knows which (new) qualifications are required.',
+        talent_retention: 'Clear Qualification Management gives employees confidence about their status.',
+        strategic_alignment: 'Strategic goals often lead to new requirements \u2014 structured Qualification Management makes these manageable.'
       },
       training: {
-        fast_productive: 'Schneller Zugang zu relevanten Schulungen beschleunigt die Produktivität neuer employeesr.',
-        compliance: 'Eine gezielte Beschaffung externer Schulungen unterstützt dabei, spezifische Zertifizierungsanforderungen zu erfüllen.',
-        change: 'In Veränderungsphasen ist schneller Zugang zu neuem knowledge essenziell.',
-        talent_retention: 'Weiterbildungsmöglichkeiten sind ein wichtiger Faktor für die Bindung von Talenten.',
-        strategic_alignment: 'Eine strategische Steuerung externer Schulungen maximiert den Impact auf organisationsziele.'
+        fast_productive: 'Quick access to relevant training accelerates the productivity of new employees.',
+        compliance: 'Targeted training procurement helps meet specific certification requirements.',
+        change: 'During periods of change, quick access to new knowledge is essential.',
+        talent_retention: 'Professional development opportunities are an important factor in talent retention.',
+        strategic_alignment: 'Strategic management of external training maximises the impact on organisational goals.'
       },
       regie: {
-        fast_productive: 'employees, die ihre Development selbst steuern, werden schneller produktiv.',
-        compliance: 'Eigenverantwortung unterstützt dabei, Verpflichtungen eigenständig im Blick zu behalten.',
-        change: 'In Veränderungsphasen ist Selbststeuerung entscheidend — employees müssen sich eigenständig anpassen können.',
-        talent_retention: 'Autonomie in der Development ist ein zentraler Faktor für Bindung.',
-        strategic_alignment: 'Wenn employees Verantwortung übernehmen, verknüpfen sie ihre Development stärker mit den organisationszielen.'
+        fast_productive: 'Employees who direct their own development become productive faster.',
+        compliance: 'Employee ownership supports keeping track of obligations independently.',
+        change: 'During periods of change, self-direction is crucial \u2014 employees need to be able to adapt independently.',
+        talent_retention: 'Autonomy in development is a key factor for retention.',
+        strategic_alignment: 'When employees take ownership, they connect their development more strongly to organisational goals.'
       },
       reskilling: {
-        fast_productive: 'Reskilling beschleunigt den Übergang in neue rolen und erhöht die Vielseitigkeit.',
-        compliance: 'Reskilling unterstützt dabei, auf veränderte regulatorische Anforderungen zu reagieren.',
-        change: 'Ihr Fokus auf Veränderung macht Reskilling zu einer logischen Priority.',
-        talent_retention: 'Investitionen in Reskilling zeigen Vertrauen in die Zukunft Ihrer employeesn.',
-        strategic_alignment: 'Strategices Reskilling bereitet die organisation auf kommende Herausforderungen vor.'
+        fast_productive: 'Reskilling accelerates transitions into new roles and increases versatility.',
+        compliance: 'Reskilling helps respond to changing regulatory requirements.',
+        change: 'Your focus on change makes reskilling a logical priority.',
+        talent_retention: 'Investing in reskilling shows confidence in your employees\\' future.',
+        strategic_alignment: 'Strategic reskilling prepares the organisation for upcoming challenges.'
       },
       strategie: {
-        fast_productive: 'Strategice Skill-Development stellt sicher, dass neue employees unmittelbar zu den organisationszielen beitragen.',
-        compliance: 'Ein klarer Skill-Fokus hilft, Compliance in die Geschäftsstrategie zu integrieren.',
-        change: 'In Transformationsphasen ist strategische Skill-Development entscheidend für den Erfolg.',
-        talent_retention: 'employees, die erkennen, wie ihr Wachstum zur Strategy beiträgt, fühlen sich stärker verbunden.',
-        strategic_alignment: 'Ihr strategischer Fokus macht dieses Thema zu einer Kernpriorität.'
+        fast_productive: 'Strategic Skill Development ensures that new employees contribute to organisational goals from the start.',
+        compliance: 'A clear skill focus helps integrate compliance into the business strategy.',
+        change: 'During transformation phases, strategic skill development is crucial for success.',
+        talent_retention: 'Employees who see how their growth contributes to the strategy feel more connected.',
+        strategic_alignment: 'Your strategic focus makes this topic a core priority.'
       },
       mobiliteit: {
-        fast_productive: 'Internal Mobility ermöglicht eine schnelle Neubesetzung dort, wo sie benötigt wird.',
-        compliance: 'Sie hilft, Anforderungen zu erfüllen, indem employees gezielt eingesetzt werden.',
-        change: 'In Veränderungsphasen ist rolenflexibilität entscheidend — Mobilität macht sie möglich.',
-        talent_retention: 'Ihr Fokus auf Talentbindung macht interne Mobilität zu einer logischen Priority.',
-        strategic_alignment: 'Strategice Mobilität stellt sicher, dass Talente dort eingesetzt werden, wo sie the greatest impact erzielen.'
+        fast_productive: 'Internal mobility enables rapid redeployment where it is needed.',
+        compliance: 'It helps meet requirements by deploying employees where they are needed most.',
+        change: 'During periods of change, role flexibility is essential \u2014 mobility makes it possible.',
+        talent_retention: 'Your focus on talent retention makes internal mobility a logical priority.',
+        strategic_alignment: 'Strategic mobility ensures that talent is deployed where it can make the greatest impact.'
       }
     };
 
     const STRATEGIC_GOAL_LABELS = {
-      growth: 'Wachstum — Umsatz oder Marktanteil steigern',
-      operational_excellence: 'Operative Exzellenz — Effizienz und quality improve',
-      transformation: 'Transformation — Neue Märkte, Produkte oder Geschäftsmodelle erschließen',
-      stability: 'Stabilität — Kontinuität secure und Kosten kontrollieren',
-      talent_development: 'Talententwicklung — In employees investieren, um sich strategisch zu differenzieren'
+      growth: 'Growth \u2014 Increase revenue or market share',
+      operational_excellence: 'Operational Excellence \u2014 Improve efficiency and quality',
+      transformation: 'Transformation \u2014 Explore new markets, products or business models',
+      stability: 'Stability \u2014 Ensure continuity and control costs',
+      talent_development: 'Talent Development \u2014 Invest in employees to differentiate strategically'
     };
 
     const LD_CHALLENGE_LABELS = {
-      fast_productive: 'Neue employees schnell produktiv machen',
-      compliance: 'Compliance-Anforderungen und Qualifikationen sicherstellen',
-      change: 'employees für Veränderungen gewinnen',
-      talent_retention: 'Talente binden und weiterdevelop',
-      strategic_alignment: 'Lernen mit der organisationsstrategie verknüpfen'
+      fast_productive: 'Get new employees productive quickly',
+      compliance: 'Ensure compliance requirements and qualifications',
+      change: 'Engage employees in change',
+      talent_retention: 'Retain and develop talent',
+      strategic_alignment: 'Connect learning to the organisational strategy'
     };
 
     const ALL_USE_CASES = [
       { id: 'onboarding', name: 'Onboarding' },
-      { id: 'kennisdeling', name: 'knowledges-management' },
+      { id: 'kennisdeling', name: 'Knowledge Management' },
       { id: 'kwalificatie', name: 'Qualification Management' },
       { id: 'training', name: 'Training Procurement' },
-      { id: 'regie', name: 'Eigenverantwortung' },
+      { id: 'regie', name: 'Employee Ownership' },
       { id: 'reskilling', name: 'Up- & Reskilling' },
-      { id: 'strategie', name: 'Strat. Skill-Development' },
+      { id: 'strategie', name: 'Strat. Skill Development' },
       { id: 'mobiliteit', name: 'Internal Mobility' }
     ];
 
@@ -1371,7 +1371,7 @@
       // Cover page
       document.getElementById('cover-name').textContent = contact.naam;
       document.getElementById('cover-org').textContent = contact.organisatie
-      document.getElementById('cover-date').textContent = new Date().toLocaleDateString('de-DE', {
+      document.getElementById('cover-date').textContent = new Date().toLocaleDateString('en-GB', {
         day: 'numeric',
         month: 'long',
         year: 'numeric'
@@ -1449,7 +1449,7 @@
                 </div>
               </div>
               <div class="score-item">
-                <div class="score-item-label">Bedeutung</div>
+                <div class="score-item-label">Importance</div>
                 <div class="score-item-value">${scores.B}</div>
                 <div class="score-bar">
                   <div class="score-bar-fill score-b" style="width: ${scores.B * 20}%"></div>
@@ -1471,7 +1471,7 @@
             <div class="priority-rank">#${index + 1}</div>
             <div class="priority-title-area">
               <div class="priority-name">${content.name}</div>
-              <div class="priority-scores">Bedeutung: ${priority.scoreB}/5 | Currenter Approach: ${priority.scoreA}/5</div>
+              <div class="priority-scores">Importance: ${priority.scoreB}/5 | Current approach: ${priority.scoreA}/5</div>
             </div>
           </div>
 
@@ -1485,9 +1485,9 @@
           ${content.section2Title ? `<h3 style="margin-top: 12px;">${content.section2Title}</h3>
           <p>${content.section2Content}</p>` : ''}
 
-          <h4>Konkrete Handlungsfelder</h4>
+          <h4>Areas for action</h4>
           <ul class="opportunity-list">
-            ${content.opportunities.map(o => `<li><strong>${o.title}</strong> — ${o.desc}</li>`).join('')}
+            ${content.opportunities.map(o => `<li><strong>${o.title}</strong> \u2014 ${o.desc}</li>`).join('')}
           </ul>
 
           <h4>Success Factors</h4>
@@ -1571,7 +1571,7 @@
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   ">
     <span style="font-size: 14px;">
-      <strong>PDF-Vorschau</strong> — Nutzen Sie die Schaltfläche rechts, um die Datei als PDF herunterzuladen.
+      <strong>PDF preview</strong> &mdash; Use the button on the right to download the file as a PDF.
     </span>
     <button onclick="printReport()" style="
       background: white;
@@ -1592,7 +1592,7 @@
         <line x1="12" y1="18" x2="12" y2="12"></line>
         <polyline points="9 15 12 18 15 15"></polyline>
       </svg>
-      Als PDF speichern
+      Save as PDF
     </button>
   </div>
 
