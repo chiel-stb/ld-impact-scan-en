@@ -89,35 +89,36 @@ export default async function handler(req, res) {
       JSON.stringify(payload),
     ];
 
-    await appendRow(row);
+    const sheetsPromise = appendRow(row);
+
+    const n8nPromise = process.env.N8N_WEBHOOK_URL
+      ? fetch(process.env.N8N_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event: 'completed',
+            result_id,
+            email,
+            first_name: contact.voornaam || '',
+            last_name: contact.achternaam || '',
+            organisation: organisation || contact.organisatie || '',
+            phone: contact.telefoon || '',
+            score: avgScore,
+            phase,
+            priorities: top3,
+            strategic_goal: context.strategic_goals_ranked?.[0] || context.strategic_goal || '',
+            ld_challenge: context.ld_challenge || '',
+            consultation: delivery.consultation || '',
+            meeting_booked: delivery.meeting_booked ?? false,
+            completed_at: completedAt,
+            payload,
+          }),
+        }).catch(err => console.error('n8n webhook error:', err.message))
+      : Promise.resolve();
+
+    await Promise.allSettled([sheetsPromise, n8nPromise]);
 
     console.log('Saved to Google Sheets - ID:', result_id, 'Score:', avgScore, 'Phase:', phase);
-
-    // Fire-and-forget n8n webhook (don't block user response)
-    if (process.env.N8N_WEBHOOK_URL) {
-      fetch(process.env.N8N_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          event: 'completed',
-          result_id,
-          email,
-          first_name: contact.voornaam || '',
-          last_name: contact.achternaam || '',
-          organisation: organisation || contact.organisatie || '',
-          phone: contact.telefoon || '',
-          score: avgScore,
-          phase,
-          priorities: top3,
-          strategic_goal: context.strategic_goals_ranked?.[0] || context.strategic_goal || '',
-          ld_challenge: context.ld_challenge || '',
-          consultation: delivery.consultation || '',
-          meeting_booked: delivery.meeting_booked ?? false,
-          completed_at: completedAt,
-          payload,
-        }),
-      }).catch(err => console.error('n8n webhook error (non-blocking):', err.message));
-    }
 
     return res.status(200).json({
       success: true,

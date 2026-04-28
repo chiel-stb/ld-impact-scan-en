@@ -39,7 +39,7 @@ export default async function handler(req, res) {
     const startedAt = new Date().toISOString();
 
     const sheets = getSheets();
-    await sheets.spreadsheets.values.append({
+    const sheetsPromise = sheets.spreadsheets.values.append({
       spreadsheetId: SHEET_ID,
       range: `${SHEET_NAME}!A:C`,
       valueInputOption: 'RAW',
@@ -49,20 +49,21 @@ export default async function handler(req, res) {
       },
     });
 
-    // Fire-and-forget n8n webhook for "started" event
-    if (process.env.N8N_WEBHOOK_URL_STARTED || process.env.N8N_WEBHOOK_URL) {
-      const webhookUrl = process.env.N8N_WEBHOOK_URL_STARTED || process.env.N8N_WEBHOOK_URL;
-      fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          event: 'started',
-          result_id,
-          email,
-          started_at: startedAt,
-        }),
-      }).catch(err => console.error('n8n started webhook error (non-blocking):', err.message));
-    }
+    const webhookUrl = process.env.N8N_WEBHOOK_URL_STARTED || process.env.N8N_WEBHOOK_URL;
+    const n8nPromise = webhookUrl
+      ? fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event: 'started',
+            result_id,
+            email,
+            started_at: startedAt,
+          }),
+        }).catch(err => console.error('n8n started webhook error:', err.message))
+      : Promise.resolve();
+
+    await Promise.allSettled([sheetsPromise, n8nPromise]);
 
     console.log('Started logged - ID:', result_id, 'Email:', email);
 
